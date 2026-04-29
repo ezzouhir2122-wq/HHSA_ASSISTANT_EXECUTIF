@@ -58,7 +58,9 @@ Read `focus.md` and `state.md` at session start. Reference others as needed.
 ## Tool Stack
 
 Gmail · Google Calendar · Google Sheets (CRM) · Google Docs · LinkedIn
-Tous utilisés manuellement — API et MCPs non configurés.
+Tous utilisés manuellement sauf Zapier.
+
+**MCP actif :** Zapier — HTTP transport, token dans `.claude/settings.local.json`. Automatisation directe depuis Claude Code.
 
 ---
 
