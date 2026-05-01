@@ -3,8 +3,8 @@
 *Updated at the end of each session. Read this FIRST on startup.*
 
 ## Last Session
-- **Date:** 2026-04-28
-- **Summary:** 3 Blueprints créés (pipeline-summary-lundi, lead-update-followup, proposal-generation). Exécution via Route Zapier (bloquée auth — à débloquer) + Route Abonnement (Gmail draft Foster & Marsh + doc Drive Sahel Cafe Group). Pipeline lu via Google Drive MCP en fallback.
+- **Date:** 2026-04-29
+- **Summary:** Skill `/recap-pipeline` migré vers le format Claude Code standard (`.claude/skills/recap-pipeline/SKILL.md`) avec frontmatter name/description/allowed-tools. Skill maintenant invocable directement via `/recap-pipeline`.
 
 ## Open Tasks
 - Définir la structure du site web et la grille tarifaire
