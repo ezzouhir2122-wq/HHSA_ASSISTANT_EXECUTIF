@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HHSA Agency — Workflows Agentiques pour PME | Audit Gratuit</title>
+  <meta name="description" content="HHSA Agency automatise vos processus métier avec des systèmes IA sur mesure. Libérez 10h par semaine. Audit gratuit de 30 min, sans engagement.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─── RESET & TOKENS ──────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent:   #A98A5C;
+      --accent-h: #76531F;
+      --dark:     #301E0E;
+      --dark-2:   #1a0f06;
+      --bg:       #FFFFFD;
+      --surface:  #F7F5F2;
+      --h-text:   #342212;
+      --b-text:   #56524E;
+      --border:   #E5E7EB;
+      --white:    #FFFFFD;
+
+      --ff-display: 'Cormorant Garamond', Georgia, serif;
+      --ff-body:    'Outfit', sans-serif;
+
+      --max-w:  1170px;
+      --px:     clamp(1.5rem, 5vw, 3rem);
+      --py:     clamp(4.5rem, 9vw, 7.5rem);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--ff-body);
+      font-size: 16px;
+      color: var(--b-text);
+      background: var(--bg);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--px);
+    }
+
+    /* ─── SCROLL REVEAL ───────────────────────────────────── */
+    .r {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .r.on  { opacity: 1; transform: none; }
+    .d1 { transition-delay: .1s; }
+    .d2 { transition-delay: .2s; }
+    .d3 { transition-delay: .3s; }
+    .d4 { transition-delay: .45s; }
+
+    /* ─── KEYFRAMES ───────────────────────────────────────── */
+    @keyframes up {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: none; }
+    }
+    @keyframes pulse-line {
+      0%, 100% { opacity: .3; transform: scaleY(1); }
+      50%       { opacity: 1;  transform: scaleY(1.15); }
+    }
+
+    /* ─── SHARED TYPOGRAPHY ───────────────────────────────── */
+    .label {
+      display: block;
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: .75rem;
+    }
+
+    .h2 {
+      font-family: var(--ff-display);
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      font-weight: 600;
+      color: var(--h-text);
+      line-height: 1.12;
+      letter-spacing: -.022em;
+    }
+
+    /* ─── NAV ─────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem var(--px);
+      transition: background .35s, backdrop-filter .35s, box-shadow .35s;
+    }
+    nav.scrolled {
+      background: rgba(48, 30, 14, .93);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 1px 0 rgba(169,138,92,.15);
+    }
+
+    .logo {
+      font-family: var(--ff-display);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: -.01em;
+      text-decoration: none;
+    }
+    .logo em { font-style: normal; color: var(--accent); }
+
+    .btn {
+      display: inline-block;
+      padding: .65rem 1.5rem;
+      font-family: var(--ff-body);
+      font-size: .85rem;
+      font-weight: 500;
+      letter-spacing: .02em;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: background .2s, transform .2s;
+    }
+    .btn-accent          { background: var(--accent);  color: var(--white); }
+    .btn-accent:hover    { background: var(--accent-h); transform: translateY(-2px); }
+    .btn-accent-lg       { background: var(--accent);  color: var(--white); padding: 1rem 2.2rem; font-size: 1rem; }
+    .btn-accent-lg:hover { background: var(--accent-h); transform: translateY(-2px); }
+
+    /* ─── HERO ────────────────────────────────────────────── */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      background: var(--dark);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* Subtle radial glow */
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 55% at 15% 55%, rgba(169,138,92,.18) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 65% at 85% 15%, rgba(169,138,92,.08) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    /* Grid lines texture */
+    #hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(169,138,92,.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(169,138,92,.055) 1px, transparent 1px);
+      background-size: 64px 64px;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      padding: 7rem var(--px) var(--py);
+      max-width: var(--max-w);
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .35rem 1rem;
+      border: 1px solid rgba(169,138,92,.35);
+      font-size: .73rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: up .8s .15s ease forwards;
+    }
+    .hero-badge-dot {
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: .3; }
+    }
+
+    .hero-h1 {
+      font-family: var(--ff-display);
+      font-size: clamp(3rem, 6.5vw, 5.5rem);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.06;
+      letter-spacing: -.025em;
+      max-width: 820px;
+      margin-bottom: 1.75rem;
+      opacity: 0;
+      animation: up .85s .3s ease forwards;
+    }
+    .hero-h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      color: rgba(255,255,253,.65);
+      font-weight: 300;
+      max-width: 560px;
+      margin-bottom: 2.75rem;
+      line-height: 1.8;
+      opacity: 0;
+      animation: up .85s .48s ease forwards;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: up .85s .62s ease forwards;
+    }
+
+    .hero-micro {
+      font-size: .78rem;
+      color: rgba(255,255,253,.38);
+      letter-spacing: .025em;
+    }
+    .hero-micro b { color: rgba(169,138,92,.7); font-weight: 400; margin: 0 .3rem; }
+
+    /* scroll arrow */
+    .scroll-arrow {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .45rem;
+      opacity: 0;
+      animation: up 1s 1.3s ease forwards;
+    }
+    .scroll-arrow span {
+      font-size: .68rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(255,255,253,.28);
+    }
+    .scroll-line {
+      width: 1px;
+      height: 42px;
+      background: linear-gradient(var(--accent), transparent);
+      animation: pulse-line 2.2s ease-in-out infinite;
+    }
+
+    /* ─── PAIN ────────────────────────────────────────────── */
+    #pain {
+      background: var(--bg);
+      padding: var(--py) var(--px);
+    }
+
+    .pain-head { margin-bottom: 3.5rem; }
+    .pain-head .h2 { max-width: 500px; margin-top: .4rem; }
+
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--border);
+    }
+
+    .pain-card {
+      padding: 2.5rem 2rem;
+      border-right: 1px solid var(--border);
+      position: relative;
+      background: var(--bg);
+      transition: background .25s;
+      overflow: hidden;
+    }
+    .pain-card:last-child { border-right: none; }
+
+    .pain-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--accent);
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform .4s ease;
+    }
+    .pain-card:hover { background: var(--surface); }
+    .pain-card:hover::before { transform: scaleY(1); }
+
+    .pain-icon {
+      width: 38px; height: 38px;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      stroke-width: 1.5;
+    }
+    .pain-card h3 {
+      font-family: var(--ff-display);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--h-text);
+      letter-spacing: -.01em;
+      margin-bottom: .7rem;
+      line-height: 1.25;
+    }
+    .pain-card p {
+      font-size: .9rem;
+      color: var(--b-text);
+      line-height: 1.8;
+    }
+
+    /* ─── SOLUTION ────────────────────────────────────────── */
+    #solution {
+      background: var(--dark);
+      padding: var(--py) var(--px);
+      position: relative;
+      overflow: hidden;
+    }
+    #solution::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 55% 75% at 95% 40%, rgba(169,138,92,.13) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    #solution .label  { color: rgba(169,138,92,.75); }
+    #solution .h2     { color: var(--white); max-width: 660px; margin-top: .4rem; }
+    #solution .h2 em  { font-style: italic; color: var(--accent); }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin-top: 4rem;
+      border-top: 1px solid rgba(169,138,92,.18);
+    }
+
+    .benefit {
+      padding: 2.5rem 2.5rem 2.5rem 0;
+      border-right: 1px solid rgba(169,138,92,.14);
+      position: relative;
+    }
+    .benefit:first-child { padding-left: 0; }
+    .benefit:last-child  { border-right: none; padding-right: 0; }
+    .benefit:not(:first-child) { padding-left: 2.5rem; }
+
+    .benefit-n {
+      font-family: var(--ff-display);
+      font-size: 4rem;
+      font-weight: 700;
+      color: rgba(169,138,92,.12);
+      line-height: 1;
+      margin-bottom: -.3rem;
+    }
+    .benefit h3 {
+      font-family: var(--ff-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: -.015em;
+      margin-bottom: .85rem;
+    }
+    .benefit p {
+      font-size: .88rem;
+      color: rgba(255,255,253,.52);
+      line-height: 1.85;
+    }
+    .benefit-bar {
+      width: 40px;
+      height: 2px;
+      background: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ─── PROCESS ─────────────────────────────────────────── */
+    #process {
+      background: var(--surface);
+      padding: var(--py) var(--px);
+    }
+
+    .process-head {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+    .process-head .h2 { margin: .4rem auto 0; }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      position: relative;
+    }
+
+    /* connector line between steps */
+    .steps::before {
+      content: '';
+      position: absolute;
+      top: 2.75rem;
+      left: calc(50% / 3);
+      right: calc(50% / 3);
+      height: 1px;
+      background: var(--border);
+      z-index: 0;
+    }
+
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 2rem 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-num {
+      width: 5.5rem;
+      height: 5.5rem;
+      border: 1.5px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface);
+      font-family: var(--ff-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 1.75rem;
+      position: relative;
+      transition: background .3s, color .3s;
+    }
+    .step:hover .step-num {
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    .step h3 {
+      font-family: var(--ff-display);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--h-text);
+      letter-spacing: -.01em;
+      margin-bottom: .65rem;
+    }
+    .step p {
+      font-size: .87rem;
+      color: var(--b-text);
+      line-height: 1.85;
+      max-width: 240px;
+    }
+
+    /* ─── WHY ─────────────────────────────────────────────── */
+    #why {
+      background: var(--bg);
+      padding: var(--py) var(--px);
+      border-top: 1px solid var(--border);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5.5rem;
+      align-items: start;
+    }
+
+    .why-left .h2  { max-width: 480px; margin: .4rem 0 1.25rem; }
+    .why-left > p {
+      font-size: .93rem;
+      line-height: 1.85;
+      color: var(--b-text);
+      margin-bottom: 2.5rem;
+    }
+
+    .points { list-style: none; }
+    .points li {
+      display: flex;
+      gap: 1.1rem;
+      align-items: flex-start;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .points li:first-child { border-top: 1px solid var(--border); }
+
+    .check {
+      flex-shrink: 0;
+      width: 22px; height: 22px;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+    .check svg { width: 11px; height: 11px; stroke: #fff; stroke-width: 2.5; fill: none; }
+
+    .points h4 {
+      font-family: var(--ff-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--h-text);
+      letter-spacing: -.01em;
+      margin-bottom: .2rem;
+    }
+    .points p {
+      font-size: .84rem;
+      color: var(--b-text);
+      line-height: 1.75;
+    }
+
+    /* Stats panel */
+    .why-right {
+      background: var(--dark);
+      padding: 0;
+      position: relative;
+    }
+    .why-right::after {
+      content: '';
+      position: absolute;
+      top: 1rem; right: -1rem;
+      width: 100%; height: 100%;
+      border: 1px solid var(--accent);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .stat {
+      padding: 2.25rem 2.5rem;
+      border-bottom: 1px solid rgba(169,138,92,.18);
+      text-align: left;
+    }
+    .stat:last-child { border-bottom: none; }
+
+    .stat-n {
+      font-family: var(--ff-display);
+      font-size: 3.6rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      letter-spacing: -.03em;
+      margin-bottom: .4rem;
+    }
+    .stat-l {
+      font-size: .82rem;
+      color: rgba(255,255,253,.5);
+      letter-spacing: .02em;
+      line-height: 1.5;
+    }
+
+    /* ─── AUDIT FORM ──────────────────────────────────────── */
+    #audit {
+      background: var(--dark);
+      padding: var(--py) var(--px);
+      position: relative;
+      overflow: hidden;
+    }
+    #audit::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(169,138,92,.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(169,138,92,.055) 1px, transparent 1px);
+      background-size: 64px 64px;
+      pointer-events: none;
+    }
+
+    .audit-wrap {
+      position: relative;
+      z-index: 2;
+      max-width: 620px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    #audit .label { color: rgba(169,138,92,.75); }
+
+    .audit-h2 {
+      font-family: var(--ff-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.12;
+      letter-spacing: -.022em;
+      margin: .4rem 0 1rem;
+    }
+    .audit-sub {
+      font-size: .95rem;
+      color: rgba(255,255,253,.55);
+      font-weight: 300;
+      line-height: 1.85;
+      margin-bottom: 2.75rem;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: .9rem;
+      text-align: left;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .9rem;
+    }
+
+    .form input {
+      width: 100%;
+      padding: .95rem 1.2rem;
+      background: rgba(255,255,253,.055);
+      border: 1px solid rgba(169,138,92,.28);
+      color: var(--white);
+      font-family: var(--ff-body);
+      font-size: .9rem;
+      outline: none;
+      transition: border-color .2s, background .2s;
+      -webkit-appearance: none;
+    }
+    .form input::placeholder { color: rgba(255,255,253,.28); }
+    .form input:focus {
+      border-color: var(--accent);
+      background: rgba(169,138,92,.07);
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 1.1rem;
+      background: var(--accent);
+      color: var(--white);
+      font-family: var(--ff-body);
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: .01em;
+      border: none;
+      cursor: pointer;
+      transition: background .2s, transform .2s;
+      margin-top: .2rem;
+    }
+    .btn-submit:hover { background: var(--accent-h); transform: translateY(-2px); }
+    .btn-submit:disabled {
+      background: var(--accent-h);
+      cursor: default;
+      transform: none;
+      opacity: .85;
+    }
+
+    .form-micro {
+      font-size: .75rem;
+      color: rgba(255,255,253,.28);
+      text-align: center;
+      letter-spacing: .025em;
+      margin-top: .3rem;
+    }
+
+    /* ─── FOOTER ──────────────────────────────────────────── */
+    footer {
+      background: var(--dark-2, #1a0f06);
+      padding: 1.75rem var(--px);
+      border-top: 1px solid rgba(169,138,92,.12);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    footer .logo { font-size: 1.15rem; }
+    footer .f-right { text-align: right; }
+    footer p {
+      font-size: .76rem;
+      color: rgba(255,255,253,.28);
+      line-height: 1.6;
+    }
+
+    /* ─── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .pain-grid,
+      .benefits,
+      .steps         { grid-template-columns: 1fr; }
+
+      .pain-card     { border-right: none; border-bottom: 1px solid var(--border); }
+      .pain-card:last-child { border-bottom: none; }
+
+      .benefit       { padding: 2rem 0 !important; border-right: none; border-bottom: 1px solid rgba(169,138,92,.14); }
+      .benefit:last-child { border-bottom: none; }
+      .benefits      { border-top: 1px solid rgba(169,138,92,.18); }
+
+      .steps::before { display: none; }
+      .step          { padding: 0 1rem 2.5rem; }
+
+      .why-grid      { grid-template-columns: 1fr; gap: 3rem; }
+      .why-right::after { display: none; }
+
+      footer         { flex-direction: column; text-align: center; }
+      footer .f-right { text-align: center; }
+    }
+
+    @media (max-width: 560px) {
+      .hero-cta-group { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .form-row       { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ░░ NAV ░░ -->
+  <nav id="nav">
+    <a href="#" class="logo">HHSA<em>.</em></a>
+    <a href="#audit" class="btn btn-accent">Audit gratuit</a>
+  </nav>
+
+
+  <!-- ░░ HERO ░░ -->
+  <section id="hero">
+    <div class="hero-inner">
+
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Workflows Agentiques &nbsp;·&nbsp; PME Maroc
+      </div>
+
+      <h1 class="hero-h1">
+        Libérez <em>10 heures</em><br>
+        par semaine en automatisant<br>
+        ce que votre équipe<br>
+        fait à la main.
+      </h1>
+
+      <p class="hero-sub">
+        HHSA Agency conçoit des systèmes IA sur mesure pour les PME — pour que votre temps aille là où il crée vraiment de la valeur.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#audit" class="btn btn-accent-lg">Obtenir mon audit gratuit</a>
+        <p class="hero-micro">
+          Analyse de 30 min
+          <b>·</b>
+          Sans engagement
+          <b>·</b>
+          100% gratuit
+        </p>
+      </div>
+
+    </div>
+
+    <div class="scroll-arrow">
+      <div class="scroll-line"></div>
+      <span>Défiler</span>
+    </div>
+  </section>
+
+
+  <!-- ░░ PAIN ░░ -->
+  <section id="pain">
+    <div class="wrap">
+      <div class="pain-head">
+        <span class="label r">Le problème</span>
+        <h2 class="h2 r d1">Vous reconnaissez-vous ?</h2>
+      </div>
+
+      <div class="pain-grid">
+
+        <div class="pain-card r d1">
+          <svg class="pain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 6v6l4 2"/>
+          </svg>
+          <h3>Vos journées partent dans des tâches répétitives</h3>
+          <p>Relances, reportings, saisies manuelles… votre équipe passe des heures sur des tâches qui ne créent aucune valeur.</p>
+        </div>
+
+        <div class="pain-card r d2">
+          <svg class="pain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+          <h3>Des opportunités passent entre les mailles</h3>
+          <p>Une relance oubliée, un suivi manqué — et le deal qui aurait dû se conclure ne se conclut jamais.</p>
+        </div>
+
+        <div class="pain-card r d3">
+          <svg class="pain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+          <h3>Vous gérez à la main ce que vos concurrents automatisent</h3>
+          <p>Pendant que vous traitez chaque demande manuellement, d'autres PME concentrent leur énergie sur la croissance.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ░░ SOLUTION ░░ -->
+  <section id="solution">
+    <div class="wrap">
+      <span class="label r">Ce que vous gagnez</span>
+      <h2 class="h2 r d1">Un système agentique,<br>c'est la différence entre<br><em>subir et décider.</em></h2>
+
+      <div class="benefits">
+
+        <div class="benefit r d1">
+          <div class="benefit-n">01</div>
+          <div class="benefit-bar"></div>
+          <h3>Votre temps, récupéré</h3>
+          <p>Vos processus tournent seuls, 24h/24. Vous gérez les exceptions — pas les opérations.</p>
+        </div>
+
+        <div class="benefit r d2">
+          <div class="benefit-n">02</div>
+          <div class="benefit-bar"></div>
+          <h3>Zéro relance oubliée</h3>
+          <p>Chaque lead est suivi. Chaque client est relancé. Automatiquement, sans y penser.</p>
+        </div>
+
+        <div class="benefit r d3">
+          <div class="benefit-n">03</div>
+          <div class="benefit-bar"></div>
+          <h3>Croissez sans tout faire grossir</h3>
+          <p>Doublez votre volume d'activité sans doubler votre charge de travail ni votre masse salariale.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ░░ PROCESS ░░ -->
+  <section id="process">
+    <div class="wrap">
+      <div class="process-head">
+        <span class="label r">Comment ça marche</span>
+        <h2 class="h2 r d1">Simple à démarrer.<br>Puissant à l'usage.</h2>
+      </div>
+
+      <div class="steps">
+
+        <div class="step r d1">
+          <div class="step-num">01</div>
+          <h3>Audit gratuit</h3>
+          <p>On analyse vos processus ensemble. On identifie les tâches chronophages et les gains rapides.</p>
+        </div>
+
+        <div class="step r d2">
+          <div class="step-num">02</div>
+          <h3>Conception sur mesure</h3>
+          <p>On conçoit les workflows adaptés à votre activité. Rien de générique — des systèmes pensés pour vous.</p>
+        </div>
+
+        <div class="step r d3">
+          <div class="step-num">03</div>
+          <h3>Déploiement et autonomie</h3>
+          <p>On installe, on teste, on forme. Vos systèmes tournent. Vous gardez le contrôle.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ░░ WHY ░░ -->
+  <section id="why">
+    <div class="wrap">
+      <div class="why-grid">
+
+        <div class="why-left">
+          <span class="label r">Pourquoi HHSA Agency</span>
+          <h2 class="h2 r d1">Spécialistes.<br>Pas généralistes.</h2>
+          <p class="r d2">On ne fait que les workflows agentiques pour PME. C'est tout ce qu'on fait. Et on maîtrise chaque détail de ce périmètre.</p>
+
+          <ul class="points">
+            <li class="r d1">
+              <div class="check">
+                <svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>
+              </div>
+              <div>
+                <h4>Sur mesure, toujours</h4>
+                <p>Chaque système est conçu pour votre contexte. Pas copié-collé d'un client à l'autre.</p>
+              </div>
+            </li>
+            <li class="r d2">
+              <div class="check">
+                <svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>
+              </div>
+              <div>
+                <h4>De l'audit au déploiement</h4>
+                <p>On vous accompagne à chaque étape. Vous n'êtes jamais seul dans la mise en place.</p>
+              </div>
+            </li>
+            <li class="r d3">
+              <div class="check">
+                <svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>
+              </div>
+              <div>
+                <h4>Focalisés MENA</h4>
+                <p>On comprend les contraintes réelles des PME marocaines — pas les théories génériques.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="why-right r d2">
+          <div class="stat">
+            <div class="stat-n">–70%</div>
+            <div class="stat-l">du temps passé sur les tâches répétitives</div>
+          </div>
+          <div class="stat">
+            <div class="stat-n">24/7</div>
+            <div class="stat-l">vos processus tournent sans intervention humaine</div>
+          </div>
+          <div class="stat">
+            <div class="stat-n">30 min</div>
+            <div class="stat-l">pour identifier vos premiers gains — dès l'audit</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ░░ AUDIT FORM ░░ -->
+  <section id="audit">
+    <div class="audit-wrap">
+
+      <span class="label r">Première étape</span>
+      <h2 class="audit-h2 r d1">Votre premier audit<br>est gratuit.</h2>
+      <p class="audit-sub r d2">
+        30 minutes ensemble. On analyse vos processus et on identifie ce qui peut être automatisé — sans engagement de votre part.
+      </p>
+
+      <form class="form r d3" id="auditForm" onsubmit="submitForm(event)">
+        <div class="form-row">
+          <input type="text"  name="prenom"    placeholder="Prénom"                   required>
+          <input type="text"  name="entreprise" placeholder="Nom de l'entreprise"      required>
+        </div>
+        <input type="email" name="email"      placeholder="Email professionnel"       required>
+        <input type="tel"   name="tel"        placeholder="Téléphone (WhatsApp de préférence)">
+        <button type="submit" class="btn-submit" id="submitBtn">
+          Réserver mon audit gratuit &nbsp;→
+        </button>
+        <p class="form-micro">Nous vous répondons sous 24h &nbsp;·&nbsp; Aucun engagement requis</p>
+      </form>
+
+    </div>
+  </section>
+
+
+  <!-- ░░ FOOTER ░░ -->
+  <footer>
+    <a href="#" class="logo">HHSA<em>.</em></a>
+    <div class="f-right">
+      <p>© 2026 HHSA Agency · Agence de workflows agentiques pour PME</p>
+      <p style="margin-top:.25rem">contact@hhsa.agency</p>
+    </div>
+  </footer>
+
+
+  <script>
+    // ── Sticky nav ──────────────────────────────────────────
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 55);
+    }, { passive: true });
+
+    // ── Scroll reveal ────────────────────────────────────────
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('on'); observer.unobserve(e.target); }
+      }),
+      { threshold: .12 }
+    );
+    document.querySelectorAll('.r').forEach(el => observer.observe(el));
+
+    // ── Form submit ──────────────────────────────────────────
+    function submitForm(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      btn.textContent = '✓ Demande reçue — on vous contacte sous 24h';
+      btn.disabled = true;
+      btn.style.background = '#76531F';
+    }
+  </script>
+
+</body>
+</html>
