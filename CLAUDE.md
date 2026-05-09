@@ -64,6 +64,19 @@ Tous utilisés manuellement sauf Zapier.
 
 ---
 
+## Skills Actifs
+
+| Skill | Déclencheur | Ce que ça fait |
+|-------|-------------|----------------|
+| `recap-pipeline` | "recap pipeline" | Résumé leads + valeur active + top 3 chauds depuis Sheets |
+| `lead-update-followup` | "update lead [nom]" | Met à jour le CRM + crée brouillon de relance Gmail |
+| `proposal-generation` | "génère une proposition pour [client]" | Lit Drive + Sheets → rédige + crée doc Drive |
+| `client-communication` | "rédige un email à [client]" | Email professionnel prêt à copier en brouillon Gmail |
+| `research-agentic-trends` | "fais une recherche sur les tendances agentic AI" | Veille web → analyse → PDF → brouillon Gmail |
+| `code-reviewer` *(agent)* | "révise mon code" / "code review" | Sous-agent isolé → git diff → analyse bugs/qualité/sécu/lisibilité → rapport dans live/reviews/ |
+
+---
+
 ## Build Queue
 
 | # | Workflow | Priorité |

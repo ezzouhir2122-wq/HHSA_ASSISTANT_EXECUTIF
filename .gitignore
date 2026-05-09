@@ -8,3 +8,4 @@ token.json
 .mcp.json
 *.pyc
 __pycache__/
+pdf_b64.txt
