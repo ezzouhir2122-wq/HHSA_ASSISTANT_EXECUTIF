@@ -86,7 +86,7 @@ Tous utilisés manuellement sauf Zapier.
 | 1 | Génération de devis et factures | **Build this first** |
 | 2 | Onboarding client automatisé | Haute |
 | 3 | Réponses FAQ clients | Haute |
-| 4 | ~~Publications réseaux sociaux~~ | ~~Moyenne~~ — **Livré (Blueprint contenu-social)** |
+| 4 | Publications réseaux sociaux | Livree — Blueprint: contenu-social |
 | 5 | Personnalisation audits clients | Moyenne |
 
 Pour lancer un build : "Construis un skill pour [tâche]."
