@@ -9,3 +9,5 @@ token.json
 *.pyc
 __pycache__/
 pdf_b64.txt
+
+.trigger

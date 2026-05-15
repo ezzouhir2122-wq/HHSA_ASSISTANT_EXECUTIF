@@ -1,0 +1,65 @@
+<h2>Architecture — Gestion des stocks</h2>
+<p class="subtitle">Approche A : WhatsApp + Google Sheets + Dashboard web</p>
+
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 720px; margin: 0 auto;">
+
+  <!-- Row 1: Input -->
+  <div style="background: #1e293b; border: 1px solid #334155; border-radius: 10px; padding: 16px 20px;">
+    <div class="label" style="color: #94a3b8; margin-bottom: 8px;">ENTRÉE</div>
+    <div style="display: flex; gap: 12px; align-items: center;">
+      <div style="background: #25d366; color: white; border-radius: 8px; padding: 10px 16px; font-weight: 600; font-size: 14px;">📱 WhatsApp</div>
+      <div style="color: #94a3b8; font-size: 13px;">Staff envoie un message en français ou darija<br><em style="color:#64748b">"entrée 10kg poulet" · "dkhel 5 bouteilles zit"</em></div>
+    </div>
+  </div>
+
+  <!-- Arrow -->
+  <div style="text-align: center; color: #475569; font-size: 20px;">↓ webhook</div>
+
+  <!-- Row 2: Brain -->
+  <div style="background: #1e293b; border: 1px solid #7c3aed; border-radius: 10px; padding: 16px 20px;">
+    <div class="label" style="color: #a78bfa; margin-bottom: 8px;">CERVEAU AGENTIQUE</div>
+    <div style="display: flex; gap: 16px; align-items: flex-start;">
+      <div style="background: #7c3aed; color: white; border-radius: 8px; padding: 10px 16px; font-weight: 600; font-size: 14px; white-space: nowrap;">🤖 Claude API</div>
+      <div style="color: #94a3b8; font-size: 13px;">
+        Extrait : <strong style="color:#e2e8f0">action</strong> (entrée/sortie) · <strong style="color:#e2e8f0">produit</strong> · <strong style="color:#e2e8f0">quantité</strong> · <strong style="color:#e2e8f0">unité</strong><br>
+        Gère les ambiguïtés + répond au staff pour confirmer
+      </div>
+    </div>
+  </div>
+
+  <!-- Arrow -->
+  <div style="text-align: center; color: #475569; font-size: 20px;">↓ write</div>
+
+  <!-- Row 3: Storage -->
+  <div style="background: #1e293b; border: 1px solid #059669; border-radius: 10px; padding: 16px 20px;">
+    <div class="label" style="color: #34d399; margin-bottom: 8px;">STOCKAGE</div>
+    <div style="display: flex; gap: 12px; align-items: center;">
+      <div style="background: #059669; color: white; border-radius: 8px; padding: 10px 16px; font-weight: 600; font-size: 14px;">📊 Google Sheets</div>
+      <div style="color: #94a3b8; font-size: 13px;">
+        3 feuilles : <strong style="color:#e2e8f0">Produits</strong> (catalogue + seuils) · <strong style="color:#e2e8f0">Mouvements</strong> (log) · <strong style="color:#e2e8f0">Stock Actuel</strong> (calculé)
+      </div>
+    </div>
+  </div>
+
+  <!-- Arrow split -->
+  <div style="display: flex; gap: 8px; align-items: center; justify-content: center; color: #475569; font-size: 14px;">
+    <span style="flex:1; border-top: 1px dashed #334155;"></span>
+    <span>↙ read &nbsp;&nbsp;&nbsp; ↘ alert</span>
+    <span style="flex:1; border-top: 1px dashed #334155;"></span>
+  </div>
+
+  <!-- Row 4: Outputs -->
+  <div style="display: flex; gap: 12px;">
+    <div style="flex: 1; background: #1e293b; border: 1px solid #0284c7; border-radius: 10px; padding: 16px 20px;">
+      <div class="label" style="color: #38bdf8; margin-bottom: 8px;">SORTIE — GÉRANT</div>
+      <div style="background: #0284c7; color: white; border-radius: 8px; padding: 10px 16px; font-weight: 600; font-size: 14px; margin-bottom: 8px;">🖥 Dashboard web</div>
+      <div style="color: #94a3b8; font-size: 12px;">Vue stock temps réel · historique · indicateurs rouge/jaune/vert</div>
+    </div>
+    <div style="flex: 1; background: #1e293b; border: 1px solid #dc2626; border-radius: 10px; padding: 16px 20px;">
+      <div class="label" style="color: #f87171; margin-bottom: 8px;">ALERTES</div>
+      <div style="background: #25d366; color: white; border-radius: 8px; padding: 10px 16px; font-weight: 600; font-size: 14px; margin-bottom: 8px;">📱 WhatsApp gérant</div>
+      <div style="color: #94a3b8; font-size: 12px;">Alerte si stock &lt; seuil · résumé quotidien automatique</div>
+    </div>
+  </div>
+
+</div>
