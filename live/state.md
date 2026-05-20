@@ -3,8 +3,27 @@
 *Updated at the end of each session. Read this FIRST on startup.*
 
 ## Last Session
-- **Date:** 2026-05-19
-- **Summary:** PARTIE 2 Branding — système d'identité visuelle HHSA Agency conçu et planifié. Logo déposé dans `equipment/assets/LOGO.png` (fond blanc, mark buildings gold, texte "HHS Agency" script gold). Palette brand définie : gold `#D4A017`, dark `#1A1A1A`, body `#333547`. Architecture choisie : module `equipment/brand.py` centralisé (BRAND dict + apply_header + apply_footer), importé par les 3 scripts PDF. Spec commitée : `docs/superpowers/specs/2026-05-19-branding-pdf-design.md`. Plan d'implémentation committé : `docs/superpowers/plans/2026-05-19-branding-pdf.md`. 4 tâches TDD prêtes à exécuter.
+- **Date:** 2026-05-20
+- **Summary:** PARTIE 3 — Design + début implémentation. Spec rédigée et validée (`docs/superpowers/specs/2026-05-20-partie3-design.md`). Plan d'implémentation créé (`docs/superpowers/plans/2026-05-20-partie3.md`). Skill `social-content` v2.0.0 installé depuis Google Docs. Task 1 complète : `equipment/brand.py` + `tests/test_brand.py` — 8 tests PASS, revue spec ✅, revue qualité ✅.
+
+## En cours — PARTIE 3 (Tasks 2-7 restantes)
+
+Plan : `docs/superpowers/plans/2026-05-20-partie3.md`
+
+| Task | Statut | Description |
+|------|--------|-------------|
+| Task 1 — brand.py | ✅ DONE | Module centralisé, tests 8/8, qualité approuvée |
+| Task 2 — generate_pdf_facture.py | ⏳ PENDING | Import brand.py + flag `--paid` + filigrane PAYÉ |
+| Task 3 — generate_pdf_devis.py | ⏳ PENDING | Import brand.py |
+| Task 4 — generate_pdf_social.py | ⏳ PENDING | Import brand.py |
+| Task 5 — Skill devis-et-factures | ⏳ PENDING | Créer `.claude/skills/devis-et-factures/SKILL.md` |
+| Task 6 — contenu-social Mode B | ⏳ PENDING | Mise à niveau skill — mode autonome sans findings |
+| Task 7 — 3 Routines CronCreate | ⏳ PENDING | Pipeline Recap · Veille+Contenu · Bilan Semaine |
+
+**Commande de démarrage :**
+> "Continue PARTIE 3 — exécute les Tasks 2 à 7 du plan"
+
+**SHA de base (avant Task 2) :** `33ab6d9`
 
 ## Blocked On — À faire avant le premier run
 
@@ -33,45 +52,24 @@
 ## Notes techniques importantes
 - **Deploy workaround :** espaces dans le path → utiliser `subst T: "C:\COHORT_2026\HHSA ASSISTANT EXECUTIF"` puis deploy depuis `T:\`, ensuite `subst T: /D`
 - **Import fix :** `claude-synthesizer.ts` utilise `import Anthropic from "@anthropic-ai/sdk"` (pas `"anthropic"`)
+- **brand.py import pattern :** dans chaque script equipment, ajouter `sys.path.insert(0, str(Path(__file__).parent))` puis `from brand import safe, BRAND, apply_header, apply_footer`
+- **Client de test PARTIE 3 :** Soukwany (`soukwany.com`) — site JS-rendered, demander les infos brand manuellement
 
 ## Open Tasks (toujours ouverts)
 - Mettre à jour Last Contact Foster & Marsh dans le CRM (2026-04-28)
 - Cadrer périmètre projet consultant RH
 - Structurer objectifs Q2 avec suivi mensuel
 
-## Next Session — PARTIE 2 (suite)
-
-**Priorité 1 — Exécuter le plan branding (4 tâches TDD)**
-Plan : `docs/superpowers/plans/2026-05-19-branding-pdf.md`
-- Task 1 : créer `equipment/brand.py` + `tests/test_brand.py`
-- Task 2 : brancher `generate_pdf_devis.py`
-- Task 3 : brancher `generate_pdf_facture.py`
-- Task 4 : brancher `generate_pdf_social.py`
-- Commande de démarrage : "Exécute le plan branding"
-
-**Priorité 2 — Build Queue #1 : skill `devis-et-factures`**
-- Blueprint : `blueprints/devis-et-factures.md` ✅ prêt
-- Equipment : `equipment/generate_pdf_devis.py` + `generate_pdf_facture.py` ✅ prêts (seront brandés après branding)
-- Templates : `templates/devis/` + `templates/factures/` ✅ prêts
-- **À faire :** créer `.claude/skills/devis-et-factures/SKILL.md`
-
-**Priorité 3 — Build Queue #2 : skill `onboarding-client`**
-- Blueprint : `blueprints/onboarding-client.md` ✅ prêt
-- Template contrat : `templates/contrats/contrat-template.md` ✅ prêt
-- **À faire :** créer `.claude/skills/onboarding-client/SKILL.md`
-
 ## Current Priorities
-1. **Exécuter le plan branding** — `docs/superpowers/plans/2026-05-19-branding-pdf.md` prêt à lancer
+1. **PARTIE 3 — Tasks 2-7** — plan prêt, Task 1 done, continuer depuis Task 2
 2. Finaliser OAuth Google + API keys → tester le lead gen Dubai HR
-3. Build Queue #1 → skill devis-et-factures (après branding)
-4. Projet consultant RH — livraison à planifier
+3. Projet consultant RH — cadrer le périmètre
 
 ## Active Projects
 
 | Projet | Statut | Échéance |
 |--------|--------|----------|
+| ea-partie3 | 🔄 Task 1/7 done — Tasks 2-7 pending | Prochaine session |
 | dubai-hr-lead-generation | ✅ Déployé prod `20260516.2` — en attente OAuth Google + API keys | Dès que OAuth configuré |
-| ea-audit-cleanup | ✅ Terminé 2026-05-19 | — |
-| ea-branding | Spec + plan prêts — exécution pending (4 tâches TDD) | Prochaine session |
 | consultant-rh | En cours | À définir |
 | lancement-agence | Lancé (deadline 15 mai passée) | — |
