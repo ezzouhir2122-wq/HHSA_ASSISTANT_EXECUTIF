@@ -137,11 +137,11 @@ Séquence :
 
 ### Définition des routines
 
-| Routine | Fichier | Cron | Heure locale |
-|---------|---------|------|-------------|
-| Pipeline Recap | `routines/pipeline-recap.md` | `30 8 * * 1` | Lundi 08h30 |
-| Veille + Contenu | `routines/veille-contenu.md` | `0 10 * * 3` | Mercredi 10h00 |
-| Bilan Semaine | `routines/bilan-semaine.md` | `0 17 * * 5` | Vendredi 17h00 |
+| Routine | Fichier | Cron (UTC) | Heure Casablanca |
+|---------|---------|------------|-----------------|
+| Pipeline Recap | `routines/pipeline-recap.md` | `30 7 * * 1` | Lundi 08h30 (UTC+1) |
+| Veille + Contenu | `routines/veille-contenu.md` | `0 9 * * 3` | Mercredi 10h00 (UTC+1) |
+| Bilan Semaine | `routines/bilan-semaine.md` | `0 16 * * 5` | Vendredi 17h00 (UTC+1) |
 
 ### Routine 1 — Pipeline Recap (Lundi 08h30)
 
@@ -153,7 +153,7 @@ Lance `recherche-tendances` sur "workflows agentiques PME MENA" → génère fin
 
 ### Routine 3 — Bilan Semaine (Vendredi 17h00)
 
-Résumé de la semaine : tâches completées, leads contactés, revenus générés. Met à jour `live/state.md` (section Last Session + Open Tasks). Liste les 3 priorités de la semaine suivante.
+Résumé de la semaine : tâches completées, leads contactés, revenus générés. Liste les 3 priorités de la semaine suivante. Résultat livré comme draft Gmail (à lire au démarrage de session lundi). Note : agent distant — ne peut pas écrire dans `live/state.md` directement ; la mise à jour de state.md reste manuelle en fin de session.
 
 ### Déploiement
 
