@@ -71,12 +71,11 @@ def apply_footer(pdf) -> None:
 
 
 def apply_paid_watermark(pdf, text: str = "PAYE") -> None:
+    # Light red simulates 25% opacity over white: rgb(246, 205, 209)
     current_y = pdf.get_y()
     pdf.set_font("Helvetica", "B", 72)
-    pdf.set_text_color(220, 53, 69)
-    pdf.set_alpha(0.25)
+    pdf.set_text_color(246, 205, 209)
     with pdf.rotation(45, x=105, y=148.5):
-        pdf.text(x=25, y=170, txt=safe(text))
-    pdf.set_alpha(1.0)
+        pdf.text(x=25, y=170, text=safe(text))
     pdf.set_text_color(0, 0, 0)
     pdf.set_y(current_y)
