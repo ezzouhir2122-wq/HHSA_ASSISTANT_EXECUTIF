@@ -76,6 +76,7 @@ Tous utilisés manuellement sauf Zapier.
 | `code-reviewer` *(agent)* | "révise mon code" / "code review" | Sous-agent isolé → git diff → analyse bugs/qualité/sécu/lisibilité → rapport dans live/reviews/ |
 | `recherche-tendances` | "fais une recherche sur [sujet]" | Recherche web → 5 findings → JSON + PDF dans live/research/ |
 | `contenu-social` | "crée les posts sociaux" / "génère les posts pour [marque]" | Lit findings B1 → 3 posts FR (LinkedIn/Facebook/Instagram) → JSON + PDF |
+| `social-content` | "help with social media content" / "create a LinkedIn post" / "content calendar" / "social strategy" | Expert social media strategist — content creation, repurposing, scheduling, engagement strategy across all platforms |
 
 ---
 
@@ -83,10 +84,10 @@ Tous utilisés manuellement sauf Zapier.
 
 | # | Workflow | Priorité |
 |---|----------|----------|
-| 1 | Génération de devis et factures | **Build this first** |
-| 2 | Onboarding client automatisé | Haute |
-| 3 | Réponses FAQ clients | Haute |
-| 4 | Publications réseaux sociaux | Livree — Blueprint: contenu-social |
+| 1 | Génération de devis et factures | Blueprint + Equipment prêts — Skill à créer |
+| 2 | Onboarding client automatisé | Blueprint prêt — Skill à créer |
+| 3 | Réponses FAQ clients | Blueprint prêt — Skill à créer |
+| 4 | Publications réseaux sociaux | Livré — Blueprint + Skill : contenu-social |
 | 5 | Personnalisation audits clients | Moyenne |
 
 Pour lancer un build : "Construis un skill pour [tâche]."
