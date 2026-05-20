@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-generate_pdf_social.py — HHSA Agency Social Posts PDF Generator
+generate_pdf_social.py -- HHSA Agency Social Posts PDF Generator
 Generates a structured PDF from a JSON social posts file.
 
 Usage:
@@ -11,8 +11,8 @@ Usage:
 JSON input format:
     {
         "brand": "HHSA Agency",
-        "topic": "Utilisation de l'IA — Création de Contenu",
-        "date": "15 Mai 2026",
+        "topic": "Workflows agentiques",
+        "date": "20 Mai 2026",
         "posts": {
             "linkedin": {"text": "...", "hashtags": ["#IA", ...]},
             "facebook": {"text": "...", "hashtags": ["#IA", ...]},
@@ -26,6 +26,9 @@ import sys
 import argparse
 from datetime import datetime
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+from brand import safe, BRAND, apply_header, apply_footer
 
 
 def ensure_fpdf():
@@ -44,51 +47,30 @@ def ensure_fpdf():
         return FPDF, XPos, YPos
 
 
-def safe(text: str) -> str:
-    """Replace Unicode chars outside latin-1 with ASCII equivalents."""
-    replacements = {
-        "—": "--", "–": "-", "‒": "-",
-        "'": "'", "'": "'", "‚": ",",
-        "“": '"', "”": '"', "„": '"',
-        "…": "...", "·": "-", "•": "-",
-        " ": " ", " ": " ", "​": "",
-        "→": "->", "←": "<-", "×": "x",
-        "é": "\xe9", "è": "\xe8", "ê": "\xea",
-        "à": "\xe0", "â": "\xe2", "ù": "\xf9",
-        "û": "\xfb", "î": "\xee", "ô": "\xf4",
-        "ë": "\xeb", "ï": "\xef", "ü": "\xfc",
-        "ç": "\xe7", "É": "\xc9", "È": "\xc8",
-        "À": "\xc0", "Ê": "\xca", "Î": "\xce",
-    }
-    for src, dst in replacements.items():
-        text = text.replace(src, dst)
-    return text.encode("latin-1", errors="replace").decode("latin-1")
-
-
 PLATFORMS = [
     {
         "key": "linkedin",
         "label": "LinkedIn",
-        "color": (10, 102, 194),       # LinkedIn blue
+        "color": (10, 102, 194),
         "bg": (232, 240, 254),
     },
     {
         "key": "facebook",
         "label": "Facebook",
-        "color": (24, 119, 242),       # Facebook blue
+        "color": (24, 119, 242),
         "bg": (232, 240, 255),
     },
     {
         "key": "instagram",
         "label": "Instagram",
-        "color": (193, 53, 132),       # Instagram pink/purple
+        "color": (193, 53, 132),
         "bg": (253, 232, 245),
     },
 ]
 
-DARK = (15, 23, 42)
-LIGHT_TEXT = (100, 116, 139)
-BODY_TEXT = (51, 65, 85)
+DARK       = BRAND["dark"]
+LIGHT_TEXT = BRAND["light"]
+BODY_TEXT  = BRAND["body"]
 
 
 def generate_social_pdf(input_path: str, output_path: str) -> str:
@@ -104,25 +86,10 @@ def generate_social_pdf(input_path: str, output_path: str) -> str:
 
     class SocialPDF(FPDF):
         def header(self):
-            self.set_fill_color(*DARK)
-            self.rect(0, 0, 210, 20, "F")
-            self.set_font("Helvetica", "B", 10)
-            self.set_text_color(255, 255, 255)
-            self.set_y(6)
-            self.cell(0, 8, "HHSA AGENCY  --  Contenu Reseaux Sociaux", align="C",
-                      new_x=XPos.LMARGIN, new_y=YPos.NEXT)
-            self.set_text_color(0, 0, 0)
-            self.set_y(22)
+            apply_header(self)
 
         def footer(self):
-            self.set_y(-14)
-            self.set_font("Helvetica", "I", 7.5)
-            self.set_text_color(*LIGHT_TEXT)
-            self.cell(
-                0, 10,
-                f"HHSA Agency  --  Rapport confidentiel  --  Page {self.page_no()}/{{nb}}",
-                align="C",
-            )
+            apply_footer(self)
 
     pdf = SocialPDF()
     pdf.alias_nb_pages()
@@ -130,7 +97,7 @@ def generate_social_pdf(input_path: str, output_path: str) -> str:
     pdf.set_margins(22, 26, 22)
     pdf.add_page()
 
-    # ── Title block ──────────────────────────────────────────────────────────
+    # Title block
     pdf.set_font("Helvetica", "B", 22)
     pdf.set_text_color(*DARK)
     pdf.ln(4)
@@ -149,7 +116,7 @@ def generate_social_pdf(input_path: str, output_path: str) -> str:
     pdf.line(22, pdf.get_y(), 188, pdf.get_y())
     pdf.ln(10)
 
-    # ── Platform sections ────────────────────────────────────────────────────
+    # Platform sections
     for platform in PLATFORMS:
         key = platform["key"]
         post = posts.get(key, {})
@@ -172,12 +139,6 @@ def generate_social_pdf(input_path: str, output_path: str) -> str:
         pdf.set_fill_color(br, bg, bb)
         pdf.set_text_color(*BODY_TEXT)
         pdf.set_font("Helvetica", "", 9.5)
-
-        # Draw background rect manually then write text
-        x = pdf.get_x()
-        y = pdf.get_y()
-        # Estimate height: write first to measure, then re-draw with bg
-        # Simpler: just use multi_cell with fill
         pdf.multi_cell(0, 5.5, text, fill=True,
                        new_x=XPos.LMARGIN, new_y=YPos.NEXT)
 
@@ -191,14 +152,13 @@ def generate_social_pdf(input_path: str, output_path: str) -> str:
 
         pdf.ln(10)
 
-        # Separator between platforms
         if key != "instagram":
             pdf.set_draw_color(210, 218, 230)
             pdf.set_line_width(0.25)
             pdf.line(22, pdf.get_y(), 188, pdf.get_y())
             pdf.ln(10)
 
-    # ── Closing line ─────────────────────────────────────────────────────────
+    # Closing line
     pdf.set_draw_color(*DARK)
     pdf.set_line_width(0.4)
     pdf.line(22, pdf.get_y(), 188, pdf.get_y())
@@ -210,7 +170,6 @@ def generate_social_pdf(input_path: str, output_path: str) -> str:
         safe(f"Genere automatiquement par HHSA Agency Executive Assistant  --  {report_date}  --  Usage interne uniquement."),
     )
 
-    # ── Save ─────────────────────────────────────────────────────────────────
     out = Path(output_path)
     out.parent.mkdir(parents=True, exist_ok=True)
     pdf.output(str(out))
@@ -222,7 +181,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description="Genere un PDF de posts sociaux HHSA depuis un fichier JSON."
     )
-    parser.add_argument("--input", required=True, help="Chemin vers le fichier posts JSON")
+    parser.add_argument("--input",  required=True, help="Chemin vers le fichier posts JSON")
     parser.add_argument("--output", required=True, help="Chemin de sortie du PDF")
     args = parser.parse_args()
 

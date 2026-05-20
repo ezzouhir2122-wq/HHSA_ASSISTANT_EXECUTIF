@@ -44,3 +44,28 @@ def test_generate_devis_standard(tmp_path):
     result = generate_devis(DEVIS_MD, str(out))
     assert Path(result).exists()
     assert Path(result).stat().st_size > 1000
+
+
+import json
+
+
+def test_generate_social_pdf(tmp_path):
+    from equipment.generate_pdf_social import generate_social_pdf
+
+    posts_data = {
+        "brand": "Soukwany",
+        "topic": "E-commerce Maroc",
+        "date": "20 Mai 2026",
+        "posts": {
+            "linkedin":  {"text": "Test LinkedIn post content here.", "hashtags": ["#Ecommerce"]},
+            "facebook":  {"text": "Test Facebook post content here.", "hashtags": ["#Maroc"]},
+            "instagram": {"text": "Test Instagram post here.", "hashtags": ["#Shop"]},
+        }
+    }
+    input_json = tmp_path / "posts_test.json"
+    input_json.write_text(json.dumps(posts_data), encoding="utf-8")
+    out = tmp_path / "posts_test.pdf"
+
+    result = generate_social_pdf(str(input_json), str(out))
+    assert Path(result).exists()
+    assert Path(result).stat().st_size > 1000
