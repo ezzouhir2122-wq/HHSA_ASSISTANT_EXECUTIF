@@ -54,7 +54,11 @@ def _header_text_fallback(pdf) -> None:
 
 
 def apply_footer(pdf) -> None:
-    pdf.set_y(-14)
+    pdf.set_y(-16)
+    pdf.set_draw_color(*BRAND["light"])
+    pdf.set_line_width(0.25)
+    pdf.line(22, pdf.get_y(), 188, pdf.get_y())
+    pdf.ln(2)
     pdf.set_font("Helvetica", "I", 7.5)
     pdf.set_text_color(*BRAND["light"])
     pdf.cell(
