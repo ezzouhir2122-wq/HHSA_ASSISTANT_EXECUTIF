@@ -77,6 +77,7 @@ Tous utilisés manuellement sauf Zapier.
 | `recherche-tendances` | "fais une recherche sur [sujet]" | Recherche web → 5 findings → JSON + PDF dans live/research/ |
 | `contenu-social` | "crée les posts sociaux" / "génère les posts pour [marque]" | Lit findings B1 → 3 posts FR (LinkedIn/Facebook/Instagram) → JSON + PDF |
 | `social-content` | "help with social media content" / "create a LinkedIn post" / "content calendar" / "social strategy" | Expert social media strategist — content creation, repurposing, scheduling, engagement strategy across all platforms |
+| `devis-et-factures` | "génère un devis pour [client]" / "crée une facture pour [client]" / "marque la facture [N°] comme payée" | Template → MD → PDF brandé → copie dans clients/ |
 
 ---
 
