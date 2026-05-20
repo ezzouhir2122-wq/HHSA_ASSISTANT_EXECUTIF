@@ -21,4 +21,9 @@
 | LinkedIn | Présence et prospection | Utilisé manuellement — API non configurée |
 
 ## MCP Servers Connected
-Aucun pour l'instant. À configurer selon les priorités du Build Queue.
+
+| MCP | Transport | Usage | Statut |
+|-----|-----------|-------|--------|
+| Zapier | HTTP (token dans `.claude/settings.local.json`) | Google Sheets (CRM), Gmail drafts | ✅ Actif |
+
+*Dernière mise à jour : 2026-05-19*

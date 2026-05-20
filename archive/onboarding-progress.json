@@ -1,0 +1,79 @@
+{
+  "section_1": {
+    "completed": true,
+    "name": "EZZOUHIR",
+    "role": "Founder",
+    "timezone": "GMT+1",
+    "what_i_do": "Je dirige une agence de workflows agentiques, et je vends des systèmes agentiques aux PME.",
+    "north_star": "Devenir le leader du conseil en workflows agentiques dans la région MENA"
+  },
+  "section_2": {
+    "completed": true,
+    "business_name": "HHSA AGENCY",
+    "products_services": [
+      "Assistants personnels IA — solutions IA personnalisées pour dirigeants et équipes",
+      "Automatisation de blogs — génération et publication de contenu automatisée",
+      "Gestion de calendriers — orchestration intelligente d'agendas",
+      "SaaS intelligents — produits logiciels à composante agentique",
+      "CRM intelligents — gestion de la relation client pilotée par l'IA"
+    ],
+    "daily_tools": ["Gmail", "Google Calendar", "Google Sheets (CRM)", "Google Docs", "LinkedIn"],
+    "live_credentials": "Aucune — outils utilisés manuellement, API non configurées",
+    "mcp_servers": "Aucun"
+  },
+  "section_3": {
+    "completed": true,
+    "working_style": "Solo",
+    "key_people": "Aucun collaborateur fixe — sous-traitants ponctuels",
+    "comms_channels": "Email (avec sous-traitants)",
+    "ops_frustration": "Non-respect des délais et qualité d'exécution insuffisante nécessitant une révision systématique — perte de temps significative"
+  },
+  "section_4": {
+    "completed": true,
+    "top_priorities": [
+      "Trouver des clients (prospection)",
+      "Créer une présence visuelle — site web / landing page",
+      "Définir la tarification",
+      "Concevoir des modèles de livrables personnalisés pour les clients"
+    ],
+    "hard_deadlines": "15 mai 2026 — ouverture officielle de l'agence",
+    "quarterly_goals": "À structurer ensemble — Q2 2026",
+    "active_projects": [
+      {
+        "name": "consultant-rh",
+        "description": "Automatisation des opérations d'un consultant RH : onboarding clients, collecte de données, étude de marché",
+        "status": "En cours"
+      }
+    ]
+  },
+  "section_5": {
+    "completed": true,
+    "info_format": "Paragraphes courts, direct, sans détours",
+    "pet_peeves": "Pas de jargon technique, pas de remplissage, rester concis",
+    "internal_tone": "Informel",
+    "external_tone": "Professionnel mais chaleureux",
+    "never_without_asking": "Envoyer des emails aux clients — toujours laisser en brouillon pour révision",
+    "gold_standard": "Exemple rédigé et sauvegardé dans references/goldstandard/",
+    "settled_decisions": []
+  },
+  "section_6": {
+    "completed": true,
+    "typical_day": "Matin : lecture des briefings, consultation de l'agenda, priorisation des tâches. Deep work le matin.",
+    "time_sinks": [
+      "Prospection clients",
+      "Personnalisation des audits clients",
+      "Communication avec les clients",
+      "Gestion des réseaux sociaux"
+    ],
+    "hand_off_today": "Communication clients — création de devis et de factures",
+    "workflows_to_automate": [
+      "Création de factures",
+      "Génération de devis",
+      "Onboarding clients",
+      "Réponses aux questions fréquentes (FAQ)",
+      "Publications sur les réseaux sociaux"
+    ],
+    "templates_needed": ["Factures", "Audits clients"],
+    "perfect_week": "Gérer le client de l'onboarding jusqu'à la facturation en pilote automatique, pendant qu'Ezzouhir développe l'activité"
+  }
+}
