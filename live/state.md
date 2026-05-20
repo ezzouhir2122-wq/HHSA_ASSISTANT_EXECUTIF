@@ -4,26 +4,24 @@
 
 ## Last Session
 - **Date:** 2026-05-20
-- **Summary:** PARTIE 3 — Design + début implémentation. Spec rédigée et validée (`docs/superpowers/specs/2026-05-20-partie3-design.md`). Plan d'implémentation créé (`docs/superpowers/plans/2026-05-20-partie3.md`). Skill `social-content` v2.0.0 installé depuis Google Docs. Task 1 complète : `equipment/brand.py` + `tests/test_brand.py` — 8 tests PASS, revue spec ✅, revue qualité ✅.
+- **Summary:** PARTIE 3 complète — Tasks 1-7 toutes livrées. brand.py centralisé, 3 scripts PDF branchés, flag --paid facture, skill devis-et-factures créé, contenu-social Mode B, 3 routines cloud créées. 13 tests PASS. SHA final : `02eb5bd`.
 
-## En cours — PARTIE 3 (Tasks 2-7 restantes)
-
-Plan : `docs/superpowers/plans/2026-05-20-partie3.md`
+## PARTIE 3 — ✅ COMPLÈTE
 
 | Task | Statut | Description |
 |------|--------|-------------|
-| Task 1 — brand.py | ✅ DONE | Module centralisé, tests 8/8, qualité approuvée |
-| Task 2 — generate_pdf_facture.py | ⏳ PENDING | Import brand.py + flag `--paid` + filigrane PAYÉ |
-| Task 3 — generate_pdf_devis.py | ⏳ PENDING | Import brand.py |
-| Task 4 — generate_pdf_social.py | ⏳ PENDING | Import brand.py |
-| Task 5 — Skill devis-et-factures | ⏳ PENDING | Créer `.claude/skills/devis-et-factures/SKILL.md` |
-| Task 6 — contenu-social Mode B | ⏳ PENDING | Mise à niveau skill — mode autonome sans findings |
-| Task 7 — 3 Routines CronCreate | ⏳ PENDING | Pipeline Recap · Veille+Contenu · Bilan Semaine |
+| Task 1 — brand.py | ✅ DONE | Module centralisé, tests 8/8 |
+| Task 2 — generate_pdf_facture.py | ✅ DONE | brand.py + --paid watermark, 3 tests PASS |
+| Task 3 — generate_pdf_devis.py | ✅ DONE | brand.py branché, 1 test PASS |
+| Task 4 — generate_pdf_social.py | ✅ DONE | brand.py branché, 1 test PASS |
+| Task 5 — Skill devis-et-factures | ✅ DONE | `.claude/skills/devis-et-factures/SKILL.md` + CLAUDE.md |
+| Task 6 — contenu-social Mode B | ✅ DONE | Skill mis à niveau — Mode A (findings) + Mode B (autonome) |
+| Task 7 — 3 Routines CronCreate | ✅ DONE | pipeline-recap (lun 08h30) · veille-contenu (mer 10h00) · bilan-semaine (ven 17h00) |
 
-**Commande de démarrage :**
-> "Continue PARTIE 3 — exécute les Tasks 2 à 7 du plan"
-
-**SHA de base (avant Task 2) :** `33ab6d9`
+**Routines cloud actives :**
+- pipeline-recap : `trig_0141b75xdCiGZEHScN6AJK3p` — prochain run lun 25 mai 08h35
+- veille-contenu : `trig_0158Yy3ucX77zjn4YSwA8Z7V` — prochain run mer 27 mai 10h05
+- bilan-semaine : `trig_01V9KaPpJf83eQPzXYtRiTte` — prochain run ven 22 mai 17h00
 
 ## Blocked On — À faire avant le premier run
 
@@ -61,15 +59,15 @@ Plan : `docs/superpowers/plans/2026-05-20-partie3.md`
 - Structurer objectifs Q2 avec suivi mensuel
 
 ## Current Priorities
-1. **PARTIE 3 — Tasks 2-7** — plan prêt, Task 1 done, continuer depuis Task 2
-2. Finaliser OAuth Google + API keys → tester le lead gen Dubai HR
-3. Projet consultant RH — cadrer le périmètre
+1. Finaliser OAuth Google + API keys → tester le lead gen Dubai HR
+2. Projet consultant RH — cadrer le périmètre
+3. Skill onboarding-client (Build Queue #2) — Blueprint prêt
 
 ## Active Projects
 
 | Projet | Statut | Échéance |
 |--------|--------|----------|
-| ea-partie3 | 🔄 Task 1/7 done — Tasks 2-7 pending | Prochaine session |
+| ea-partie3 | ✅ COMPLÈTE — 7/7 tasks, 13 tests PASS | — |
 | dubai-hr-lead-generation | ✅ Déployé prod `20260516.2` — en attente OAuth Google + API keys | Dès que OAuth configuré |
 | consultant-rh | En cours | À définir |
 | lancement-agence | Lancé (deadline 15 mai passée) | — |
