@@ -3,6 +3,8 @@
 
 from pathlib import Path
 
+__all__ = ["BRAND", "safe", "apply_header", "apply_footer", "apply_paid_watermark"]
+
 BRAND = {
     "name":  "HHSA Agency",
     "gold":  (212, 160, 23),
@@ -29,7 +31,6 @@ def safe(text: str) -> str:
 
 
 def apply_header(pdf) -> None:
-    from fpdf import XPos, YPos
     pdf.set_fill_color(*BRAND["dark"])
     pdf.rect(0, 0, 210, 20, "F")
     logo = BRAND["logo"]
@@ -54,6 +55,7 @@ def _header_text_fallback(pdf) -> None:
 
 
 def apply_footer(pdf) -> None:
+    # Requires pdf.alias_nb_pages() to have been called before pdf.output()
     pdf.set_y(-16)
     pdf.set_draw_color(*BRAND["light"])
     pdf.set_line_width(0.25)

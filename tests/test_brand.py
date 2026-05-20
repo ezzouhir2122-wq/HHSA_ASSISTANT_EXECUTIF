@@ -30,13 +30,16 @@ def test_safe_replaces_em_dash():
 
 
 def test_safe_replaces_curly_quotes():
-    result = safe("'hello'")
+    result = safe("‘hello’")
+    assert "‘" not in result
+    assert "’" not in result
     assert "'" in result
 
 
 def test_safe_encodes_to_latin1():
-    result = safe("café")
-    assert isinstance(result, str)
+    # Euro sign is not in latin-1, should become replacement char
+    result = safe("€")
+    assert result == "?"
 
 
 def test_safe_handles_plain_ascii():
