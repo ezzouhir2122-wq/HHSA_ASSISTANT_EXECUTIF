@@ -33,3 +33,14 @@ def test_cli_paid_flag(tmp_path):
     )
     assert result.returncode == 0
     assert out.exists()
+
+
+DEVIS_MD = "templates/devis/devis-template.md"
+
+
+def test_generate_devis_standard(tmp_path):
+    from equipment.generate_pdf_devis import generate_devis
+    out = tmp_path / "devis_test.pdf"
+    result = generate_devis(DEVIS_MD, str(out))
+    assert Path(result).exists()
+    assert Path(result).stat().st_size > 1000
