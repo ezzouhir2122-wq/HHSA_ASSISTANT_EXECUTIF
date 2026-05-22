@@ -3,8 +3,8 @@
 *Updated at the end of each session. Read this FIRST on startup.*
 
 ## Last Session
-- **Date:** 2026-05-20
-- **Summary:** PARTIE 3 complète — Tasks 1-7 toutes livrées. brand.py centralisé, 3 scripts PDF branchés, flag --paid facture, skill devis-et-factures créé, contenu-social Mode B, 3 routines cloud créées. 13 tests PASS. SHA final : `02eb5bd`.
+- **Date:** 2026-05-21
+- **Summary:** Génération batch 15 factures PDF depuis Google Sheets (AAA-INV-2026-001 à 015) → `Documents/Exports-pdf` avec filigrane PAYÉ/ÉCHU. Posts sociaux IA & Contenu générés (JSON + PDF). 3 nouvelles routines cloud créées : KPI Cash (quotidien 08h), Lead Gen (lundi 09h), Content Brand (vendredi 09h). Dossiers live/leads/ et live/reports/ créés. Tout commité + pushé → SHA `b4f4ebc`.
 
 ## PARTIE 3 — ✅ COMPLÈTE
 

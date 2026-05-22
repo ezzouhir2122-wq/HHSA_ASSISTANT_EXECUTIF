@@ -9,5 +9,8 @@ token.json
 *.pyc
 __pycache__/
 pdf_b64.txt
-
 .trigger
+
+# Client documents — contain sensitive data (bank details, client info)
+live/documents/exports-pdf/
+live/reviews/
