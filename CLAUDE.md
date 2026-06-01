@@ -78,6 +78,8 @@ Tous utilisés manuellement sauf Zapier.
 | `contenu-social` | "crée les posts sociaux" / "génère les posts pour [marque]" | Lit findings B1 → 3 posts FR (LinkedIn/Facebook/Instagram) → JSON + PDF |
 | `social-content` | "help with social media content" / "create a LinkedIn post" / "content calendar" / "social strategy" | Expert social media strategist — content creation, repurposing, scheduling, engagement strategy across all platforms |
 | `devis-et-factures` | "génère un devis pour [client]" / "crée une facture pour [client]" / "marque la facture [N°] comme payée" | Template → MD → PDF brandé → copie dans clients/ |
+| `onboarding-client` | "onboarde [client]" / "deal signé avec [client]" / "démarre l'onboarding pour [client]" | Crée dossier client + contrat + CRM Won via Zapier + brouillon email bienvenue |
+| `faq-clients` | "comment répondre à [question]" / "que dire si un client demande [sujet]" | Réponse calibrée depuis knowledge base — adapte au canal (email/chat/appel) |
 
 ---
 
@@ -86,8 +88,8 @@ Tous utilisés manuellement sauf Zapier.
 | # | Workflow | Priorité |
 |---|----------|----------|
 | 1 | Génération de devis et factures | ✅ Livré — Blueprint + Equipment + Skill : devis-et-factures |
-| 2 | Onboarding client automatisé | Blueprint prêt — Skill à créer |
-| 3 | Réponses FAQ clients | Blueprint prêt — Skill à créer |
+| 2 | Onboarding client automatisé | ✅ Livré — Blueprint + Skill : onboarding-client |
+| 3 | Réponses FAQ clients | ✅ Livré — Blueprint + Skill : faq-clients |
 | 4 | Publications réseaux sociaux | ✅ Livré — Blueprint + Skill : contenu-social |
 | 5 | Personnalisation audits clients | Moyenne — Blueprint + Skill à créer |
 
