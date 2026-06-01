@@ -13,7 +13,6 @@ Usage:
 import sys
 import re
 import argparse
-from datetime import datetime
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -39,8 +38,8 @@ def ensure_fpdf():
 DARK       = BRAND["dark"]
 LIGHT_TEXT = BRAND["light"]
 BODY_TEXT  = BRAND["body"]
-ACCENT     = (16, 185, 129)
-PAGE_BG    = (248, 250, 252)
+ACCENT     = BRAND["gold"]
+PAGE_BG    = (255, 250, 247)
 
 
 def extract_field(lines, label):

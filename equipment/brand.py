@@ -7,7 +7,7 @@ __all__ = ["BRAND", "safe", "apply_header", "apply_footer", "apply_paid_watermar
 
 BRAND = {
     "name":  "HHSA Agency",
-    "gold":  (212, 160, 23),
+    "gold":  (224, 88, 24),    # Primary orange — #E05818
     "dark":  (26, 26, 26),
     "body":  (51, 53, 71),
     "light": (100, 116, 139),
@@ -31,7 +31,7 @@ def safe(text: str) -> str:
 
 
 def apply_header(pdf) -> None:
-    pdf.set_fill_color(*BRAND["dark"])
+    pdf.set_fill_color(*BRAND["gold"])
     pdf.rect(0, 0, 210, 20, "F")
     logo = BRAND["logo"]
     if Path(logo).exists():
