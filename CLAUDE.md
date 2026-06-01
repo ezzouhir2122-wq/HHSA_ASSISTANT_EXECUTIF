@@ -73,7 +73,7 @@ Tous utilisés manuellement sauf Zapier.
 | `proposal-generation` | "génère une proposition pour [client]" | Lit Drive + Sheets → rédige + crée doc Drive |
 | `client-communication` | "rédige un email à [client]" | Email professionnel prêt à copier en brouillon Gmail |
 | `research-agentic-trends` | "fais une recherche sur les tendances agentic AI" | Veille web → analyse → PDF → brouillon Gmail |
-| `code-reviewer` *(agent)* | "révise mon code" / "code review" | Sous-agent isolé → git diff → analyse bugs/qualité/sécu/lisibilité → rapport dans live/reviews/ |
+| `code-review` *(agent)* | "révise mon code" / "code review" / `/code-review` | Sous-agent isolé → git diff → analyse bugs/qualité/sécu/lisibilité → rapport dans live/reviews/. Déclenché via l'agent `.claude/agents/code-reviewer.md` |
 | `recherche-tendances` | "fais une recherche sur [sujet]" | Recherche web → 5 findings → JSON + PDF dans live/research/ |
 | `contenu-social` | "crée les posts sociaux" / "génère les posts pour [marque]" | Lit findings B1 → 3 posts FR (LinkedIn/Facebook/Instagram) → JSON + PDF |
 | `social-content` | "help with social media content" / "create a LinkedIn post" / "content calendar" / "social strategy" | Expert social media strategist — content creation, repurposing, scheduling, engagement strategy across all platforms |
@@ -85,11 +85,11 @@ Tous utilisés manuellement sauf Zapier.
 
 | # | Workflow | Priorité |
 |---|----------|----------|
-| 1 | Génération de devis et factures | Blueprint + Equipment prêts — Skill à créer |
+| 1 | Génération de devis et factures | ✅ Livré — Blueprint + Equipment + Skill : devis-et-factures |
 | 2 | Onboarding client automatisé | Blueprint prêt — Skill à créer |
 | 3 | Réponses FAQ clients | Blueprint prêt — Skill à créer |
-| 4 | Publications réseaux sociaux | Livré — Blueprint + Skill : contenu-social |
-| 5 | Personnalisation audits clients | Moyenne |
+| 4 | Publications réseaux sociaux | ✅ Livré — Blueprint + Skill : contenu-social |
+| 5 | Personnalisation audits clients | Moyenne — Blueprint + Skill à créer |
 
 Pour lancer un build : "Construis un skill pour [tâche]."
 
