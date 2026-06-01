@@ -1,0 +1,112 @@
+{
+  "date": "25 Mai 2026",
+  "week": "Semaine du 25 mai 2026",
+  "leads": [
+    {
+      "business_name": "Pinch Gourmet",
+      "sector": "F&B / Catering",
+      "city": "Dubai",
+      "country": "UAE",
+      "score": 9,
+      "problems_detected": [
+        "Processus de réservation manuel (WhatsApp / email direct)",
+        "4K followers Facebook — faible pour le marché UAE catering",
+        "Absence de funnel de conversion en ligne visible",
+        "Pas d'automation CRM détectée"
+      ],
+      "contact": "https://www.linkedin.com/company/pinch-gourmet — Elias Kandalaft (Chef & Managing Director)",
+      "priority": "High",
+      "notes": "Entreprise familiale fondée 2015, 11-50 employés (16 sur LinkedIn). Primée 5x (2020-2025). Site pinchgourmet.com + Instagram + Facebook. Fort signal opérationnel : bookings gérés manuellement pour des événements de 20 à 500 personnes. Idéal pour un workflow events + lead capture automatisé."
+    },
+    {
+      "business_name": "Ananas Catering",
+      "sector": "F&B / Catering",
+      "city": "Dubai",
+      "country": "UAE",
+      "score": 8,
+      "problems_detected": [
+        "Deux comptes Instagram actifs en parallèle : @ananascatering (14K) et @ananas_catering (1,702) — branding fragmenté",
+        "Absence de funnel de réservation en ligne",
+        "Contact uniquement via WhatsApp — pas de CRM ou système de suivi visible"
+      ],
+      "contact": "+971 55 495 8855 (WhatsApp) — https://www.instagram.com/ananascatering/ — https://ananascatering.ae/",
+      "priority": "High",
+      "notes": "Petite opération de catering à Dubai Hills. Site web basique. Signal branding immédiat : deux comptes Instagram parallèles créent de la confusion. Aucun système de booking ou CRM apparent. Accroche facile via DM Instagram @ananascatering."
+    },
+    {
+      "business_name": "Taste Studio",
+      "sector": "F&B / Catering",
+      "city": "Dubai",
+      "country": "UAE",
+      "score": 8,
+      "problems_detected": [
+        "Absence d'automation pour la gestion des leads événementiels",
+        "Processus de booking par appel ou email — pas de système automatisé visible",
+        "Facebook peu mis en avant par rapport à l'Instagram (19K)"
+      ],
+      "contact": "info@tastestudio.ae — https://tastestudio.ae/ — +971 4 887 0440",
+      "priority": "High",
+      "notes": "Établi depuis 2015 à Dubai Media City. Gère des événements de 20 à 2000 personnes. Instagram 19K mais processus opérationnel très manuel (3 numéros de contact, email générique). Opportunité : workflow qualification leads événements + automatisation suivi devis."
+    },
+    {
+      "business_name": "Egy Logistics",
+      "sector": "Logistique / Transport",
+      "city": "Cairo",
+      "country": "Egypt",
+      "score": 8,
+      "problems_detected": [
+        "Facebook : 94 likes pour une société de fret international actif — signal critique",
+        "LinkedIn 1,550 followers — très faible pour une société de 63 employés dans ce secteur",
+        "Absence quasi-totale de stratégie social media et de funnel client"
+      ],
+      "contact": "https://www.linkedin.com/company/egy-logistics — https://egylogistics.com/contact.html",
+      "priority": "High",
+      "notes": "Société de fret international (air, mer, terre, dédouanement) au Caire. ~63 employés. Facebook 94 likes = présence digitale quasi inexistante. Site egylogistics.com actif mais sans funnel visible. Fort potentiel : stratégie digitale full + automation leads B2B."
+    },
+    {
+      "business_name": "Liaison RH",
+      "sector": "RH / Recrutement",
+      "city": "Casablanca",
+      "country": "Maroc",
+      "score": 8,
+      "problems_detected": [
+        "Cabinet de coaching/recrutement — processus typiquement très manuels",
+        "Absence de funnel de génération de leads visible en ligne",
+        "Pas d'automation CRM ou workflow candidat détectés"
+      ],
+      "contact": "+212 663 10 27 10 — https://ma.linkedin.com/company/liaison-rh — https://liaisonrh.com/",
+      "priority": "High",
+      "notes": "Cabinet fondé à Casablanca. Services : recrutement, évaluation, coaching, formation. LinkedIn 8,881 followers. Estimation équipe : 5-15 personnes. Secteur RH/coaching = très manuel par nature. Fort potentiel pour : workflows suivi candidats + automatisation relances clients."
+    },
+    {
+      "business_name": "Saccom RH",
+      "sector": "RH / Recrutement",
+      "city": "Casablanca",
+      "country": "Maroc",
+      "score": 7,
+      "problems_detected": [
+        "L'entité RH (24 employés) est noyée dans la communication du holding Saccom Capital — branding RH dilué",
+        "Instagram @saccomcapitalgroup mélange plusieurs activités sans identité RH distincte",
+        "Pas de funnel ou page de destination dédiée à l'offre RH visible"
+      ],
+      "contact": "https://www.linkedin.com/company/saccom-rh — https://saccomcapitalgroupe.com/en/",
+      "priority": "Medium",
+      "notes": "Fondé 2012. L'entité RH (24 employés) est une branche du holding Saccom Capital Group (200-500 total). Communication centralisée @saccomcapitalgroup. Signal : branding RH inexistant en dehors du groupe. Opportunité : stratégie digitale RH autonome + automation recrutement."
+    },
+    {
+      "business_name": "Colis.ma",
+      "sector": "Logistique / Transport",
+      "city": "Casablanca",
+      "country": "Maroc",
+      "score": 7,
+      "problems_detected": [
+        "Startup tech à croissance rapide mais marketing automation B2B probablement embryonnaire",
+        "Présence social media non confirmée dans les résultats de recherche",
+        "Onboarding e-commerçants probablement manuel malgré le volume ($50M GMV)"
+      ],
+      "contact": "Issam Darui (CEO/Founder) — https://www.start-up.ma/liste-startups-au-maroc/colis-ma/ — https://colis.ma/",
+      "priority": "Medium",
+      "notes": "Fondée 2022 par Issam Darui. $300K pre-seed (Witamax). 50,000+ colis livrés, 55 destinations. Forte croissance mais équipe produit-first. Opportunité : workflow automation B2B lead gen + onboarding e-commerçants + nurturing clients."
+    }
+  ]
+}
