@@ -1,4 +1,69 @@
 {
   "version": 1,
-  "bugs": []
+  "bugs": [
+    {
+      "id": "bug-001",
+      "timestamp": "2026-06-27T17:46:16.548Z",
+      "error_message": "Incorrect value in code",
+      "file": "agent-ui/components/HistoryTable.tsx",
+      "root_cause": "Had `${entry.id}-expanded`",
+      "fix": "Changed to \"bg-zinc-900/50\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-06-27T17:46:16.548Z"
+    },
+    {
+      "id": "bug-002",
+      "timestamp": "2026-06-27T17:46:27.503Z",
+      "error_message": "Type error",
+      "file": "agent-ui/components/SettingsPanel.tsx",
+      "root_cause": "Missing or incorrect type annotation",
+      "fix": "Added type assertion/annotation",
+      "tags": [
+        "auto-detected",
+        "type-fix",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-06-27T17:46:27.503Z"
+    },
+    {
+      "id": "bug-003",
+      "timestamp": "2026-06-27T17:46:31.247Z",
+      "error_message": "Wrong reference: Settings should be AgentSettings",
+      "file": "agent-ui/components/SettingsPanel.tsx",
+      "root_cause": "Used \"Settings\" instead of \"AgentSettings\"",
+      "fix": "Changed Settings → AgentSettings",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-06-27T17:46:31.247Z"
+    },
+    {
+      "id": "bug-004",
+      "timestamp": "2026-06-27T17:54:43.060Z",
+      "error_message": "Significant refactor of ",
+      "file": "agent-ui/components/StatsCards.tsx",
+      "root_cause": "5 lines replaced/restructured",
+      "fix": "Rewrote 8→5 lines (5 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-06-27T17:54:43.060Z"
+    }
+  ]
 }

@@ -1,7 +1,29 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-06-05T10:21:40.489Z
-> Files: 456 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-06-27T17:54:43.028Z
+> Files: 479 tracked | Anatomy hits: 0 | Misses: 0
+
+## agent-ui/
+
+- `package.json` — Next.js 15 + Tailwind 3 + Recharts + Framer Motion (~66 tok)
+- `app/globals.css` — Design tokens, glass/grid/terminal CSS, custom keyframes (~150 tok)
+- `app/layout.tsx` — Root layout: Syne + Outfit + JetBrains Mono fonts (~60 tok)
+- `app/page.tsx` — Main dashboard: orchestrates all 12 components (~80 tok)
+- `lib/types.ts` — Shared TypeScript types (AgentStatus, LogEntry, Tool, etc.) (~60 tok)
+- `lib/utils.ts` — cn(), formatNumber(), formatCurrency() helpers (~40 tok)
+- `components/Sidebar.tsx` — Collapsible sidebar + 6-agent selector dropdown + nav (~180 tok)
+- `components/Header.tsx` — Sticky header + CPU/MEM/API metrics + notifications (~120 tok)
+- `components/StatsCards.tsx` — 6 animated stat cards with sparklines + animated counters (~200 tok)
+- `components/MissionCard.tsx` — Live mission with animated progress bar + task list (~130 tok)
+- `components/QuickActions.tsx` — 6 agent control buttons + confirm dialogs + toasts (~160 tok)
+- `components/LiveLogs.tsx` — Auto-scrolling terminal with real-time simulated logs (~150 tok)
+- `components/WorkflowView.tsx` — Animated 7-step pipeline diagram with step cycling (~130 tok)
+- `components/MemoryPanel.tsx` — Tabbed memory viewer: short/long/context/goals/priorities (~140 tok)
+- `components/ToolsGrid.tsx` — Filterable grid of 10 tools (Google/AI/Automation) + status (~160 tok)
+- `components/PerformanceCharts.tsx` — 6 recharts (Area/Line/Bar) analytics charts (~200 tok)
+- `components/HistoryTable.tsx` — Sortable/paginated history table with expandable rows (~180 tok)
+- `components/SettingsPanel.tsx` — Tabbed settings: agent/perf/budget with sliders + toggles (~160 tok)
+- `components/Footer.tsx` — Minimal footer with version + model info (~20 tok)
 
 ## ./
 
@@ -464,6 +486,41 @@
 - `Ygse-ugrfmM` — \n\t * @param {string} boundary\n\t */\n\tconstructor(boundary) {\n\t\tthis.index = 0;\n\t\tthis.flags = 0;\n\n\t\tthis.onHeaderEnd = noop;\n\t\tth... (~4850 tok)
 - `YU2_6JRIkkU` — Exports helloWorldTask (~236 tok)
 - `zubJXZbd_6k` — parse: fmtShort, fmtLong, plural + 12 more (~59806 tok)
+
+## agent-ui/
+
+- `next.config.ts` — Declares nextConfig (~38 tok)
+- `package.json` — Node.js package manifest (~182 tok)
+- `postcss.config.mjs` — Declares config (~42 tok)
+- `tailwind.config.ts` — /*.{js,ts,jsx,tsx,mdx}", (~1138 tok)
+- `tsconfig.json` — TypeScript configuration (~164 tok)
+
+## agent-ui/app/
+
+- `globals.css` — Styles: 30 rules, 3 vars (~1263 tok)
+- `layout.tsx` — syne (~286 tok)
+- `page.tsx` — HomePage (~1180 tok)
+
+## agent-ui/components/
+
+- `Footer.tsx` — Footer (~203 tok)
+- `Header.tsx` — STATUS_CONFIG (~1480 tok)
+- `HistoryTable.tsx` — HISTORY — renders table (~2689 tok)
+- `LiveLogs.tsx` — LEVEL_STYLES (~1986 tok)
+- `MemoryPanel.tsx` — TABS (~1822 tok)
+- `MissionCard.tsx` — MISSION (~1282 tok)
+- `PerformanceCharts.tsx` — tasksData (~2712 tok)
+- `QuickActions.tsx` — ACTIONS (~2095 tok)
+- `SettingsPanel.tsx` — DEFAULTS (~3180 tok)
+- `Sidebar.tsx` — AGENTS (~2311 tok)
+- `StatsCards.tsx` — STATS (~1646 tok)
+- `ToolsGrid.tsx` — TOOLS (~1894 tok)
+- `WorkflowView.tsx` — STEPS (~1562 tok)
+
+## agent-ui/lib/
+
+- `types.ts` — Exports AgentStatus, AgentConfig, LogLevel, LogEntry + 5 more (~281 tok)
+- `utils.ts` — Exports cn, formatNumber, formatCurrency, formatTime, randomBetween (~255 tok)
 
 ## archive/
 
