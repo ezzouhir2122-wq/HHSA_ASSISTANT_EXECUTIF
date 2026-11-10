@@ -1,28 +1,12 @@
 {
-  "session_id": "session-2026-11-10-2138",
-  "started": "2026-11-10T21:38:46.268Z",
-  "files_read": {
-    "/tmp/claude-0/-home-user-HHSA-ASSISTANT-EXECUTIF/d325b19a-7e52-5dfa-b939-326968452289/scratchpad/promo/preview.jpg": {
-      "count": 1,
-      "tokens": 0,
-      "first_read": "2026-11-10T21:40:45.647Z"
-    },
-    "/tmp/claude-0/-home-user-HHSA-ASSISTANT-EXECUTIF/d325b19a-7e52-5dfa-b939-326968452289/scratchpad/promo/sheet.jpg": {
-      "count": 1,
-      "tokens": 0,
-      "first_read": "2026-11-10T21:42:01.015Z"
-    },
-    "/tmp/claude-0/-home-user-HHSA-ASSISTANT-EXECUTIF/d325b19a-7e52-5dfa-b939-326968452289/scratchpad/promo/chk2.jpg": {
-      "count": 1,
-      "tokens": 0,
-      "first_read": "2026-11-10T21:43:19.465Z"
-    }
-  },
+  "session_id": "session-2026-11-10-2224",
+  "started": "2026-11-10T22:24:00.771Z",
+  "files_read": {},
   "files_written": [],
   "edit_counts": {},
   "anatomy_hits": 0,
-  "anatomy_misses": 3,
+  "anatomy_misses": 0,
   "repeated_reads_warned": 0,
   "cerebrum_warnings": 0,
-  "stop_count": 6
+  "stop_count": 1
 }

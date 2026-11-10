@@ -3,11 +3,11 @@
   "created_at": "2026-06-05T10:21:39.829Z",
   "lifetime": {
     "total_tokens_estimated": 0,
-    "total_reads": 18,
+    "total_reads": 21,
     "total_writes": 0,
-    "total_sessions": 3,
+    "total_sessions": 4,
     "anatomy_hits": 0,
-    "anatomy_misses": 18,
+    "anatomy_misses": 21,
     "repeated_reads_blocked": 0,
     "estimated_savings_vs_bare_cli": 0
   },
@@ -186,6 +186,40 @@
       "id": "session-2026-11-10-2138",
       "started": "2026-11-10T21:38:46.268Z",
       "ended": "2026-11-10T21:58:57.839Z",
+      "reads": [
+        {
+          "file": "/tmp/claude-0/-home-user-HHSA-ASSISTANT-EXECUTIF/d325b19a-7e52-5dfa-b939-326968452289/scratchpad/promo/preview.jpg",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/tmp/claude-0/-home-user-HHSA-ASSISTANT-EXECUTIF/d325b19a-7e52-5dfa-b939-326968452289/scratchpad/promo/sheet.jpg",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/tmp/claude-0/-home-user-HHSA-ASSISTANT-EXECUTIF/d325b19a-7e52-5dfa-b939-326968452289/scratchpad/promo/chk2.jpg",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [],
+      "totals": {
+        "input_tokens_estimated": 0,
+        "output_tokens_estimated": 0,
+        "reads_count": 3,
+        "writes_count": 0,
+        "repeated_reads_blocked": 0,
+        "anatomy_lookups": 0
+      }
+    },
+    {
+      "id": "session-2026-11-10-2138",
+      "started": "2026-11-10T21:38:46.268Z",
+      "ended": "2026-11-10T22:14:20.697Z",
       "reads": [
         {
           "file": "/tmp/claude-0/-home-user-HHSA-ASSISTANT-EXECUTIF/d325b19a-7e52-5dfa-b939-326968452289/scratchpad/promo/preview.jpg",
