@@ -735,6 +735,12 @@
 - `README.md` — Project documentation (~78 tok)
 - `session-brief.md` — Session Brief (~49 tok)
 
+## templates/brand-assets/
+
+- `affiche-easydigia-vert.png` — Affiche EasyDigIA fond sombre/vert, portrait Ezzouhir (source pour vidéos Higgsfield) (~0 tok)
+- `affiche-easydigia-skyline.jpg` — Affiche EasyDigIA skyline, portrait bras croisés (~0 tok)
+- `logo-easydigia.jpg` — Logo EasyDigIA 3D sur fond noir (~0 tok)
+
 ## templates/contrats/
 
 - `contrat-template.md` — Template — Contrat de Prestation (~358 tok)

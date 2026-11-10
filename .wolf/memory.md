@@ -64,3 +64,4 @@
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
+| 21:58 | Ajout affiches + logo EasyDigIA comme source publique pour Higgsfield (upload direct bloqué par le réseau) | templates/brand-assets/ | ok | ~300 |
