@@ -1,0 +1,13 @@
+{
+  "name": "change-preview",
+  "version": "0.1.0",
+  "description": "Aperçu et confirmation explicite avant une suppression ou un remplacement massif.",
+  "userConfig": {
+    "timeoutSeconds": {
+      "type": "number",
+      "title": "Délai de réponse (secondes)",
+      "description": "Sans réponse dans ce délai, la commande est refusée.",
+      "default": 300
+    }
+  }
+}

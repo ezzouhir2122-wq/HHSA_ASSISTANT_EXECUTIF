@@ -1,0 +1,14 @@
+{
+  "name": "workflow-meter",
+  "version": "0.1.0",
+  "description": "Compte localement les appels d'outils, les durées et les échecs de la session, sans rien garder des demandes ni des fichiers.",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "exportPath": {
+      "type": "string",
+      "title": "Fichier d'export",
+      "description": "Où /meter export écrit le résumé JSON, relatif au dossier de travail.",
+      "default": "workflow-meter-export.json"
+    }
+  }
+}

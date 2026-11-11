@@ -1,0 +1,20 @@
+{
+  "name": "second-brain-lens",
+  "version": "0.1.0",
+  "description": "Panneau qui indexe les fichiers Markdown des dossiers choisis, avec recherche et aperçu d'un extrait avant de l'ajouter à la demande.",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "folders": {
+      "type": "string",
+      "title": "Dossiers indexés",
+      "description": "Dossiers relatifs au dossier de travail, séparés par des virgules. Rien d'autre n'est lu.",
+      "default": "intel,live,blueprints"
+    },
+    "excerptChars": {
+      "type": "number",
+      "title": "Longueur maximale d'un extrait",
+      "description": "Nombre de caractères du début du fichier montrés et ajoutés à la demande.",
+      "default": 800
+    }
+  }
+}

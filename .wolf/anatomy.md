@@ -1,29 +1,18 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-06-27T17:54:43.028Z
-> Files: 479 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-11-11T20:12:39.473Z
+> Files: 503 tracked | Anatomy hits: 0 | Misses: 0
 
-## agent-ui/
+## ../../../root/.claude/dev-mods/13282bb6-8c8a-589f-b84e-32ad9c905604/change-preview/.claude-plugin/
 
-- `package.json` — Next.js 15 + Tailwind 3 + Recharts + Framer Motion (~66 tok)
-- `app/globals.css` — Design tokens, glass/grid/terminal CSS, custom keyframes (~150 tok)
-- `app/layout.tsx` — Root layout: Syne + Outfit + JetBrains Mono fonts (~60 tok)
-- `app/page.tsx` — Main dashboard: orchestrates all 12 components (~80 tok)
-- `lib/types.ts` — Shared TypeScript types (AgentStatus, LogEntry, Tool, etc.) (~60 tok)
-- `lib/utils.ts` — cn(), formatNumber(), formatCurrency() helpers (~40 tok)
-- `components/Sidebar.tsx` — Collapsible sidebar + 6-agent selector dropdown + nav (~180 tok)
-- `components/Header.tsx` — Sticky header + CPU/MEM/API metrics + notifications (~120 tok)
-- `components/StatsCards.tsx` — 6 animated stat cards with sparklines + animated counters (~200 tok)
-- `components/MissionCard.tsx` — Live mission with animated progress bar + task list (~130 tok)
-- `components/QuickActions.tsx` — 6 agent control buttons + confirm dialogs + toasts (~160 tok)
-- `components/LiveLogs.tsx` — Auto-scrolling terminal with real-time simulated logs (~150 tok)
-- `components/WorkflowView.tsx` — Animated 7-step pipeline diagram with step cycling (~130 tok)
-- `components/MemoryPanel.tsx` — Tabbed memory viewer: short/long/context/goals/priorities (~140 tok)
-- `components/ToolsGrid.tsx` — Filterable grid of 10 tools (Google/AI/Automation) + status (~160 tok)
-- `components/PerformanceCharts.tsx` — 6 recharts (Area/Line/Bar) analytics charts (~200 tok)
-- `components/HistoryTable.tsx` — Sortable/paginated history table with expandable rows (~180 tok)
-- `components/SettingsPanel.tsx` — Tabbed settings: agent/perf/budget with sliders + toggles (~160 tok)
-- `components/Footer.tsx` — Minimal footer with version + model info (~20 tok)
+- `plugin.json` (~108 tok)
+
+## ../../../root/.claude/dev-mods/13282bb6-8c8a-589f-b84e-32ad9c905604/change-preview/hooks/
+
+- `detect.ts` — Détection des commandes sensibles. Heuristique, pas une garantie : une (~1028 tok)
+- `hooks.json` (~10 tok)
+- `register.test.ts` — Declares answer (~486 tok)
+- `register.ts` — Exports register (~661 tok)
 
 ## ./
 
@@ -489,7 +478,26 @@
 
 ## agent-ui/
 
+- `app/globals.css` — Design tokens, glass/grid/terminal CSS, custom keyframes (~150 tok)
+- `app/layout.tsx` — Root layout: Syne + Outfit + JetBrains Mono fonts (~60 tok)
+- `app/page.tsx` — Main dashboard: orchestrates all 12 components (~80 tok)
+- `components/Footer.tsx` — Minimal footer with version + model info (~20 tok)
+- `components/Header.tsx` — Sticky header + CPU/MEM/API metrics + notifications (~120 tok)
+- `components/HistoryTable.tsx` — Sortable/paginated history table with expandable rows (~180 tok)
+- `components/LiveLogs.tsx` — Auto-scrolling terminal with real-time simulated logs (~150 tok)
+- `components/MemoryPanel.tsx` — Tabbed memory viewer: short/long/context/goals/priorities (~140 tok)
+- `components/MissionCard.tsx` — Live mission with animated progress bar + task list (~130 tok)
+- `components/PerformanceCharts.tsx` — 6 recharts (Area/Line/Bar) analytics charts (~200 tok)
+- `components/QuickActions.tsx` — 6 agent control buttons + confirm dialogs + toasts (~160 tok)
+- `components/SettingsPanel.tsx` — Tabbed settings: agent/perf/budget with sliders + toggles (~160 tok)
+- `components/Sidebar.tsx` — Collapsible sidebar + 6-agent selector dropdown + nav (~180 tok)
+- `components/StatsCards.tsx` — 6 animated stat cards with sparklines + animated counters (~200 tok)
+- `components/ToolsGrid.tsx` — Filterable grid of 10 tools (Google/AI/Automation) + status (~160 tok)
+- `components/WorkflowView.tsx` — Animated 7-step pipeline diagram with step cycling (~130 tok)
+- `lib/types.ts` — Shared TypeScript types (AgentStatus, LogEntry, Tool, etc.) (~60 tok)
+- `lib/utils.ts` — cn(), formatNumber(), formatCurrency() helpers (~40 tok)
 - `next.config.ts` — Declares nextConfig (~38 tok)
+- `package.json` — Next.js 15 + Tailwind 3 + Recharts + Framer Motion (~66 tok)
 - `package.json` — Node.js package manifest (~182 tok)
 - `postcss.config.mjs` — Declares config (~42 tok)
 - `tailwind.config.ts` — /*.{js,ts,jsx,tsx,mdx}", (~1138 tok)
@@ -755,3 +763,16 @@
 
 - `test_brand.py` — Tests: brand_has_required_keys, brand_colors_are_rgb_tuples, brand_gold_is_correct, brand_dark_is_correct + 4 more (~336 tok)
 - `test_pdf_integration.py` — Tests: generate_facture_standard, generate_facture_paid, cli_paid_flag, generate_devis_standard + 1 more (~651 tok)
+
+## mods/
+
+- `README.md` — Les 5 mods Claude Code : rôle, commandes, installation, limites (~900 tok)
+- `change-preview/` — Confirmation avant suppression / remplacement massif (`hooks/detect.ts`, `hooks/register.ts`)
+- `second-brain-lens/` — Panneau `/lens` : index Markdown de intel, live, blueprints
+- `finish-signal/` — Toast de fin de tâche, `/finish-signal quiet|on`
+- `workflow-meter/` — Compteur d'appels d'outils, `/meter`
+- `easy-task-router/` — Routage des demandes simples, `/router` (`hooks/classify.ts`)
+
+## .claude-plugin/
+
+- `marketplace.json` — Liste les mods de `mods/` pour `/plugin install <mod> --marketplace <repo>`

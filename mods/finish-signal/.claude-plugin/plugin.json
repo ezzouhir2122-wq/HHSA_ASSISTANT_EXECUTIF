@@ -1,0 +1,20 @@
+{
+  "name": "finish-signal",
+  "version": "0.1.0",
+  "description": "Signale dans l'interface qu'une tâche est terminée, arrêtée ou en attente d'une décision.",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "minSeconds": {
+      "type": "number",
+      "title": "Durée minimale (secondes)",
+      "description": "Une tâche terminée plus vite ne déclenche pas de signal. Les arrêts et les demandes de décision signalent toujours.",
+      "default": 20
+    },
+    "showTaskName": {
+      "type": "boolean",
+      "title": "Afficher le début de la demande",
+      "description": "Affiche les premiers mots de la demande dans le signal.",
+      "default": true
+    }
+  }
+}

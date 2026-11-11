@@ -64,6 +64,23 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-06-27T17:54:43.060Z"
+    },
+    {
+      "id": "bug-005",
+      "timestamp": "2026-11-11T20:15:00Z",
+      "error_message": "claude plugin validate: $ is passed to \"isApproved\", which is not a function declared at the top of this file",
+      "file": "mods/change-preview/hooks/register.ts",
+      "root_cause": "Helper recevant $ défini comme closure dans register ; le scan des mods n'accepte que des fonctions déclarées au niveau du fichier",
+      "fix": "Helpers isApproved/refusal déplacés au niveau du fichier, options passées en paramètre",
+      "tags": [
+        "mods",
+        "plugin",
+        "validate",
+        "claude-code"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-11T20:15:00Z"
     }
   ]
 }

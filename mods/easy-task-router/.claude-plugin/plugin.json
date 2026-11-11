@@ -1,0 +1,33 @@
+{
+  "name": "easy-task-router",
+  "version": "0.1.0",
+  "description": "Propose, puis applique sur demande, un modèle moins coûteux pour les demandes simples de mise en forme et de classement.",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "mode": {
+      "type": "string",
+      "title": "Mode",
+      "description": "preview : montre le modèle proposé sans rien changer. on : applique le routage. off : ne fait rien.",
+      "options": ["preview", "on", "off"],
+      "default": "preview"
+    },
+    "model": {
+      "type": "string",
+      "title": "Modèle des tâches simples",
+      "description": "Alias ou identifiant complet d'un modèle disponible sur le compte.",
+      "default": "haiku"
+    },
+    "maxChars": {
+      "type": "number",
+      "title": "Longueur maximale d'une demande simple",
+      "description": "Au-delà, la demande reste sur le modèle courant.",
+      "default": 400
+    },
+    "maxMessages": {
+      "type": "number",
+      "title": "Contexte maximal",
+      "description": "Au-delà de ce nombre de messages, pas de routage : changer de modèle ferait retraiter tout le contexte.",
+      "default": 30
+    }
+  }
+}

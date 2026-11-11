@@ -1,0 +1,11 @@
+{
+  "name": "hhsa-mods",
+  "owner": { "name": "HHSA Agency" },
+  "plugins": [
+    { "name": "change-preview", "source": "./mods/change-preview" },
+    { "name": "second-brain-lens", "source": "./mods/second-brain-lens" },
+    { "name": "finish-signal", "source": "./mods/finish-signal" },
+    { "name": "workflow-meter", "source": "./mods/workflow-meter" },
+    { "name": "easy-task-router", "source": "./mods/easy-task-router" }
+  ]
+}
