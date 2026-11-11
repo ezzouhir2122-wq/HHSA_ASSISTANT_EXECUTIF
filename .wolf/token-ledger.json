@@ -2,12 +2,12 @@
   "version": 1,
   "created_at": "2026-06-05T10:21:39.829Z",
   "lifetime": {
-    "total_tokens_estimated": 2901,
-    "total_reads": 1,
-    "total_writes": 6,
+    "total_tokens_estimated": 8703,
+    "total_reads": 3,
+    "total_writes": 18,
     "total_sessions": 1,
     "anatomy_hits": 0,
-    "anatomy_misses": 1,
+    "anatomy_misses": 3,
     "repeated_reads_blocked": 0,
     "estimated_savings_vs_bare_cli": 0
   },
@@ -16,6 +16,112 @@
       "id": "session-2026-11-11-2007",
       "started": "2026-11-11T20:07:47.110Z",
       "ended": "2026-11-11T20:18:36.049Z",
+      "reads": [
+        {
+          "file": "/tmp/claude-0/bundled-skills/2.1.322/d525f08d55b1e908e8a7dbd5495e9330/plugin-authoring/reference.md",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [
+        {
+          "file": "/root/.claude/dev-mods/13282bb6-8c8a-589f-b84e-32ad9c905604/change-preview/.claude-plugin/plugin.json",
+          "tokens_estimated": 108,
+          "action": "create"
+        },
+        {
+          "file": "/root/.claude/dev-mods/13282bb6-8c8a-589f-b84e-32ad9c905604/change-preview/hooks/hooks.json",
+          "tokens_estimated": 10,
+          "action": "create"
+        },
+        {
+          "file": "/root/.claude/dev-mods/13282bb6-8c8a-589f-b84e-32ad9c905604/change-preview/hooks/detect.ts",
+          "tokens_estimated": 1028,
+          "action": "create"
+        },
+        {
+          "file": "/root/.claude/dev-mods/13282bb6-8c8a-589f-b84e-32ad9c905604/change-preview/hooks/register.ts",
+          "tokens_estimated": 608,
+          "action": "create"
+        },
+        {
+          "file": "/root/.claude/dev-mods/13282bb6-8c8a-589f-b84e-32ad9c905604/change-preview/hooks/register.ts",
+          "tokens_estimated": 661,
+          "action": "create"
+        },
+        {
+          "file": "/root/.claude/dev-mods/13282bb6-8c8a-589f-b84e-32ad9c905604/change-preview/hooks/register.test.ts",
+          "tokens_estimated": 486,
+          "action": "create"
+        }
+      ],
+      "totals": {
+        "input_tokens_estimated": 0,
+        "output_tokens_estimated": 2901,
+        "reads_count": 1,
+        "writes_count": 6,
+        "repeated_reads_blocked": 0,
+        "anatomy_lookups": 0
+      }
+    },
+    {
+      "id": "session-2026-11-11-2007",
+      "started": "2026-11-11T20:07:47.110Z",
+      "ended": "2026-11-11T20:18:48.635Z",
+      "reads": [
+        {
+          "file": "/tmp/claude-0/bundled-skills/2.1.322/d525f08d55b1e908e8a7dbd5495e9330/plugin-authoring/reference.md",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [
+        {
+          "file": "/root/.claude/dev-mods/13282bb6-8c8a-589f-b84e-32ad9c905604/change-preview/.claude-plugin/plugin.json",
+          "tokens_estimated": 108,
+          "action": "create"
+        },
+        {
+          "file": "/root/.claude/dev-mods/13282bb6-8c8a-589f-b84e-32ad9c905604/change-preview/hooks/hooks.json",
+          "tokens_estimated": 10,
+          "action": "create"
+        },
+        {
+          "file": "/root/.claude/dev-mods/13282bb6-8c8a-589f-b84e-32ad9c905604/change-preview/hooks/detect.ts",
+          "tokens_estimated": 1028,
+          "action": "create"
+        },
+        {
+          "file": "/root/.claude/dev-mods/13282bb6-8c8a-589f-b84e-32ad9c905604/change-preview/hooks/register.ts",
+          "tokens_estimated": 608,
+          "action": "create"
+        },
+        {
+          "file": "/root/.claude/dev-mods/13282bb6-8c8a-589f-b84e-32ad9c905604/change-preview/hooks/register.ts",
+          "tokens_estimated": 661,
+          "action": "create"
+        },
+        {
+          "file": "/root/.claude/dev-mods/13282bb6-8c8a-589f-b84e-32ad9c905604/change-preview/hooks/register.test.ts",
+          "tokens_estimated": 486,
+          "action": "create"
+        }
+      ],
+      "totals": {
+        "input_tokens_estimated": 0,
+        "output_tokens_estimated": 2901,
+        "reads_count": 1,
+        "writes_count": 6,
+        "repeated_reads_blocked": 0,
+        "anatomy_lookups": 0
+      }
+    },
+    {
+      "id": "session-2026-11-11-2007",
+      "started": "2026-11-11T20:07:47.110Z",
+      "ended": "2026-11-11T20:18:55.309Z",
       "reads": [
         {
           "file": "/tmp/claude-0/bundled-skills/2.1.322/d525f08d55b1e908e8a7dbd5495e9330/plugin-authoring/reference.md",
