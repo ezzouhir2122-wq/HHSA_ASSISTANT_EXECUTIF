@@ -49,3 +49,9 @@
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
+
+## Session: 2026-11-13 22:13
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 22:18 | Recherche web voix du client : automatisation WhatsApp (chatbot/API) Maroc + MENA — fetch direct bloqué (allowlist réseau), résultats via WebSearch uniquement | aucun fichier | livré en chat | ~9000 |
