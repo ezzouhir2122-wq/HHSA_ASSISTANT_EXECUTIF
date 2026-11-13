@@ -1,12 +1,23 @@
 {
-  "session_id": "",
-  "started": "",
-  "files_read": {},
+  "session_id": "session-2026-11-13-2213",
+  "started": "2026-11-13T22:13:57.880Z",
+  "files_read": {
+    "/home/user/HHSA_ASSISTANT_EXECUTIF/intel/focus.md": {
+      "count": 1,
+      "tokens": 355,
+      "first_read": "2026-11-13T22:17:12.773Z"
+    },
+    "/home/user/HHSA_ASSISTANT_EXECUTIF/live/state.md": {
+      "count": 1,
+      "tokens": 1023,
+      "first_read": "2026-11-13T22:17:13.127Z"
+    }
+  },
   "files_written": [],
   "edit_counts": {},
-  "anatomy_hits": 0,
+  "anatomy_hits": 2,
   "anatomy_misses": 0,
   "repeated_reads_warned": 0,
   "cerebrum_warnings": 0,
-  "stop_count": 2
+  "stop_count": 1
 }
