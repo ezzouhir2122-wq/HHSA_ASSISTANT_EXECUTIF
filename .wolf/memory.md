@@ -96,3 +96,8 @@
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
 | 17:45 | Vidéo pub agence EasyDigia 30 s, 100 % graphique, voix Piper homme/femme + musique existante | sandbox Higgsfield ~/v3 | ok | ~2000 |
+
+## Session: 2026-11-18 18:37
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
