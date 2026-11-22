@@ -769,4 +769,4 @@
 - `test_brand.py` — Tests: brand_has_required_keys, brand_colors_are_rgb_tuples, brand_gold_is_correct, brand_dark_is_correct + 4 more (~336 tok)
 - `test_pdf_integration.py` — Tests: generate_facture_standard, generate_facture_paid, cli_paid_flag, generate_devis_standard + 1 more (~651 tok)
 - `carrousels/A_lancement/`, `carrousels/B_6_etapes/` — 7 slides PNG 1080x1350 chacun + PDF LinkedIn. Source `src/carousel.html`.
-- `video/Pub_Agent_IA_sans_voix.mp4` — pub verticale 38 s sous-titrée. Source `src/video.html` (timeline TL) + `src/render_video.js`. `video/Script_voix_off.md` — script + commandes d'assemblage voix.
+- `video/Pub_Agent_IA_sans_logo_sans_voix.mp4` — pub verticale 38 s sous-titrée. Source `src/video.html` (timeline TL) + `src/render_video.js`. `video/Script_voix_off.md` — script + commandes d'assemblage voix.

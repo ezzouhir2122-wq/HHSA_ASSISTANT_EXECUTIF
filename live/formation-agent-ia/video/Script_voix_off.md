@@ -19,4 +19,4 @@
    `node src/render_video.js <dossier_frames> 30`, puis
    `ffmpeg -framerate 30 -i <dossier_frames>/f%05d.jpg -c:v libx264 -pix_fmt yuv420p -crf 20 sans_voix.mp4`
 3. Assembler :
-   `ffmpeg -i video/Pub_Agent_IA_sans_voix.mp4 -i voix.mp3 -c:v copy -c:a aac -b:a 192k -shortest video/Pub_Agent_IA.mp4`
+   `ffmpeg -i video/Pub_Agent_IA_sans_logo_sans_voix.mp4 -i voix.mp3 -c:v copy -c:a aac -b:a 192k -shortest video/Pub_Agent_IA.mp4`
