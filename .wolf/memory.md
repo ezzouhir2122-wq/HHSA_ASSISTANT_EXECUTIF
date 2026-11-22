@@ -58,3 +58,4 @@
 | 23:08 | Created live/formation-agent-ia/src/render.js | — | ~220 |
 | 23:10 | Created live/formation-agent-ia/src/guide.html | — | ~6104 |
 | 23:10 | Formation PME "Ton premier Agent IA" : deck 18 slides (PDF+PPTX) + guide participant 10 p. (PDF), branding HHSA, interfaces Claude reconstituées | live/formation-agent-ia/ | OK | ~30k |
+| 23:10 | Session end: 3 writes across 3 files (deck.html, render.js, guide.html) | 6 reads | ~15234 tok |
