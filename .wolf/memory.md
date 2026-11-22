@@ -73,3 +73,5 @@
 | 23:38 | Session end: 4 writes across 4 files (carousel.html, video.html, render_video.js, Script_voix_off.md) | 2 reads | ~6613 tok |
 | 23:38 | Session end: 4 writes across 4 files (carousel.html, video.html, render_video.js, Script_voix_off.md) | 2 reads | ~6613 tok |
 | 23:58 | Vidéo pub : logo HHSA retiré, re-rendu ; voix off bloquée (ElevenLabs 91 cr., Higgsfield 0 cr., pip edge-tts refusé par permissions) | live/formation-agent-ia/video | partiel | ~15k |
+| 23:43 | Session end: 4 writes across 4 files (carousel.html, video.html, render_video.js, Script_voix_off.md) | 3 reads | ~6613 tok |
+| 23:49 | Session end: 4 writes across 4 files (carousel.html, video.html, render_video.js, Script_voix_off.md) | 3 reads | ~6613 tok |
