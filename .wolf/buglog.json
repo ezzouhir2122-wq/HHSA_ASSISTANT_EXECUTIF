@@ -64,6 +64,23 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-06-27T17:54:43.060Z"
+    },
+    {
+      "id": "bug-005",
+      "timestamp": "2026-11-22T23:40:00Z",
+      "error_message": "ElevenLabs: This request exceeds your quota of 10000. You have 91 credits remaining, while 576 credits are required",
+      "file": "live/formation-agent-ia/video",
+      "root_cause": "Quota mensuel ElevenLabs presque épuisé",
+      "fix": "Vidéo livrée sans voix + sous-titres ; voix à générer après recharge (~576 crédits) ou enregistrement manuel. Ne pas relancer sans accord.",
+      "tags": [
+        "elevenlabs",
+        "tts",
+        "quota",
+        "video"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-11-22T23:40:00Z"
     }
   ]
 }

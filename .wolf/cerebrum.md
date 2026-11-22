@@ -19,6 +19,9 @@
 
 - **Supports de formation/deck :** HTML + Playwright → PDF (page CSS 1280x720 pour slides, A4 pour guides) ; PPTX généré via python-pptx à partir des captures de slides. Logo recadré depuis equipment/assets/LOGO.png (fond transparent, décor doré à exclure).
 
+- **Coordonnées pub/formation (2026-11-22):** www.easydigia.com · Contact@Easydigia.com · +212 781 995 665. Pubs en vouvoiement ; voix off féminine ElevenLabs « Elisa » (rPVufKNutioPFV4by3r0).
+- **Vidéo pub:** HTML avec window.render(t) déterministe → frames Playwright → ffmpeg (38 s ≈ 1 min de rendu). HuggingFace bloqué par le proxy (pas de TTS Piper local).
+
 ## Do-Not-Repeat
 
 <!-- Mistakes made and corrected. Each entry prevents the same mistake recurring. -->

@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-11-22T23:10:05.638Z
-> Files: 501 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-11-22T23:37:34.354Z
+> Files: 505 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -650,11 +650,21 @@
 - `FAC-20260520-001.md` — Facture (~292 tok)
 - `FAC-20260525-001.md` — EMETTEUR (~228 tok)
 
+## live/formation-agent-ia/
+
+
 ## live/formation-agent-ia/src/
 
+- `carousel.html` — Carrousels pub — Formation Agent IA (~3651 tok)
 - `deck.html` — Ton premier Agent IA — Formation PME (~7909 tok)
 - `guide.html` — Guide participant — Ton premier Agent IA (~6104 tok)
+- `render_video.js` — Render src/video.html frame by frame (window.render(t)) to JPEG frames for ffmpeg. (~242 tok)
 - `render.js` — Render an HTML file to PDF (CSS page size) and optionally screenshot each section.slide (~220 tok)
+- `video.html` — Vidéo pub — Formation Agent IA (~1855 tok)
+
+## live/formation-agent-ia/video/
+
+- `Script_voix_off.md` — Script voix off — Pub « Créez votre premier agent IA » (~38 s) (~413 tok)
 
 ## live/lancement-agence/
 
@@ -758,8 +768,5 @@
 
 - `test_brand.py` — Tests: brand_has_required_keys, brand_colors_are_rgb_tuples, brand_gold_is_correct, brand_dark_is_correct + 4 more (~336 tok)
 - `test_pdf_integration.py` — Tests: generate_facture_standard, generate_facture_paid, cli_paid_flag, generate_devis_standard + 1 more (~651 tok)
-
-## live/formation-agent-ia/
-- `Presentation_Formation_Agent_IA.pdf` / `.pptx` — Deck 18 slides formation PME "Ton premier Agent IA" (Claude, sans code). PPTX = images des slides.
-- `Guide_Participant_Agent_IA.pdf` — Guide A4 10 pages : 6 étapes, prompt de contexte, prompt constructeur, checklist, 7 modèles métiers, plan 5 jours.
-- `src/deck.html`, `src/guide.html` — sources HTML (éditer ici). `src/render.js` — `node src/render.js <html> <pdf> [shotsDir]` (Playwright). `src/logo.png` — logo HHSA recadré.
+- `carrousels/A_lancement/`, `carrousels/B_6_etapes/` — 7 slides PNG 1080x1350 chacun + PDF LinkedIn. Source `src/carousel.html`.
+- `video/Pub_Agent_IA_sans_voix.mp4` — pub verticale 38 s sous-titrée. Source `src/video.html` (timeline TL) + `src/render_video.js`. `video/Script_voix_off.md` — script + commandes d'assemblage voix.

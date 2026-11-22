@@ -59,3 +59,14 @@
 | 23:10 | Created live/formation-agent-ia/src/guide.html | — | ~6104 |
 | 23:10 | Formation PME "Ton premier Agent IA" : deck 18 slides (PDF+PPTX) + guide participant 10 p. (PDF), branding HHSA, interfaces Claude reconstituées | live/formation-agent-ia/ | OK | ~30k |
 | 23:10 | Session end: 3 writes across 3 files (deck.html, render.js, guide.html) | 6 reads | ~15234 tok |
+| 23:10 | Session end: 3 writes across 3 files (deck.html, render.js, guide.html) | 6 reads | ~15234 tok |
+
+## Session: 2026-11-22 23:24
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 23:33 | Created live/formation-agent-ia/src/carousel.html | — | ~3651 |
+| 23:34 | Created live/formation-agent-ia/src/video.html | — | ~1855 |
+| 23:34 | Created live/formation-agent-ia/src/render_video.js | — | ~242 |
+| 23:37 | Created live/formation-agent-ia/video/Script_voix_off.md | — | ~440 |
+| 23:45 | Pub formation Agent IA : 2 carrousels 1080x1350 (PNG + PDF LinkedIn), vidéo verticale 38 s sous-titrée (sans voix), script voix off ; coordonnées easydigia ajoutées au deck/guide | live/formation-agent-ia/{carrousels,video,src} | Voix ElevenLabs bloquée (crédits) | ~40k |

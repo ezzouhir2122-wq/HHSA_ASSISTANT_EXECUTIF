@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Carrousels pub — Formation Agent IA</title>
+<style>
+@page { size: 1080px 1350px; margin: 0; }
+:root{--or:#E05818;--or2:#F5A15F;--ink:#161616;--body:#3A3D4F;--mute:#6B7280;--cream:#FAF6F0;--line:#E7DFD3}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,"DejaVu Sans",sans-serif;background:#555}
+.slide{width:1080px;height:1350px;position:relative;overflow:hidden;background:var(--cream);color:var(--ink);padding:96px 88px;page-break-after:always}
+.dark{background:var(--ink);color:#fff}
+.orange{background:var(--or);color:#fff}
+.kicker{font-size:26px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--or);margin-bottom:24px}
+.dark .kicker{color:var(--or2)}
+.orange .kicker{color:#FFE3D1}
+h1{font-size:112px;line-height:1;font-weight:900;letter-spacing:-.03em}
+h2{font-size:78px;line-height:1.04;font-weight:850;letter-spacing:-.02em;margin-bottom:34px}
+p{font-size:36px;line-height:1.42;color:var(--body)}
+.dark p{color:#D6D6D6}
+.orange p{color:#fff}
+.hl{color:var(--or)}
+.top{position:absolute;left:88px;right:88px;top:52px;display:flex;justify-content:space-between;align-items:center}
+.top img{height:64px}
+.top span{font-size:22px;font-weight:700;color:var(--mute)}
+.dark .top span{color:#888}
+.bottom{position:absolute;left:88px;right:88px;bottom:52px;display:flex;justify-content:space-between;align-items:center;font-size:24px;font-weight:600;color:var(--mute)}
+.dark .bottom{color:#999}
+.orange .bottom{color:#FFE3D1}
+.swipe{display:flex;align-items:center;gap:12px;color:var(--or);font-weight:800}
+.dark .swipe{color:var(--or2)}
+.dots{display:flex;gap:8px}.dots i{width:12px;height:12px;border-radius:50%;background:#D9CFC2;display:block}.dots i.on{background:var(--or);width:34px;border-radius:6px}
+.dark .dots i{background:#444}.dark .dots i.on{background:var(--or)}
+.card{background:#fff;border:2px solid var(--line);border-radius:28px;padding:34px 38px;margin-bottom:22px}
+.dark .card{background:#232323;border-color:#353535}
+.card h3{font-size:40px;font-weight:800;margin-bottom:8px}
+.card p{font-size:30px}
+.big{font-size:190px;font-weight:900;color:var(--or);line-height:.9;letter-spacing:-.04em}
+.row{display:flex;gap:22px;align-items:flex-start}
+.n{flex:none;width:76px;height:76px;border-radius:22px;background:var(--or);color:#fff;font-size:40px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.contact{font-size:38px;font-weight:700;color:#fff;margin-bottom:16px;display:flex;align-items:center;gap:18px}
+.contact b{display:inline-flex;width:64px;height:64px;border-radius:18px;background:rgba(255,255,255,.18);align-items:center;justify-content:center;font-size:30px}
+.btn{display:inline-block;background:#fff;color:var(--or);font-weight:900;font-size:40px;border-radius:99px;padding:26px 54px;margin:18px 0 48px}
+.ring{position:absolute;border-radius:50%;border:70px solid var(--or)}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.vs .card{margin:0}
+.x{color:#B4552B}
+</style>
+</head>
+<body>
+
+<!-- ================= CARROUSEL A : LANCEMENT ================= -->
+<section class="slide dark">
+  <div class="top"><img src="logo.png"><span>Formation PME · 2026</span></div>
+  <div class="ring" style="width:720px;height:720px;right:-300px;bottom:-200px"></div>
+  <div style="position:absolute;left:88px;right:88px;top:290px">
+    <div class="kicker">Nouvelle formation</div>
+    <h1>Créez votre<br>premier<br><span class="hl">agent IA</span>.<br>Sans coder.</h1>
+    <p style="margin-top:40px;max-width:760px">En une journée, avec Claude. Vous repartez avec un agent qui travaille pour vous.</p>
+  </div>
+  <div class="bottom"><span>www.easydigia.com</span><span class="swipe">Glissez →</span></div>
+</section>
+
+<section class="slide">
+  <div class="top"><img src="logo.png"><div class="dots"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+  <div style="margin-top:150px">
+    <div class="kicker">Le constat</div>
+    <h2>Vous utilisez déjà l'IA…</h2>
+    <div class="big">90 %</div>
+    <p style="margin-top:30px;font-size:44px;font-weight:700;color:var(--ink)">…mais c'est encore vous qui faites le travail.</p>
+    <p style="margin-top:30px">Copier, coller, reformuler, recommencer chaque semaine. Ce n'est pas de l'automatisation.</p>
+  </div>
+  <div class="bottom"><span>www.easydigia.com</span><span class="swipe">→</span></div>
+</section>
+
+<section class="slide">
+  <div class="top"><img src="logo.png"><div class="dots"><i></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div></div>
+  <div style="margin-top:150px">
+    <div class="kicker">La différence</div>
+    <h2>Chatbot <span style="color:var(--mute)">vs</span> <span class="hl">agent IA</span></h2>
+    <div class="vs">
+      <div class="card"><h3 class="x">Chatbot</h3><p>Vous posez la question.<br><br>Vous recopiez la réponse.<br><br>Vous recommencez.</p></div>
+      <div class="card" style="border-color:var(--or)"><h3 class="hl">Agent IA</h3><p>Il a une mission.<br><br>Il utilise vos outils.<br><br>Il livre, seul, chaque semaine.</p></div>
+    </div>
+    <p style="margin-top:40px;font-size:40px;font-weight:700;color:var(--ink)">Vous ne faites plus le travail. Vous le dirigez.</p>
+  </div>
+  <div class="bottom"><span>www.easydigia.com</span><span class="swipe">→</span></div>
+</section>
+
+<section class="slide dark">
+  <div class="top"><img src="logo.png"><div class="dots"><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i></div></div>
+  <div style="margin-top:150px">
+    <div class="kicker">Exemple réel</div>
+    <h2>Lundi, 8 h.<br>Vous n'avez touché à rien.</h2>
+    <div class="card"><div class="row"><div class="n">5</div><p style="padding-top:12px">comptes concurrents analysés</p></div></div>
+    <div class="card"><div class="row"><div class="n">15</div><p style="padding-top:12px">publications performantes repérées</p></div></div>
+    <div class="card"><div class="row"><div class="n">1</div><p style="padding-top:12px">tableau à jour + résumé prêt à relire</p></div></div>
+    <p style="margin-top:20px">De 2 heures de veille à 10 minutes de relecture.</p>
+  </div>
+  <div class="bottom"><span>www.easydigia.com</span><span class="swipe">→</span></div>
+</section>
+
+<section class="slide">
+  <div class="top"><img src="logo.png"><div class="dots"><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i></div></div>
+  <div style="margin-top:150px">
+    <div class="kicker">Le programme</div>
+    <h2>1 journée.<br>1 agent qui tourne.</h2>
+    <div class="card"><h3>Matin · Comprendre</h3><p>Chatbot vs agent, choix de la tâche, fiche de contexte.</p></div>
+    <div class="card"><h3>Après-midi · Construire</h3><p>Mission, prompt constructeur, connecteurs, règles de fiabilité.</p></div>
+    <div class="card" style="border-color:var(--or)"><h3>J+7 · Automatiser</h3><p>Tâche planifiée et revue de vos premiers résultats.</p></div>
+  </div>
+  <div class="bottom"><span>www.easydigia.com</span><span class="swipe">→</span></div>
+</section>
+
+<section class="slide">
+  <div class="top"><img src="logo.png"><div class="dots"><i></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i></div></div>
+  <div style="margin-top:150px">
+    <div class="kicker">Pour qui ?</div>
+    <h2>Pour les PME qui veulent gagner des heures, pas des gadgets.</h2>
+    <div class="card"><p>🛒 <b>Commerce</b> · veille des prix concurrents</p></div>
+    <div class="card"><p>🏠 <b>Immobilier</b> · nouvelles annonces filtrées</p></div>
+    <div class="card"><p>📊 <b>Comptabilité</b> · relances de factures</p></div>
+    <div class="card"><p>👥 <b>RH</b> · tri des candidatures</p></div>
+  </div>
+  <div class="bottom"><span>www.easydigia.com</span><span class="swipe">→</span></div>
+</section>
+
+<section class="slide orange">
+  <div class="top"><img src="logo.png" style="filter:brightness(0) invert(1)"><span style="color:#FFE3D1">Places limitées</span></div>
+  <div style="margin-top:170px">
+    <div class="kicker">Passez à l'action</div>
+    <h2 style="font-size:92px">Réservez votre place.</h2>
+    <p>Session inter-entreprises ou formation sur mesure pour votre équipe.</p>
+    <div class="btn">Je m'inscris →</div>
+    <div class="contact"><b>🌐</b>www.easydigia.com</div>
+    <div class="contact"><b>✉</b>Contact@Easydigia.com</div>
+    <div class="contact"><b>☎</b>+212 781 995 665</div>
+  </div>
+  <div class="bottom"><span>HHSA Agency · Workflows agentiques pour PME</span></div>
+</section>
+
+<!-- ================= CARROUSEL B : LES 6 ÉTAPES ================= -->
+<section class="slide dark">
+  <div class="top"><img src="logo.png"><span>Guide express</span></div>
+  <div class="ring" style="width:640px;height:640px;right:-280px;top:-200px"></div>
+  <div style="position:absolute;left:88px;right:88px;top:300px">
+    <div class="kicker">Sauvegardez ce post</div>
+    <h1 style="font-size:104px">Les <span class="hl">6 étapes</span><br>pour créer un<br>agent IA</h1>
+    <p style="margin-top:40px;max-width:780px">Sans code, sans serveur. Juste Claude, une méthode et les bons outils.</p>
+  </div>
+  <div class="bottom"><span>www.easydigia.com</span><span class="swipe">Glissez →</span></div>
+</section>
+
+<section class="slide">
+  <div class="top"><img src="logo.png"><div class="dots"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+  <div style="margin-top:170px">
+    <div class="big" style="font-size:150px">01</div>
+    <h2 style="margin-top:20px">Le contexte</h2>
+    <p>Qui vous êtes, vos clients, vos concurrents, votre ton, vos objectifs.</p>
+    <div class="card" style="margin-top:40px;border-color:var(--or)"><p><b>Le piège :</b> c'est l'étape que tout le monde saute. Sans contexte, l'agent produit du générique.</p></div>
+  </div>
+  <div class="bottom"><span>www.easydigia.com</span><span class="swipe">→</span></div>
+</section>
+
+<section class="slide">
+  <div class="top"><img src="logo.png"><div class="dots"><i></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div></div>
+  <div style="margin-top:170px">
+    <div class="big" style="font-size:150px">02</div>
+    <h2 style="margin-top:20px">Une seule mission</h2>
+    <div class="card"><p><span class="x"><b>✗</b></span> « Gère mon marketing. »</p></div>
+    <div class="card" style="border-color:var(--or)"><p><span class="hl"><b>✓</b></span> « Chaque lundi, analyse mes 5 concurrents et range leurs 3 meilleures publications dans mon tableau. »</p></div>
+    <p style="margin-top:16px"><b style="color:var(--ink)">Formule :</b> Quand + Quoi + Quel livrable + Où.</p>
+  </div>
+  <div class="bottom"><span>www.easydigia.com</span><span class="swipe">→</span></div>
+</section>
+
+<section class="slide dark">
+  <div class="top"><img src="logo.png"><div class="dots"><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i></div></div>
+  <div style="margin-top:170px">
+    <div class="big" style="font-size:150px">03</div>
+    <h2 style="margin-top:20px">Le prompt constructeur</h2>
+    <p>Vous n'écrivez pas l'agent. Claude le fait.</p>
+    <div class="card" style="margin-top:36px;font-family:'DejaVu Sans Mono',monospace"><p style="font-size:27px;color:#EDEDED">« Pose-moi des questions une à une, puis rédige les instructions de l'agent : RÔLE · MISSION · ÉTAPES · RÈGLES · CHECKLIST. »</p></div>
+  </div>
+  <div class="bottom"><span>www.easydigia.com</span><span class="swipe">→</span></div>
+</section>
+
+<section class="slide">
+  <div class="top"><img src="logo.png"><div class="dots"><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i></div></div>
+  <div style="margin-top:170px">
+    <div class="big" style="font-size:150px">04</div>
+    <h2 style="margin-top:20px">Les outils</h2>
+    <p>Les connecteurs donnent des mains à votre agent.</p>
+    <div class="vs" style="margin-top:36px">
+      <div class="card"><h3>Chercher</h3><p>Recherche web</p></div>
+      <div class="card"><h3>Ranger</h3><p>Drive, Sheets, Notion</p></div>
+      <div class="card"><h3>Prévenir</h3><p>Brouillon Gmail</p></div>
+      <div class="card"><h3>Règle PME</h3><p>Le strict minimum</p></div>
+    </div>
+  </div>
+  <div class="bottom"><span>www.easydigia.com</span><span class="swipe">→</span></div>
+</section>
+
+<section class="slide">
+  <div class="top"><img src="logo.png"><div class="dots"><i></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i></div></div>
+  <div style="margin-top:170px">
+    <div class="row" style="gap:40px"><div><div class="big" style="font-size:150px">05</div></div><div><div class="big" style="font-size:150px">06</div></div></div>
+    <h2 style="margin-top:20px">Fiable, puis autonome</h2>
+    <div class="card"><h3>« N'invente jamais »</h3><p>Donnée introuvable = « non trouvé ». Brouillons uniquement, jamais d'envoi.</p></div>
+    <div class="card" style="border-color:var(--or)"><h3>Tâche planifiée</h3><p>Après 3 tests réussis : chaque lundi 8 h, sans vous.</p></div>
+  </div>
+  <div class="bottom"><span>www.easydigia.com</span><span class="swipe">→</span></div>
+</section>
+
+<section class="slide orange">
+  <div class="top"><img src="logo.png" style="filter:brightness(0) invert(1)"><span style="color:#FFE3D1">Formation 1 journée</span></div>
+  <div style="margin-top:170px">
+    <div class="kicker">On le construit ensemble ?</div>
+    <h2 style="font-size:86px">Repartez avec votre agent IA qui fonctionne.</h2>
+    <div class="btn">Réserver ma place →</div>
+    <div class="contact"><b>🌐</b>www.easydigia.com</div>
+    <div class="contact"><b>✉</b>Contact@Easydigia.com</div>
+    <div class="contact"><b>☎</b>+212 781 995 665</div>
+  </div>
+  <div class="bottom"><span>HHSA Agency · Workflows agentiques pour PME</span></div>
+</section>
+
+</body>
+</html>
