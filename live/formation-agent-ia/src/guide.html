@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Guide participant — Ton premier Agent IA</title>
+<style>
+@page { size: A4; margin: 0; }
+:root{--or:#E05818;--or2:#F5A15F;--ink:#161616;--body:#3A3D4F;--mute:#6B7280;--cream:#FAF6F0;--line:#E7DFD3}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,"DejaVu Sans",sans-serif;color:var(--ink)}
+.page{width:210mm;height:297mm;position:relative;overflow:hidden;padding:22mm 20mm 24mm;page-break-after:always;background:#fff}
+.page.cover{background:var(--ink);color:#fff;padding:26mm 22mm}
+.kicker{font-size:10pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--or);margin-bottom:6px}
+h1{font-size:40pt;line-height:1.02;font-weight:800;letter-spacing:-.02em}
+h2{font-size:22pt;line-height:1.1;font-weight:800;margin-bottom:12px;letter-spacing:-.01em}
+h3{font-size:12.5pt;font-weight:700;margin:14px 0 5px}
+p,li{font-size:10.5pt;line-height:1.55;color:var(--body)}
+.cover p{color:#D6D6D6}
+ul,ol{padding-left:18px;margin:4px 0 8px}
+li{margin-bottom:3px}
+.foot{position:absolute;left:20mm;right:20mm;bottom:10mm;display:flex;justify-content:space-between;font-size:8pt;color:var(--mute);border-top:1px solid var(--line);padding-top:6px}
+.foot b{color:var(--or)}
+.box{background:var(--cream);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:10px 0}
+.box.or{background:#FFF1E8;border-color:#F3C6AC}
+.prompt{background:#1E1E1E;color:#EDEDED;border-radius:10px;padding:12px 14px;font-family:"DejaVu Sans Mono",monospace;font-size:8.6pt;line-height:1.55;white-space:pre-wrap;margin:8px 0 10px}
+.prompt .v{color:var(--or2)}
+table{border-collapse:collapse;width:100%;margin:8px 0}
+th,td{text-align:left;padding:7px 9px;font-size:9.5pt;border-bottom:1px solid var(--line);vertical-align:top;color:var(--body)}
+th{font-size:8pt;text-transform:uppercase;letter-spacing:.08em;color:var(--mute)}
+td:first-child{font-weight:700;color:var(--ink)}
+.line{border-bottom:1px solid #CFC7B7;height:22px}
+.cb{display:inline-block;width:11px;height:11px;border:1.5px solid var(--or);border-radius:3px;margin-right:7px;vertical-align:-1px}
+.toc td{font-size:11pt;padding:9px 4px}
+.toc td:last-child{text-align:right;color:var(--mute)}
+.stepn{display:inline-block;background:var(--or);color:#fff;font-weight:800;border-radius:7px;padding:2px 9px;font-size:10pt;margin-right:8px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.small{font-size:8.5pt;color:var(--mute);font-style:italic}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="page cover">
+  <img src="logo.png" style="height:70px">
+  <div style="position:absolute;left:22mm;top:95mm;right:22mm">
+    <div class="kicker" style="color:var(--or2)">Guide participant · Formation PME</div>
+    <h1>Ton premier<br><span style="color:var(--or)">Agent IA</span><br>sans coder</h1>
+    <p style="font-size:13pt;margin-top:16px;max-width:130mm">Le pas à pas complet avec Claude : du choix de la tâche à l'agent qui tourne tout seul chaque semaine.</p>
+    <div style="margin-top:22mm;display:flex;gap:10px;flex-wrap:wrap">
+      <span style="border:1px solid #444;border-radius:99px;padding:6px 14px;font-size:9.5pt;color:#ddd">6 étapes</span>
+      <span style="border:1px solid #444;border-radius:99px;padding:6px 14px;font-size:9.5pt;color:#ddd">2 prompts prêts à copier</span>
+      <span style="border:1px solid #444;border-radius:99px;padding:6px 14px;font-size:9.5pt;color:#ddd">7 modèles d'agents</span>
+      <span style="border:1px solid #444;border-radius:99px;padding:6px 14px;font-size:9.5pt;color:#ddd">Plan d'action 5 jours</span>
+    </div>
+  </div>
+  <div style="position:absolute;right:-40mm;bottom:-40mm;width:120mm;height:120mm;border-radius:50%;border:16mm solid var(--or)"></div>
+  <p style="position:absolute;left:22mm;bottom:16mm;font-size:9pt;color:#888">HHSA Agency · Workflows agentiques pour PME · Édition 2026</p>
+</section>
+
+<!-- TOC + intro -->
+<section class="page">
+  <div class="kicker">Sommaire</div>
+  <h2>Ce que tu vas construire</h2>
+  <p>À la fin de cette formation, tu as <b>un agent IA qui fonctionne</b> sur une vraie tâche de ton entreprise. Pas une démo : ton agent, avec ton contexte, tes outils, et une exécution planifiée.</p>
+  <table class="toc" style="margin-top:14px">
+    <tr><td>1. Chatbot ou agent : la différence</td><td>p. 3</td></tr>
+    <tr><td>2. Ta tâche mérite-t-elle un agent ?</td><td>p. 3</td></tr>
+    <tr><td>3. Les 5 pièces de tout agent IA</td><td>p. 4</td></tr>
+    <tr><td>Étape 1 — La fiche de contexte</td><td>p. 4</td></tr>
+    <tr><td>Étape 2 — La mission</td><td>p. 5</td></tr>
+    <tr><td>Étape 3 — Le prompt constructeur</td><td>p. 6</td></tr>
+    <tr><td>Étape 4 — Les outils et connecteurs</td><td>p. 7</td></tr>
+    <tr><td>Étape 5 — La fiabilité</td><td>p. 7</td></tr>
+    <tr><td>Étape 6 — La tâche planifiée</td><td>p. 8</td></tr>
+    <tr><td>7 modèles d'agents prêts à adapter</td><td>p. 9</td></tr>
+    <tr><td>Plan d'action 5 jours + checklist finale</td><td>p. 10</td></tr>
+  </table>
+  <div class="box or" style="margin-top:16px">
+    <h3 style="margin-top:0">Ce qu'il te faut</h3>
+    <ul><li>Un ordinateur et un compte Claude. Une offre payante est recommandée : les connecteurs et les tâches planifiées en dépendent.</li>
+    <li>Une tâche répétitive précise en tête.</li>
+    <li>45 minutes de concentration par étape. Pas de compétence technique.</li></ul>
+  </div>
+  <p class="small">Les captures d'interface de ce guide sont des reconstitutions simplifiées. L'interface de Claude évolue régulièrement : les noms de menus peuvent légèrement différer.</p>
+  <div class="foot"><span><b>HHSA Agency</b> · Ton premier Agent IA</span><span>2</span></div>
+</section>
+
+<!-- Bases -->
+<section class="page">
+  <div class="kicker">Module 1 · Les bases</div>
+  <h2>Chatbot ou agent : la vraie différence</h2>
+  <p>Avec un chatbot, tu fais le travail <i>avec</i> l'IA : tu poses la question, tu recopies la réponse, tu recommences la semaine suivante. Avec un agent, l'IA fait le travail <i>pour</i> toi : elle a une mission, des outils, et elle livre le résultat au bon endroit.</p>
+  <table>
+    <tr><th></th><th>Chatbot</th><th>Agent IA</th></tr>
+    <tr><td>Qui agit ?</td><td>Toi, à chaque message</td><td>L'IA, en autonomie sur une mission</td></tr>
+    <tr><td>Outils</td><td>Aucun ou limités</td><td>Web, Drive, Sheets, Notion, Gmail…</td></tr>
+    <tr><td>Résultat</td><td>Une réponse à recopier</td><td>Un livrable rangé au bon endroit</td></tr>
+    <tr><td>Déclenchement</td><td>Quand tu y penses</td><td>Planifié, sans toi</td></tr>
+    <tr><td>Ton rôle</td><td>Exécutant assisté</td><td>Manager qui valide</td></tr>
+  </table>
+
+  <div class="kicker" style="margin-top:22px">Module 1 · Diagnostic</div>
+  <h2>Ta tâche mérite-t-elle un agent ?</h2>
+  <p>Liste 5 tâches que tu fais chaque semaine. Coche les critères. Garde celle qui a le meilleur score — idéalement 4/4.</p>
+  <table>
+    <tr><th style="width:34%">Tâche</th><th>Répétitive</th><th>Règles claires</th><th>100 % numérique</th><th>&gt; 1 h / sem.</th></tr>
+    <tr><td><div class="line"></div></td><td><span class="cb"></span></td><td><span class="cb"></span></td><td><span class="cb"></span></td><td><span class="cb"></span></td></tr>
+    <tr><td><div class="line"></div></td><td><span class="cb"></span></td><td><span class="cb"></span></td><td><span class="cb"></span></td><td><span class="cb"></span></td></tr>
+    <tr><td><div class="line"></div></td><td><span class="cb"></span></td><td><span class="cb"></span></td><td><span class="cb"></span></td><td><span class="cb"></span></td></tr>
+    <tr><td><div class="line"></div></td><td><span class="cb"></span></td><td><span class="cb"></span></td><td><span class="cb"></span></td><td><span class="cb"></span></td></tr>
+    <tr><td><div class="line"></div></td><td><span class="cb"></span></td><td><span class="cb"></span></td><td><span class="cb"></span></td><td><span class="cb"></span></td></tr>
+  </table>
+  <div class="foot"><span><b>HHSA Agency</b> · Ton premier Agent IA</span><span>3</span></div>
+</section>
+
+<!-- 5 pieces + contexte -->
+<section class="page">
+  <div class="kicker">Module 2 · Anatomie</div>
+  <h2>Les 5 pièces de tout agent IA</h2>
+  <table>
+    <tr><td style="width:24%">1. Contexte</td><td>Qui tu es, ton marché, tes clients, ton ton. Sans lui, l'agent produit du générique.</td></tr>
+    <tr><td>2. Cerveau</td><td>Le modèle d'IA qui raisonne. Ici : Claude.</td></tr>
+    <tr><td>3. Mission</td><td>Une seule tâche, avec un livrable précis et une fin claire.</td></tr>
+    <tr><td>4. Règles</td><td>Ce qu'il doit faire, ce qu'il ne doit jamais faire, ce qu'il vérifie avant de finir.</td></tr>
+    <tr><td>5. Outils</td><td>Les connecteurs qui lui permettent d'agir : chercher, ranger, prévenir.</td></tr>
+  </table>
+
+  <div style="margin-top:18px"><span class="stepn">ÉTAPE 1</span><b style="font-size:15pt">La fiche de contexte</b></div>
+  <p style="margin-top:8px">C'est l'étape que tout le monde saute — et la raison n°1 des résultats décevants. Tu l'écris une seule fois, elle sert à tous tes futurs agents.</p>
+  <div class="prompt"><span class="v">PROMPT DE CONTEXTE — à copier dans un nouveau chat Claude</span>
+Je veux créer une fiche de contexte sur mon entreprise, réutilisable
+par tous mes futurs agents IA. Pose-moi ces 5 questions une par une
+et attends ma réponse à chaque fois :
+1. Qui es-tu ? (activité, ville, taille de l'équipe, ancienneté)
+2. Pour qui ? (clients types, leurs problèmes, leur budget)
+3. Contre qui ? (3 à 5 concurrents ou références du marché)
+4. Comment tu parles ? (ton, langue FR/AR/EN, tutoiement ou vouvoiement)
+5. Ce qui compte ? (tes objectifs des 3 prochains mois)
+Ensuite, rédige une fiche d'une page, claire et structurée.
+Ne remplis rien toi-même. Si une réponse est floue, demande-moi de préciser.</div>
+  <h3>Dans Claude : crée un Projet</h3>
+  <ol><li>Menu de gauche › <b>Projets</b> › <b>Nouveau projet</b>. Nomme-le « Agent [Mission] — [Entreprise] ».</li>
+  <li>Enregistre ta fiche en PDF ou Word, puis ajoute-la dans <b>Connaissances du projet</b>.</li>
+  <li>Ajoute tes fichiers utiles : liste de concurrents, grille tarifaire, charte de ton.</li></ol>
+  <div class="foot"><span><b>HHSA Agency</b> · Ton premier Agent IA</span><span>4</span></div>
+</section>
+
+<!-- Mission -->
+<section class="page">
+  <div><span class="stepn">ÉTAPE 2</span><b style="font-size:15pt">La mission : un agent, une seule tâche</b></div>
+  <p style="margin-top:10px">L'erreur n°1 des débutants : vouloir un agent pour tout. Un agent « qui gère mon marketing » ne sait pas quoi livrer, ni quand il a fini. Il sera moyen partout.</p>
+  <div class="grid2">
+    <div class="box"><b>✗ Trop vague</b><p>« Fais ma veille concurrentielle. »</p></div>
+    <div class="box or"><b>✓ Mission claire</b><p>« Chaque lundi, analyse les 5 concurrents de ma liste, repère leurs 3 publications les plus performantes et range une fiche par publication dans mon Google Sheet. »</p></div>
+  </div>
+  <h3>La formule en 4 blocs</h3>
+  <table>
+    <tr><td style="width:22%">Quand</td><td>Chaque lundi à 8h / chaque fin de mois / à chaque nouveau mail reçu de…</td></tr>
+    <tr><td>Quoi analyser</td><td>Les sources précises : comptes, sites, dossiers, boîte mail, tableur.</td></tr>
+    <tr><td>Quel livrable</td><td>Le format exact : fiche, tableau, résumé de 5 lignes, brouillon de mail.</td></tr>
+    <tr><td>Où le ranger</td><td>Google Sheet « Veille 2026 », dossier Drive, page Notion, brouillon Gmail.</td></tr>
+  </table>
+  <h3>Ta mission (à remplir)</h3>
+  <div class="box">
+    <p><b>Quand :</b></p><div class="line"></div>
+    <p style="margin-top:8px"><b>Quoi analyser :</b></p><div class="line"></div>
+    <p style="margin-top:8px"><b>Quel livrable :</b></p><div class="line"></div>
+    <p style="margin-top:8px"><b>Où le ranger :</b></p><div class="line"></div>
+  </div>
+  <p><b>Test rapide :</b> si tu peux résumer ta mission en une phrase de moins de 40 mots, elle est assez précise.</p>
+  <div class="foot"><span><b>HHSA Agency</b> · Ton premier Agent IA</span><span>5</span></div>
+</section>
+
+<!-- Prompt constructeur -->
+<section class="page">
+  <div><span class="stepn">ÉTAPE 3</span><b style="font-size:15pt">Le prompt constructeur</b></div>
+  <p style="margin-top:10px">Tu n'écris pas l'agent toi-même : Claude le fait. Ouvre un chat <b>dans ton Projet</b> (pour qu'il lise ta fiche de contexte) et colle ce prompt.</p>
+  <div class="prompt"><span class="v">PROMPT CONSTRUCTEUR</span>
+Tu es un expert en conception d'agents IA pour les petites entreprises.
+Aide-moi à créer UN agent, pas plus.
+
+1. Lis ma fiche de contexte (dans les connaissances du projet).
+2. Ma tâche : <span class="v">[décris ta mission en une phrase]</span>
+3. Pose-moi des questions, une à la fois, pour préciser :
+   - la fréquence et le moment d'exécution ;
+   - les sources à analyser ;
+   - le livrable exact (format, champs, longueur) ;
+   - l'endroit où ranger le résultat ;
+   - les outils/connecteurs dont tu as besoin.
+4. Rédige ensuite les instructions complètes de l'agent en 5 sections :
+   RÔLE · MISSION · ÉTAPES · RÈGLES · CHECKLIST DE FIN.
+5. Inclus obligatoirement ces règles :
+   - « Si une information est introuvable, écris "non trouvé". N'invente jamais. »
+   - « Ne jamais envoyer de mail : créer uniquement des brouillons. »
+   - « Ne jamais supprimer ni modifier un fichier existant sans demander. »
+6. Exécute la mission une fois en test et montre-moi le résultat.</div>
+  <h3>Ce qui se passe ensuite</h3>
+  <ol><li>Claude te pose 4 à 8 questions. Réponds précisément, avec des exemples.</li>
+  <li>Il rédige les instructions de l'agent. Relis-les : c'est ton cahier des charges.</li>
+  <li>Copie-les dans <b>Instructions du projet</b>. Désormais, chaque chat du projet démarre avec ton agent.</li>
+  <li>Il lance un premier test. Note ce qui ne va pas et demande-lui de corriger les instructions.</li></ol>
+  <div class="box or"><b>Astuce :</b> <span style="font-size:10.5pt;color:var(--body)">quand le résultat te convient, demande : « Mets à jour les instructions pour que ce résultat soit reproduit à chaque fois. »</span></div>
+  <div class="foot"><span><b>HHSA Agency</b> · Ton premier Agent IA</span><span>6</span></div>
+</section>
+
+<!-- Outils + fiabilité -->
+<section class="page">
+  <div><span class="stepn">ÉTAPE 4</span><b style="font-size:15pt">Les outils et connecteurs</b></div>
+  <p style="margin-top:10px">Les connecteurs donnent des mains à ton agent. Dans Claude : <b>Paramètres › Connecteurs</b>, puis <b>Connecter</b> sur l'outil voulu et autorise l'accès. Dans un chat, le bouton d'outils permet d'activer ou couper chaque connecteur.</p>
+  <table>
+    <tr><th>Besoin</th><th>Connecteurs typiques</th><th>Exemple d'usage</th></tr>
+    <tr><td>Chercher</td><td>Recherche web, navigateur</td><td>Lire les sites et réseaux des concurrents</td></tr>
+    <tr><td>Ranger</td><td>Google Drive, Sheets, Notion</td><td>Ajouter une ligne par résultat</td></tr>
+    <tr><td>Prévenir</td><td>Gmail (brouillon), Slack</td><td>Résumé prêt à relire le lundi matin</td></tr>
+    <tr><td>Planifier</td><td>Google Calendar</td><td>Bloquer un créneau de relecture</td></tr>
+  </table>
+  <p><b>Règle PME :</b> connecte le strict minimum. Un agent de veille n'a pas besoin d'accéder à ta boîte mail ni à ta comptabilité.</p>
+
+  <div style="margin-top:18px"><span class="stepn">ÉTAPE 5</span><b style="font-size:15pt">Rends ton agent fiable</b></div>
+  <div class="grid2" style="margin-top:10px">
+    <div class="box"><b>« N'invente jamais »</b><p>Une case vide « non trouvé » vaut mieux qu'un chiffre faux dans ton reporting.</p></div>
+    <div class="box"><b>Il prépare, tu valides</b><p>Brouillons uniquement. Aucun envoi, paiement ou suppression sans toi.</p></div>
+  </div>
+  <div class="prompt"><span class="v">CHECKLIST DE FIN — à ajouter à la fin des instructions</span>
+Avant de terminer, vérifie chaque point et corrige si besoin :
+□ Chaque fiche contient tous les champs demandés (sinon : "non trouvé").
+□ Aucune donnée n'a été inventée ou estimée sans le signaler.
+□ Chaque lien est complet et pointe vers la bonne source.
+□ Le résultat est rangé au bon endroit, au bon format.
+□ Un résumé de 3 lignes est placé en tête du livrable.
+Termine par : "Checklist validée" ou la liste des points non validés.</div>
+  <div class="foot"><span><b>HHSA Agency</b> · Ton premier Agent IA</span><span>7</span></div>
+</section>
+
+<!-- Planif -->
+<section class="page">
+  <div><span class="stepn">ÉTAPE 6</span><b style="font-size:15pt">Il tourne tout seul : la tâche planifiée</b></div>
+  <p style="margin-top:10px">Dernière marche : ton agent s'exécute à heure fixe, sans que tu ouvres Claude. La fonction de tâches planifiées est disponible selon l'application Claude utilisée (par exemple l'app de bureau) et ton offre.</p>
+  <h3>Mise en place</h3>
+  <ol><li>Ouvre <b>Tâches planifiées</b> › <b>Nouvelle tâche</b>.</li>
+  <li><b>Nom :</b> « Veille concurrents — hebdo ».</li>
+  <li><b>Instructions :</b> « Exécute la mission de l'agent [nom du projet], range les résultats dans [lieu], puis crée un brouillon Gmail avec le résumé. »</li>
+  <li><b>Fréquence :</b> chaque semaine, lundi, 08:00.</li>
+  <li>Vérifie que les connecteurs nécessaires sont actifs, puis enregistre.</li></ol>
+  <div class="box or">
+    <b>Les 4 règles avant de planifier</b>
+    <ul><li>3 tests manuels réussis d'affilée, pas moins.</li>
+    <li>Un créneau où tu peux relire le résultat dans l'heure.</li>
+    <li>Une notification : brouillon Gmail, message ou alerte.</li>
+    <li>Relecture de chaque sortie pendant le premier mois.</li></ul>
+  </div>
+  <h3>Le résultat</h3>
+  <p>Lundi 8h : tes concurrents sont analysés, les publications qui performent sont rangées dans ton tableau, un résumé t'attend en brouillon. Tu passes de 2 heures de veille à 10 minutes de relecture.</p>
+  <h3>Faire évoluer l'agent</h3>
+  <table>
+    <tr><td style="width:30%">Résultat trop long</td><td>Ajoute une règle de format : « 5 lignes maximum par fiche ».</td></tr>
+    <tr><td>Sources manquées</td><td>Liste-les explicitement dans la section MISSION.</td></tr>
+    <tr><td>Données douteuses</td><td>Renforce la checklist : « cite la source de chaque chiffre ».</td></tr>
+    <tr><td>Nouvelle tâche</td><td>Crée un <b>nouvel</b> agent. Ne surcharge pas celui-ci.</td></tr>
+  </table>
+  <div class="foot"><span><b>HHSA Agency</b> · Ton premier Agent IA</span><span>8</span></div>
+</section>
+
+<!-- 7 modèles -->
+<section class="page">
+  <div class="kicker">Module 3 · Ton métier</div>
+  <h2>7 modèles d'agents prêts à adapter</h2>
+  <p>Remplace la phrase <b>[ta tâche]</b> du prompt constructeur par la mission de ton métier.</p>
+  <table>
+    <tr><th style="width:20%">Métier</th><th>Mission à coller dans le prompt constructeur</th><th style="width:20%">Outils</th></tr>
+    <tr><td>Commerce / e-commerce</td><td>Chaque lundi, relève les prix et promotions de mes 5 concurrents sur leurs sites et réseaux, et compare-les à mes prix dans un tableau.</td><td>Web, Sheets</td></tr>
+    <tr><td>Immobilier</td><td>Chaque matin, repère les nouvelles annonces correspondant à mes critères (quartier, budget, surface) et ajoute-les à ma liste avec lien et prix.</td><td>Web, Sheets, Gmail</td></tr>
+    <tr><td>Restauration</td><td>Chaque dimanche, synthétise les avis clients de la semaine, classe-les par thème et prépare une réponse en brouillon pour chaque avis négatif.</td><td>Web, Docs</td></tr>
+    <tr><td>Cabinet comptable</td><td>Chaque 1er du mois, liste les factures impayées de mon suivi et prépare un mail de relance personnalisé en brouillon pour chacune.</td><td>Sheets, Gmail</td></tr>
+    <tr><td>Recrutement / RH</td><td>À chaque nouveau dossier dans le dossier « Candidatures », note le CV selon ma grille et mets à jour la shortlist.</td><td>Drive, Sheets</td></tr>
+    <tr><td>Formation / coaching</td><td>Chaque semaine, repère les appels d'offres et événements de mon secteur dans ma région et crée une fiche par opportunité.</td><td>Web, Notion</td></tr>
+    <tr><td>Créateur / marketing</td><td>Chaque lundi, analyse les contenus les plus performants de 10 comptes de référence et propose 5 idées de posts adaptées à ma marque.</td><td>Web, Notion</td></tr>
+  </table>
+  <div class="box or"><b>Pour les PME de la région MENA :</b> <span style="font-size:10.5pt;color:var(--body)">précise la langue de sortie dans les règles (français, arabe ou anglais) et les sources locales à privilégier (annuaires, portails d'appels d'offres, plateformes d'annonces de ton pays).</span></div>
+  <div class="foot"><span><b>HHSA Agency</b> · Ton premier Agent IA</span><span>9</span></div>
+</section>
+
+<!-- Plan d'action -->
+<section class="page">
+  <div class="kicker">Passe à l'action</div>
+  <h2>Ton plan sur 5 jours</h2>
+  <table>
+    <tr><td style="width:16%">Lundi</td><td>Liste 5 tâches répétitives, passe-les au test des 4 critères, garde-en une.</td><td style="width:6%"><span class="cb"></span></td></tr>
+    <tr><td>Mardi</td><td>Rédige ta fiche de contexte avec le prompt de contexte. Crée ton Projet Claude.</td><td><span class="cb"></span></td></tr>
+    <tr><td>Mercredi</td><td>Formule ta mission en 4 blocs. Lance le prompt constructeur. Colle les instructions.</td><td><span class="cb"></span></td></tr>
+    <tr><td>Jeudi</td><td>Connecte les outils nécessaires. Fais 3 tests, corrige les règles et la checklist.</td><td><span class="cb"></span></td></tr>
+    <tr><td>Vendredi</td><td>Planifie la tâche. Lundi prochain, tu relis au lieu de faire.</td><td><span class="cb"></span></td></tr>
+  </table>
+  <h3 style="margin-top:18px">Checklist finale : ton agent est-il prêt ?</h3>
+  <div class="box">
+    <p><span class="cb"></span>La fiche de contexte est dans les connaissances du projet.</p>
+    <p><span class="cb"></span>La mission tient en une phrase de moins de 40 mots.</p>
+    <p><span class="cb"></span>Les instructions contiennent RÔLE, MISSION, ÉTAPES, RÈGLES, CHECKLIST.</p>
+    <p><span class="cb"></span>La règle « N'invente jamais » est présente.</p>
+    <p><span class="cb"></span>Seuls les connecteurs nécessaires sont actifs.</p>
+    <p><span class="cb"></span>Aucun envoi, paiement ou suppression automatique.</p>
+    <p><span class="cb"></span>3 tests manuels réussis.</p>
+    <p><span class="cb"></span>La tâche est planifiée avec une notification.</p>
+  </div>
+  <div class="box or" style="margin-top:16px">
+    <b style="font-size:12pt">Besoin d'aller plus loin ?</b>
+    <p>HHSA Agency accompagne les PME dans la conception d'agents sur mesure : audit des tâches automatisables, construction des agents, formation des équipes et suivi.</p>
+    <p style="margin-top:6px"><b>[Contact · Site · WhatsApp]</b></p>
+  </div>
+  <div class="foot"><span><b>HHSA Agency</b> · Ton premier Agent IA</span><span>10</span></div>
+</section>
+
+</body>
+</html>

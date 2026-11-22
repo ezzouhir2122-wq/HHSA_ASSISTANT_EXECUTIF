@@ -17,10 +17,13 @@
 - **TypeScript naming:** Never name a local type the same as an imported icon (e.g., `type Settings` conflicts with `import { Settings } from 'lucide-react'`). Use `Settings as SettingsIcon` pattern.
 - **Fragment keys:** Use `<Fragment key={...}>` (named import) not `<>...</>` when a key prop is needed in a list map.
 
+- **Supports de formation/deck :** HTML + Playwright → PDF (page CSS 1280x720 pour slides, A4 pour guides) ; PPTX généré via python-pptx à partir des captures de slides. Logo recadré depuis equipment/assets/LOGO.png (fond transparent, décor doré à exclure).
+
 ## Do-Not-Repeat
 
 <!-- Mistakes made and corrected. Each entry prevents the same mistake recurring. -->
 <!-- Format: [YYYY-MM-DD] Description of what went wrong and what to do instead. -->
+- [2026-11-22] Bash heredoc avec `cat > file <<EOF` contenant du JS a été bloqué par le check de sécurité — écrire les fichiers source via l'outil Write.
 
 ## Decision Log
 

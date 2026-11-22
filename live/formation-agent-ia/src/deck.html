@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Ton premier Agent IA — Formation PME</title>
+<style>
+@page { size: 1280px 720px; margin: 0; }
+:root{
+  --or:#E05818; --or2:#F5A15F; --ink:#161616; --ink2:#2A2A2A; --body:#3A3D4F; --mute:#6B7280;
+  --cream:#FAF6F0; --line:#E7DFD3; --cl-bg:#F4F1EA; --cl-side:#EDE9DF; --cl-acc:#C96442;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter, "DejaVu Sans", sans-serif;color:var(--ink);background:#555}
+.slide{width:1280px;height:720px;position:relative;overflow:hidden;background:var(--cream);page-break-after:always;padding:64px 80px}
+.slide.dark{background:var(--ink);color:#fff}
+.slide.orange{background:var(--or);color:#fff}
+.kicker{font-size:15px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--or);margin-bottom:14px}
+.dark .kicker{color:var(--or2)}
+h1{font-size:68px;line-height:1.02;font-weight:800;letter-spacing:-.02em}
+h2{font-size:44px;line-height:1.08;font-weight:800;letter-spacing:-.015em;margin-bottom:22px}
+h3{font-size:22px;font-weight:700;margin-bottom:8px}
+p,li{font-size:20px;line-height:1.45;color:var(--body)}
+.dark p,.dark li{color:#D6D6D6}
+.lead{font-size:24px;max-width:900px}
+.foot{position:absolute;left:80px;right:80px;bottom:28px;display:flex;justify-content:space-between;font-size:13px;color:var(--mute)}
+.dark .foot{color:#8A8A8A}
+.foot b{color:var(--or)}
+.logo{height:56px}
+.num{position:absolute;right:80px;top:56px;font-size:120px;font-weight:900;color:rgba(224,88,24,.12);line-height:1}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px 24px}
+.dark .card{background:#222;border-color:#333}
+.card p{font-size:17px}
+.tag{display:inline-block;background:var(--or);color:#fff;font-weight:700;font-size:13px;border-radius:99px;padding:5px 12px;margin-bottom:10px}
+.tag.ghost{background:#F1E6DA;color:var(--or)}
+table{border-collapse:collapse;width:100%}
+th,td{text-align:left;padding:12px 16px;font-size:18px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--mute)}
+td:first-child{font-weight:700;color:var(--ink)}
+.prompt{background:#1E1E1E;color:#EDEDED;border-radius:14px;padding:20px 24px;font-family:"DejaVu Sans Mono",monospace;font-size:15.5px;line-height:1.55;white-space:pre-wrap}
+.prompt .v{color:var(--or2)}
+ul.check{list-style:none}
+ul.check li{padding-left:34px;position:relative;margin-bottom:10px}
+ul.check li:before{content:"";position:absolute;left:0;top:6px;width:20px;height:20px;border-radius:6px;background:var(--or)}
+ul.check li:after{content:"";position:absolute;left:7px;top:9px;width:5px;height:10px;border:solid #fff;border-width:0 3px 3px 0;transform:rotate(45deg)}
+/* ---- Claude interface reconstruction ---- */
+.win{background:var(--cl-bg);border-radius:14px;box-shadow:0 18px 50px rgba(0,0,0,.18);overflow:hidden;border:1px solid #DDD6C8;font-family:Inter,sans-serif}
+.win .bar{height:34px;background:#E8E3D8;display:flex;align-items:center;gap:7px;padding:0 14px}
+.win .bar i{width:11px;height:11px;border-radius:50%;background:#D0C8B8;display:block}
+.win .bar span{margin-left:12px;font-size:12px;color:#7A7468}
+.cl{display:flex;height:100%}
+.cl .side{width:190px;background:var(--cl-side);padding:16px 12px;font-size:13px;color:#4A463E}
+.cl .side .it{padding:7px 10px;border-radius:8px;margin-bottom:3px}
+.cl .side .it.on{background:#DDD7C9;font-weight:600}
+.cl .side .brand{font-family:Georgia,serif;font-size:19px;color:#2B2924;margin:2px 10px 16px}
+.cl .main{flex:1;padding:22px 28px;position:relative}
+.serif{font-family:Georgia,"DejaVu Serif",serif;color:#2B2924}
+.inbox{background:#fff;border:1px solid #DDD6C8;border-radius:16px;padding:14px 16px;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.inbox .ph{font-size:14px;color:#8B857A;min-height:44px}
+.inbox .row{display:flex;align-items:center;gap:8px;margin-top:8px}
+.pill{border:1px solid #DDD6C8;border-radius:9px;padding:4px 10px;font-size:12px;color:#5A554B;background:#fff}
+.send{margin-left:auto;width:30px;height:30px;border-radius:9px;background:var(--cl-acc);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700}
+.msg-u{background:#E9E4D8;border-radius:14px;padding:10px 14px;font-size:13px;color:#2B2924;margin-left:auto;max-width:78%;margin-bottom:12px;line-height:1.45}
+.msg-a{font-size:13px;color:#2B2924;line-height:1.5;margin-bottom:10px}
+.tool{display:inline-flex;align-items:center;gap:6px;border:1px solid #DDD6C8;background:#fff;border-radius:9px;padding:5px 10px;font-size:12px;color:#5A554B;margin:3px 4px 3px 0}
+.tool b{width:8px;height:8px;border-radius:50%;background:#3BA55C;display:inline-block}
+.conn{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #E3DDD1;padding:11px 2px;font-size:14px;color:#2B2924}
+.conn .ic{width:28px;height:28px;border-radius:7px;background:#fff;border:1px solid #DDD6C8;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;margin-right:10px}
+.btn{border-radius:8px;padding:5px 12px;font-size:12px;font-weight:600}
+.btn.on{background:#2B2924;color:#fff}.btn.off{border:1px solid #CFC7B7;color:#4A463E;background:#fff}
+.field{margin-bottom:12px}.field label{display:block;font-size:12px;font-weight:600;color:#5A554B;margin-bottom:5px}
+.field .box{background:#fff;border:1px solid #DDD6C8;border-radius:9px;padding:9px 12px;font-size:13px;color:#2B2924;line-height:1.45}
+.cap{font-size:12.5px;color:var(--mute);margin-top:10px;font-style:italic}
+.arrow{color:var(--or);font-weight:800}
+.callout{position:absolute;background:var(--or);color:#fff;font-weight:700;font-size:14px;border-radius:99px;width:30px;height:30px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(224,88,24,.4)}
+.steps{display:flex;gap:10px;margin-top:8px}
+.steps div{flex:1;height:6px;border-radius:3px;background:#E8DED1}
+.steps div.on{background:var(--or)}
+</style>
+</head>
+<body>
+
+<!-- 1 COVER -->
+<section class="slide dark">
+  <img src="logo.png" class="logo" style="height:80px">
+  <div style="position:absolute;left:80px;top:200px;width:820px">
+    <div class="kicker">Formation PME · Sans code · 2026</div>
+    <h1>Crée ton premier<br><span style="color:var(--or)">Agent IA</span><br>étape par étape</h1>
+    <p class="lead" style="margin-top:26px">Avec Claude. Pas de code, pas de serveur. Un agent qui travaille pendant que tu gères ton entreprise.</p>
+  </div>
+  <div style="position:absolute;right:-120px;top:120px;width:520px;height:520px;border-radius:50%;border:60px solid var(--or);opacity:.9"></div>
+  <div style="position:absolute;right:60px;top:300px;width:200px;height:200px;border-radius:50%;background:#2A2A2A"></div>
+  <div class="foot"><span><b>HHSA Agency</b> · Workflows agentiques pour PME</span><span>Programme de formation</span></div>
+</section>
+
+<!-- 2 CONSTAT -->
+<section class="slide">
+  <div class="kicker">Le constat</div>
+  <h2>Tu utilises déjà l'IA.<br>Mais c'est toi qui fais 90 % du travail.</h2>
+  <div class="grid3" style="margin-top:34px">
+    <div class="card"><span class="tag ghost">Aujourd'hui</span><h3>Tu copies-colles</h3><p>Tu poses une question, tu récupères la réponse, tu la colles dans ton tableur, ton mail, ton CRM.</p></div>
+    <div class="card"><span class="tag ghost">Aujourd'hui</span><h3>Tu recommences</h3><p>Chaque lundi, la même veille. Chaque fin de mois, le même reporting. Le même prompt, réécrit.</p></div>
+    <div class="card"><span class="tag">Demain</span><h3>Tu diriges</h3><p>Tu définis la mission une fois. L'agent l'exécute, range les résultats et te prévient quand c'est prêt.</p></div>
+  </div>
+  <p style="margin-top:36px;font-size:24px;font-weight:600;color:var(--ink)">Objectif de la formation : passer du <span class="arrow">chatbot</span> à l'<span class="arrow">agent</span>.</p>
+  <div class="foot"><span><b>HHSA Agency</b></span><span>02</span></div>
+</section>
+
+<!-- 3 CHATBOT VS AGENT -->
+<section class="slide">
+  <div class="kicker">Module 1 · Les bases</div>
+  <h2>Chatbot ou agent : la vraie différence</h2>
+  <table style="margin-top:10px">
+    <tr><th style="width:24%"></th><th>Chatbot</th><th>Agent IA</th></tr>
+    <tr><td>Qui agit ?</td><td>Toi, à chaque message</td><td>L'IA, en autonomie sur une mission</td></tr>
+    <tr><td>Accès aux outils</td><td>Aucun ou limité</td><td>Navigateur, Drive, Notion, Gmail, Sheets…</td></tr>
+    <tr><td>Résultat</td><td>Une réponse à recopier</td><td>Un livrable rangé au bon endroit</td></tr>
+    <tr><td>Déclenchement</td><td>Quand tu y penses</td><td>Planifié : chaque lundi 8h, sans toi</td></tr>
+    <tr><td>Ton rôle</td><td>Exécutant assisté</td><td>Manager qui valide</td></tr>
+  </table>
+  <div class="foot"><span><b>HHSA Agency</b></span><span>03</span></div>
+</section>
+
+<!-- 4 TASK TEST -->
+<section class="slide">
+  <div class="kicker">Module 1 · Diagnostic</div>
+  <h2>Ta tâche mérite-t-elle un agent ?</h2>
+  <p class="lead">Si tu coches au moins 3 cases sur 4, oui.</p>
+  <div class="grid2" style="margin-top:28px">
+    <div class="card"><h3>① Elle revient souvent</h3><p>Chaque semaine ou chaque mois. Une tâche unique ne justifie pas un agent.</p></div>
+    <div class="card"><h3>② Elle suit des règles claires</h3><p>Tu peux l'expliquer à un stagiaire en 10 minutes.</p></div>
+    <div class="card"><h3>③ Elle est 100 % numérique</h3><p>Web, mails, documents, tableurs. Pas de déplacement, pas de signature physique.</p></div>
+    <div class="card"><h3>④ Elle te coûte plus d'1 h / semaine</h3><p>En dessous, le gain ne vaut pas la mise en place.</p></div>
+  </div>
+  <div class="foot"><span><b>HHSA Agency</b></span><span>04</span></div>
+</section>
+
+<!-- 5 FIVE PIECES -->
+<section class="slide dark">
+  <div class="kicker">Module 2 · Anatomie</div>
+  <h2>Les 5 pièces de tout agent IA</h2>
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:40px">
+    <div class="card" style="border-top:5px solid var(--or)"><div style="font-size:44px;font-weight:900;color:var(--or)">1</div><h3>Contexte</h3><p>Qui tu es, ton marché, tes clients, ton ton.</p></div>
+    <div class="card" style="border-top:5px solid var(--or)"><div style="font-size:44px;font-weight:900;color:var(--or)">2</div><h3>Cerveau</h3><p>Le modèle d'IA. Ici : Claude.</p></div>
+    <div class="card" style="border-top:5px solid var(--or)"><div style="font-size:44px;font-weight:900;color:var(--or)">3</div><h3>Mission</h3><p>Une seule tâche, un livrable précis.</p></div>
+    <div class="card" style="border-top:5px solid var(--or)"><div style="font-size:44px;font-weight:900;color:var(--or)">4</div><h3>Règles</h3><p>Ce qu'il doit faire, ne jamais faire, et vérifier.</p></div>
+    <div class="card" style="border-top:5px solid var(--or)"><div style="font-size:44px;font-weight:900;color:var(--or)">5</div><h3>Outils</h3><p>Les connecteurs : web, Drive, Notion, Gmail…</p></div>
+  </div>
+  <p style="margin-top:40px;font-size:22px">Il en manque une ? L'agent devine. Et un agent qui devine, c'est un agent qui se trompe.</p>
+  <div class="foot"><span><b>HHSA Agency</b></span><span>05</span></div>
+</section>
+
+<!-- 6 CONTEXTE -->
+<section class="slide">
+  <div class="num">01</div>
+  <div class="kicker">Étape 1 · Le contexte</div>
+  <h2>L'étape que tout le monde saute</h2>
+  <div class="grid2" style="grid-template-columns:1.1fr 1fr;align-items:start">
+    <div>
+      <p class="lead" style="margin-bottom:20px">Ta fiche de contexte tient en 5 questions. 15 minutes, une seule fois.</p>
+      <ul class="check">
+        <li><b>Qui es-tu ?</b> Activité, ville, taille de l'équipe.</li>
+        <li><b>Pour qui ?</b> Tes clients types, leurs problèmes.</li>
+        <li><b>Contre qui ?</b> 3 à 5 concurrents ou références.</li>
+        <li><b>Comment tu parles ?</b> Ton, langue (FR / AR / EN), vouvoiement.</li>
+        <li><b>Ce qui compte ?</b> Tes objectifs du trimestre.</li>
+      </ul>
+    </div>
+    <div class="prompt"><span class="v">// Prompt de contexte</span>
+Pose-moi ces 5 questions une par
+une, attends ma réponse à chaque
+fois, puis rédige une fiche de
+contexte d'une page que je pourrai
+réutiliser pour tous mes agents.
+
+Ne remplis rien toi-même.
+Si une réponse est floue,
+demande-moi de préciser.</div>
+  </div>
+  <div class="steps" style="position:absolute;left:80px;right:80px;bottom:64px"><div class="on"></div><div></div><div></div><div></div><div></div><div></div></div>
+  <div class="foot"><span><b>HHSA Agency</b></span><span>06</span></div>
+</section>
+
+<!-- 7 INTERFACE: PROJECT -->
+<section class="slide">
+  <div class="kicker">Étape 1 · Dans Claude</div>
+  <h2 style="font-size:36px">Range ton contexte dans un Projet</h2>
+  <div class="grid2" style="grid-template-columns:1.45fr 1fr;gap:36px">
+    <div class="win" style="height:440px;position:relative">
+      <div class="bar"><i></i><i></i><i></i><span>claude.ai — Projets</span></div>
+      <div class="cl" style="height:406px">
+        <div class="side"><div class="brand">Claude</div><div class="it">＋ Nouveau chat</div><div class="it">Chats</div><div class="it on">Projets</div><div class="it">Artefacts</div></div>
+        <div class="main">
+          <div class="serif" style="font-size:22px;margin-bottom:14px">Agent Veille — Ma PME</div>
+          <div class="field"><label>Instructions du projet</label><div class="box">Tu es l'assistant de veille de [Entreprise], agence immobilière à Casablanca. Utilise toujours la fiche de contexte jointe…</div></div>
+          <div class="field"><label>Connaissances du projet</label>
+            <div class="box" style="display:flex;gap:8px;flex-wrap:wrap"><span class="tool">📄 fiche-contexte.pdf</span><span class="tool">📊 concurrents.xlsx</span><span class="tool">📄 ton-de-marque.docx</span><span class="tool" style="border-style:dashed">＋ Ajouter</span></div></div>
+          <div class="inbox" style="margin-top:14px"><div class="ph" style="min-height:24px">Démarrer un chat dans ce projet…</div><div class="row"><span class="pill">＋</span><span class="send">↑</span></div></div>
+        </div>
+      </div>
+      <div class="callout" style="right:14px;top:128px">1</div>
+      <div class="callout" style="right:14px;top:222px">2</div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:14px"><span class="tag">1</span><h3>Instructions</h3><p>Le rôle de l'agent en 3 lignes. Toujours la même base.</p></div>
+      <div class="card"><span class="tag">2</span><h3>Connaissances</h3><p>Ta fiche de contexte + tes fichiers de référence. L'agent les relit à chaque conversation.</p></div>
+      <p class="cap">Reconstitution simplifiée de l'interface Claude. L'interface réelle peut varier selon la version et l'offre.</p>
+    </div>
+  </div>
+  <div class="foot"><span><b>HHSA Agency</b></span><span>07</span></div>
+</section>
+
+<!-- 8 MISSION -->
+<section class="slide">
+  <div class="num">02</div>
+  <div class="kicker">Étape 2 · La mission</div>
+  <h2>Un agent = une seule mission</h2>
+  <div class="grid2" style="margin-top:20px">
+    <div class="card" style="border:2px solid #E5B9A3"><span class="tag ghost">✗ Erreur n°1 du débutant</span><h3>« Un agent qui gère mon marketing »</h3><p>Trop large. Il ne sait pas quoi livrer, ni quand il a fini. Résultat : moyen partout.</p></div>
+    <div class="card" style="border:2px solid var(--or)"><span class="tag">✓ La bonne mission</span><h3>« Chaque lundi, analyse les 5 concurrents de ma liste, repère leurs 3 publications les plus performantes et range une fiche par publication dans mon Google Sheet. »</h3></div>
+  </div>
+  <p style="margin-top:30px;font-size:21px"><b style="color:var(--ink)">La formule :</b> Quand + Quoi analyser + Quel livrable + Où le ranger.</p>
+  <div class="steps" style="position:absolute;left:80px;right:80px;bottom:64px"><div class="on"></div><div class="on"></div><div></div><div></div><div></div><div></div></div>
+  <div class="foot"><span><b>HHSA Agency</b></span><span>08</span></div>
+</section>
+
+<!-- 9 PROMPT CONSTRUCTEUR -->
+<section class="slide dark">
+  <div class="num" style="color:rgba(224,88,24,.25)">03</div>
+  <div class="kicker">Étape 3 · Construire l'agent</div>
+  <h2>Le prompt constructeur</h2><p class="lead" style="margin:-8px 0 18px">Claude écrit l'agent à ta place. Tu n'as qu'à répondre à ses questions.</p>
+  <div class="prompt" style="background:#0E0E0E;border:1px solid #333;font-size:15px;margin-top:10px">Tu es un expert en conception d'agents IA. Aide-moi à créer UN agent.
+
+1. Lis ma fiche de contexte (jointe au projet).
+2. Pose-moi des questions, une à la fois, sur : la mission <span class="v">[ta tâche]</span>,
+   la fréquence, le livrable attendu, l'endroit où le ranger, les outils disponibles.
+3. Rédige ensuite les instructions complètes de l'agent avec 5 sections :
+   RÔLE · MISSION · ÉTAPES · RÈGLES · CHECKLIST DE FIN.
+4. Ajoute la règle : « Si une information est introuvable, écris "non trouvé".
+   N'invente jamais. »
+5. Termine par un test : exécute la mission une fois et montre-moi le résultat.</div>
+  <div class="foot"><span><b>HHSA Agency</b></span><span>09</span></div>
+</section>
+
+<!-- 10 INTERFACE: BUILD LIVE -->
+<section class="slide">
+  <div class="kicker">Étape 3 · En direct dans Claude</div>
+  <h2 style="font-size:36px">L'agent se construit en conversation</h2>
+  <div class="grid2" style="grid-template-columns:1.45fr 1fr;gap:36px">
+    <div class="win" style="height:450px">
+      <div class="bar"><i></i><i></i><i></i><span>claude.ai — Agent Veille — Ma PME</span></div>
+      <div style="padding:20px 28px">
+        <div class="msg-u">Tu es un expert en conception d'agents IA. Aide-moi à créer UN agent… Ma tâche : la veille concurrentielle Instagram.</div>
+        <div class="msg-a">J'ai lu ta fiche de contexte. Première question : <b>quels comptes</b> veux-tu surveiller ? Donne-moi les noms ou les liens.</div>
+        <div class="msg-u">@concurrent_a, @concurrent_b, @concurrent_c, @concurrent_d, @concurrent_e</div>
+        <div class="msg-a">Parfait. Deuxième question : <b>où ranger les fiches</b> ? J'ai accès à :<br>
+          <span class="tool"><b></b>Google Drive</span><span class="tool"><b></b>Recherche web</span><span class="tool"><b></b>Notion</span></div>
+        <div class="inbox" style="margin-top:8px"><div class="ph" style="min-height:22px">Répondre…</div><div class="row"><span class="pill">＋</span><span class="pill">⚙ Outils</span><span class="send">↑</span></div></div>
+      </div>
+    </div>
+    <div>
+      <ul class="check">
+        <li>Claude pose les questions, toi tu réponds.</li>
+        <li>Il rédige les instructions finales.</li>
+        <li>Tu les colles dans les <b>Instructions du projet</b>.</li>
+        <li>Tu lances un premier test et tu corriges.</li>
+      </ul>
+      <p class="cap" style="margin-top:24px">Reconstitution simplifiée de l'interface Claude. L'interface réelle peut varier.</p>
+    </div>
+  </div>
+  <div class="foot"><span><b>HHSA Agency</b></span><span>10</span></div>
+</section>
+
+<!-- 11 CONNECTEURS -->
+<section class="slide">
+  <div class="num">04</div>
+  <div class="kicker">Étape 4 · Les outils</div>
+  <h2 style="font-size:36px">Donne-lui des mains : les connecteurs</h2>
+  <div class="grid2" style="grid-template-columns:1.45fr 1fr;gap:36px">
+    <div class="win" style="height:440px">
+      <div class="bar"><i></i><i></i><i></i><span>claude.ai — Paramètres › Connecteurs</span></div>
+      <div class="cl" style="height:406px">
+        <div class="side"><div class="brand">Paramètres</div><div class="it">Général</div><div class="it">Compte</div><div class="it">Confidentialité</div><div class="it on">Connecteurs</div></div>
+        <div class="main">
+          <div class="serif" style="font-size:20px;margin-bottom:8px">Connecteurs</div>
+          <div class="conn"><span><span class="ic">G</span>Google Drive</span><span class="btn on">Connecté</span></div>
+          <div class="conn"><span><span class="ic">M</span>Gmail</span><span class="btn on">Connecté</span></div>
+          <div class="conn"><span><span class="ic">C</span>Google Calendar</span><span class="btn off">Connecter</span></div>
+          <div class="conn"><span><span class="ic">N</span>Notion</span><span class="btn off">Connecter</span></div>
+          <div class="conn"><span><span class="ic">🌐</span>Recherche web</span><span class="btn on">Activé</span></div>
+          <div class="conn" style="border:0"><span><span class="ic">＋</span>Parcourir les connecteurs</span><span></span></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <table>
+        <tr><th>Besoin</th><th>Connecteur</th></tr>
+        <tr><td>Chercher</td><td>Recherche web, navigateur</td></tr>
+        <tr><td>Ranger</td><td>Drive, Sheets, Notion</td></tr>
+        <tr><td>Prévenir</td><td>Gmail (brouillon), Slack</td></tr>
+        <tr><td>Planifier</td><td>Google Calendar</td></tr>
+      </table>
+      <p style="font-size:16px;margin-top:14px"><b>Règle PME :</b> connecte le minimum. Un agent de veille n'a pas besoin de ta boîte mail.</p>
+      <p class="cap">Reconstitution simplifiée. Les connecteurs disponibles dépendent de ton offre Claude.</p>
+    </div>
+  </div>
+  <div class="foot"><span><b>HHSA Agency</b></span><span>11</span></div>
+</section>
+
+<!-- 12 FIABILITE -->
+<section class="slide">
+  <div class="num">05</div>
+  <div class="kicker">Étape 5 · La fiabilité</div>
+  <h2>Rends ton agent fiable</h2>
+  <div class="grid3" style="margin-top:16px">
+    <div class="card"><span class="tag">Règle d'or</span><h3>« N'invente jamais »</h3><p>Donnée introuvable = « non trouvé ». Un trou visible vaut mieux qu'un chiffre faux.</p></div>
+    <div class="card"><span class="tag">Garde-fous</span><h3>Il prépare, tu valides</h3><p>Mails en brouillon, jamais envoyés. Pas de paiement, pas de suppression.</p></div>
+    <div class="card"><span class="tag">Contrôle</span><h3>Checklist de fin</h3><p>Avant de terminer, l'agent vérifie lui-même son travail point par point.</p></div>
+  </div>
+  <div class="prompt" style="margin-top:24px;font-size:14px"><span class="v">CHECKLIST DE FIN — à coller dans les instructions</span>
+□ Chaque fiche contient : nom du compte, lien, date, vues, description.   □ Aucun chiffre inventé.
+□ Les liens sont cliquables et vérifiés.                                  □ Résumé de 3 lignes en tête.</div>
+  <div class="foot"><span><b>HHSA Agency</b></span><span>12</span></div>
+</section>
+
+<!-- 13 PLANIFIER -->
+<section class="slide">
+  <div class="num">06</div>
+  <div class="kicker">Étape 6 · L'autonomie</div>
+  <h2 style="font-size:36px">Il tourne tout seul : la tâche planifiée</h2>
+  <div class="grid2" style="grid-template-columns:1.45fr 1fr;gap:36px">
+    <div class="win" style="height:440px">
+      <div class="bar"><i></i><i></i><i></i><span>Claude — Tâches planifiées › Nouvelle tâche</span></div>
+      <div style="padding:20px 28px">
+        <div class="serif" style="font-size:20px;margin-bottom:14px">Nouvelle tâche planifiée</div>
+        <div class="field"><label>Nom</label><div class="box">Veille concurrents — hebdo</div></div>
+        <div class="field"><label>Instructions</label><div class="box">Exécute la mission de l'agent « Veille — Ma PME » : analyse les 5 comptes, range les fiches dans le Google Sheet, puis crée un brouillon Gmail avec le résumé.</div></div>
+        <div style="display:flex;gap:12px">
+          <div class="field" style="flex:1"><label>Fréquence</label><div class="box">Chaque semaine ▾</div></div>
+          <div class="field" style="flex:1"><label>Jour</label><div class="box">Lundi ▾</div></div>
+          <div class="field" style="flex:1"><label>Heure</label><div class="box">08:00 ▾</div></div>
+        </div>
+        <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:4px"><span class="btn off">Annuler</span><span class="btn on" style="background:var(--cl-acc)">Enregistrer</span></div>
+      </div>
+    </div>
+    <div>
+      <ul class="check">
+        <li>Ne planifie <b>qu'après 3 tests manuels</b> réussis.</li>
+        <li>Choisis un créneau où tu peux relire le résultat.</li>
+        <li>Fais-toi prévenir : brouillon Gmail ou notification.</li>
+        <li>Relis chaque sortie le premier mois.</li>
+      </ul>
+      <p class="cap" style="margin-top:20px">Reconstitution simplifiée. Les tâches planifiées sont disponibles selon l'application et l'offre Claude utilisées.</p>
+    </div>
+  </div>
+  <div class="foot"><span><b>HHSA Agency</b></span><span>13</span></div>
+</section>
+
+<!-- 14 EXEMPLE -->
+<section class="slide dark">
+  <div class="kicker">Cas réel · Le résultat</div>
+  <h2>Lundi 8h. Toi, tu n'as touché à rien.</h2>
+  <div style="display:flex;align-items:center;gap:18px;margin-top:40px">
+    <div class="card" style="flex:1;text-align:center"><div style="font-size:42px;font-weight:900;color:var(--or)">5</div><p>comptes concurrents analysés</p></div>
+    <div style="font-size:36px;color:var(--or)">→</div>
+    <div class="card" style="flex:1;text-align:center"><div style="font-size:42px;font-weight:900;color:var(--or)">15</div><p>publications performantes repérées</p></div>
+    <div style="font-size:36px;color:var(--or)">→</div>
+    <div class="card" style="flex:1;text-align:center"><div style="font-size:42px;font-weight:900;color:var(--or)">1</div><p>Google Sheet à jour + résumé en brouillon</p></div>
+  </div>
+  <p style="margin-top:44px;font-size:22px">Tu passes de 2 h de veille manuelle à 10 minutes de relecture. Tu ne fais plus le travail : tu le diriges.</p>
+  <p class="cap" style="color:#8A8A8A">Chiffres d'exemple pour illustrer le scénario de démonstration de la formation.</p>
+  <div class="foot"><span><b>HHSA Agency</b></span><span>14</span></div>
+</section>
+
+<!-- 15 7 MODELES -->
+<section class="slide">
+  <div class="kicker">Module 3 · Ton métier</div>
+  <h2 style="font-size:38px">Le même agent, adapté à 7 métiers</h2>
+  <table>
+    <tr><th>Métier</th><th>Mission de l'agent</th><th>Livrable</th></tr>
+    <tr><td>Commerce / e-commerce</td><td>Surveiller prix et promos de 5 concurrents</td><td>Tableau comparatif hebdo</td></tr>
+    <tr><td>Immobilier</td><td>Repérer les nouvelles annonces d'un quartier</td><td>Liste filtrée + alerte</td></tr>
+    <tr><td>Restauration</td><td>Synthétiser les avis Google de la semaine</td><td>Rapport + réponses en brouillon</td></tr>
+    <tr><td>Cabinet comptable</td><td>Lister les factures impayées et préparer les relances</td><td>Brouillons Gmail</td></tr>
+    <tr><td>Recrutement / RH</td><td>Trier les candidatures selon une grille</td><td>Shortlist notée</td></tr>
+    <tr><td>Formation / coaching</td><td>Veille des appels d'offres et événements</td><td>Fiches opportunités</td></tr>
+    <tr><td>Créateur / marketing</td><td>Analyser les contenus qui performent</td><td>Idées de posts du mois</td></tr>
+  </table>
+  <div class="foot"><span><b>HHSA Agency</b></span><span>15</span></div>
+</section>
+
+<!-- 16 PROGRAMME -->
+<section class="slide">
+  <div class="kicker">La formation</div>
+  <h2>Programme : 1 journée, 1 agent qui tourne</h2>
+  <div class="grid3" style="margin-top:12px">
+    <div class="card"><span class="tag">Matin · 3 h</span><h3>Comprendre & cadrer</h3><p>Chatbot vs agent · Diagnostic des tâches · Les 5 pièces · Rédaction de la fiche de contexte.</p></div>
+    <div class="card"><span class="tag">Après-midi · 3 h</span><h3>Construire & connecter</h3><p>Mission · Prompt constructeur en direct · Connecteurs · Règles et checklist de fin.</p></div>
+    <div class="card"><span class="tag">Suivi · J+7</span><h3>Automatiser</h3><p>Planification · Revue des premiers résultats · Ajustements en session de 1 h.</p></div>
+  </div>
+  <div class="grid2" style="margin-top:24px">
+    <div class="card"><h3>Format</h3><p>Présentiel ou en ligne · 6 à 12 participants · Chacun repart avec <b>son</b> agent fonctionnel.</p></div>
+    <div class="card"><h3>Prérequis</h3><p>Un ordinateur, un compte Claude (offre payante recommandée pour les connecteurs), une tâche répétitive en tête.</p></div>
+  </div>
+  <div class="foot"><span><b>HHSA Agency</b></span><span>16</span></div>
+</section>
+
+<!-- 17 ACTIONS -->
+<section class="slide">
+  <div class="kicker">Tes actions cette semaine</div>
+  <h2>5 jours pour ton premier agent</h2>
+  <table style="margin-top:8px">
+    <tr><td style="width:18%">Lundi</td><td>Liste 5 tâches répétitives. Passe-les au test des 4 critères. Garde-en une.</td></tr>
+    <tr><td>Mardi</td><td>Rédige ta fiche de contexte avec le prompt de contexte. Crée ton Projet Claude.</td></tr>
+    <tr><td>Mercredi</td><td>Lance le prompt constructeur. Colle les instructions dans le projet.</td></tr>
+    <tr><td>Jeudi</td><td>Connecte les outils nécessaires. Fais 3 tests, corrige les règles.</td></tr>
+    <tr><td>Vendredi</td><td>Planifie la tâche. Lundi prochain, tu relis au lieu de faire.</td></tr>
+  </table>
+  <div class="foot"><span><b>HHSA Agency</b></span><span>17</span></div>
+</section>
+
+<!-- 18 CTA -->
+<section class="slide orange">
+  <img src="logo.png" style="height:70px;filter:brightness(0) invert(1)">
+  <div style="position:absolute;left:80px;top:210px;width:900px">
+    <h1 style="font-size:60px">Ne fais plus le travail<br>avec l'IA. Dirige-le.</h1>
+    <p class="lead" style="color:#fff;margin-top:26px">Inscris ton équipe à la prochaine session ou demande une formation sur mesure pour ta PME.</p>
+    <p style="color:#fff;font-size:22px;font-weight:700;margin-top:30px">HHSA Agency · Workflows agentiques pour PME · Région MENA</p>
+    <p style="color:#FFE3D1;font-size:18px;margin-top:6px">[Contact · Site · WhatsApp]</p>
+  </div>
+</section>
+
+</body>
+</html>
