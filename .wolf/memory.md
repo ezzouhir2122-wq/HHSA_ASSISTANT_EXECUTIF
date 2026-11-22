@@ -70,3 +70,4 @@
 | 23:34 | Created live/formation-agent-ia/src/render_video.js | — | ~242 |
 | 23:37 | Created live/formation-agent-ia/video/Script_voix_off.md | — | ~440 |
 | 23:45 | Pub formation Agent IA : 2 carrousels 1080x1350 (PNG + PDF LinkedIn), vidéo verticale 38 s sous-titrée (sans voix), script voix off ; coordonnées easydigia ajoutées au deck/guide | live/formation-agent-ia/{carrousels,video,src} | Voix ElevenLabs bloquée (crédits) | ~40k |
+| 23:38 | Session end: 4 writes across 4 files (carousel.html, video.html, render_video.js, Script_voix_off.md) | 2 reads | ~6613 tok |
