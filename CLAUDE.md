@@ -87,6 +87,7 @@ Tous utilisés manuellement sauf Zapier.
 | `devis-et-factures` | "génère un devis pour [client]" / "crée une facture pour [client]" / "marque la facture [N°] comme payée" | Template → MD → PDF brandé → copie dans clients/ |
 | `onboarding-client` | "onboarde [client]" / "deal signé avec [client]" / "démarre l'onboarding pour [client]" | Crée dossier client + contrat + CRM Won via Zapier + brouillon email bienvenue |
 | `faq-clients` | "comment répondre à [question]" / "que dire si un client demande [sujet]" | Réponse calibrée depuis knowledge base — adapte au canal (email/chat/appel) |
+| `ig-*` (13 skills) | "/ig-reel", "/ig-caption", "/ig-plan", "/ig-human"… | Pack Instagram (Jake Schincariol, MIT) — Reels + hook score, légendes lintées, carrousels, stories, profil /100, plan semaine, commentaires, DMs, audit, humanizer. Données dans `live/instagram/` (remplir `voice.md` d'abord). Ne publie jamais. |
 
 ---
 

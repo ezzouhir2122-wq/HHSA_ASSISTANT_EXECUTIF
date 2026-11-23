@@ -16,6 +16,7 @@
 - **Hydration mismatch:** `new Date()` in JSX causes SSR/client mismatch. Fix with `suppressHydrationWarning` on the containing element or use `useEffect` + state.
 - **TypeScript naming:** Never name a local type the same as an imported icon (e.g., `type Settings` conflicts with `import { Settings } from 'lucide-react'`). Use `Settings as SettingsIcon` pattern.
 - **Fragment keys:** Use `<Fragment key={...}>` (named import) not `<>...</>` when a key prop is needed in a list map.
+- Pack Instagram ig-* installé en local projet; chemins ~/.claude/instagram/ réécrits en live/instagram/ (container cloud éphémère, seul le repo persiste). Lexique slop.json de ig-human est anglais uniquement: en français il corrige typo/invisibles mais pas les clichés FR, et peut injecter des mots anglais.
 
 ## Do-Not-Repeat
 

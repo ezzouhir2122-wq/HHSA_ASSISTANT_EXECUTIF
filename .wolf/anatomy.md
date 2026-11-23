@@ -104,6 +104,14 @@
 
 - `SKILL.md` — Inputs Requis (~1026 tok)
 
+## .claude/skills/ig-*/ (13 skills Instagram)
+
+- ig-reel, ig-caption, ig-carousel, ig-story, ig-profile, ig-plan, ig-human, ig-comment, ig-reply, ig-dm, ig-repurpose, ig-audit, ig-viral — SKILL.md chacun. Source: github.com/Jakeschincariol/instagram-agent-skill (MIT, licence dans ig-reel/). Scripts Python locaux sans réseau: ig-reel/hookscore.py, beats.py, hooks.json; ig-caption/caption.py; ig-human/humanize.py, detect.py, slop.json; ig-viral/swipe.py; ig-profile/rubric.json. (~45k tok total)
+
+## live/instagram/
+
+- `voice.md` — Profil de voix Instagram (template à remplir), lu par tous les skills ig-*. log.md / plan.md / swipe.md créés à l'usage. (~1k tok)
+
 ## .claude/skills/recap-pipeline/
 
 - `SKILL.md` — Séquence (~731 tok)

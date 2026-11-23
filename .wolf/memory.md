@@ -49,3 +49,9 @@
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
+
+## Session: 2026-11-23 19:10
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 19:11 | Installé pack instagram-agent-skill (13 skills ig-*), chemins → live/instagram/, CLAUDE.md + anatomy mis à jour | .claude/skills/ig-*, live/instagram/voice.md, CLAUDE.md | OK, scripts testés | ~15k |
