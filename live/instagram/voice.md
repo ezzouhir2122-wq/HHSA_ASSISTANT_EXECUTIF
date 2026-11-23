@@ -23,8 +23,8 @@ Lu par tous les skills ig-*. Les champs `{{...}}` restent à compléter.
 - **Do I swear:** non
 - **Emoji in captions:** jamais
 - **Face on camera:** sans visage
-- **Voiceover or to-camera:** sans visage, sans voix : texte à l'écran + B-roll / captures d'écran de workflows. Le "script" = les lignes de texte à l'écran.
-- **Pace:** N/A (pas de voix). Pour beats.py, compter le temps de lecture du texte à l'écran.
+- **Voiceover or to-camera:** sans visage. Voix off sur carrousels animés / B-roll (demandé 2026-11-23). Débit cible 150 mots/min.
+- **Pace:** 150 wpm (beats.py --wpm 150).
 - **Format rules (house style):** paragraphes courts, une idée par ligne, direct, si ça tient en 3 phrases, 3 phrases suffisent.
 
 ## My positions

@@ -57,3 +57,10 @@
 | 19:11 | Installé pack instagram-agent-skill (13 skills ig-*), chemins → live/instagram/, CLAUDE.md + anatomy mis à jour | .claude/skills/ig-*, live/instagram/voice.md, CLAUDE.md | OK, scripts testés | ~15k |
 | 19:13 | Created live/instagram/voice.md | — | ~638 |
 | 19:13 | voice.md Instagram pré-rempli (FR+darija, sans visage, calme, 0 emoji) | live/instagram/voice.md | Partiel, champs {{}} à compléter | ~3k |
+| 19:13 | Session end: 1 writes across 1 files (voice.md) | 0 reads | ~683 tok |
+
+## Session: 2026-11-23 19:31
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 19:33 | Script voix off Reel 'coût tâche manuelle' (26s, 150wpm) | live/instagram/reels/2026-11-23-cout-tache-manuelle.txt | OK | ~4k |

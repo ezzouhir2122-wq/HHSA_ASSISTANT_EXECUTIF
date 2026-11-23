@@ -17,6 +17,8 @@
 - **TypeScript naming:** Never name a local type the same as an imported icon (e.g., `type Settings` conflicts with `import { Settings } from 'lucide-react'`). Use `Settings as SettingsIcon` pattern.
 - **Fragment keys:** Use `<Fragment key={...}>` (named import) not `<>...</>` when a key prop is needed in a list map.
 - Pack Instagram ig-* installé en local projet; chemins ~/.claude/instagram/ réécrits en live/instagram/ (container cloud éphémère, seul le repo persiste). Lexique slop.json de ig-human est anglais uniquement: en français il corrige typo/invisibles mais pas les clichés FR, et peut injecter des mots anglais.
+- ig-human/detect.py et beats.py sont calibrés anglais: chiffres écrits en toutes lettres FR non comptés comme concrets, score VOICE (contractions anglaises) non fiable en FR. Ignorer ces flags sur scripts FR.
+- Instagram Ezzouhir: Reels sans visage MAIS avec voix off (FR + touches darija, calme). Scripts dans live/instagram/reels/.
 
 ## Do-Not-Repeat
 
