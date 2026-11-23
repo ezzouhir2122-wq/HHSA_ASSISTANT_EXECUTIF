@@ -1,67 +1,51 @@
-# voice.md
+# voice.md — HHSA Agency
 
-Copy this to `live/instagram/voice.md` and fill it in. Every skill in the
-pack reads it. Ten minutes here is the difference between scripts you shoot and
-scripts you rewrite.
-
-If you would rather not fill it in by hand, send Claude three of your own reels
-or captions and say "write my voice.md from these". That works better than
-guessing at the answers.
-
-This file matters more on Instagram than anywhere else, because you have to say
-the words out loud. A line you would never say is not a draft, it is a retake.
+Lu par tous les skills ig-*. Les champs `{{...}}` restent à compléter.
 
 ---
 
 ## Who I am
 
-- **Name:**
-- **Handle:**
-- **What I do, in one sentence:**
-- **Who I am talking to:** (be specific: "photographers charging under $2,000",
-  not "creatives")
-- **What I sell:**
+- **Name:** Ezzouhir, fondateur de HHSA Agency
+- **Handle:** {{@handle}}
+- **What I do, in one sentence:** Je construis des workflows agentiques (des systèmes IA qui exécutent le travail, pas juste des chatbots) pour les PME.
+- **Who I am talking to:** {{à préciser — ex. "dirigeants de PME au Maroc et dans le Golfe, 5 à 50 salariés, qui perdent des heures sur des tâches répétitives"}}
+- **What I sell:** Assistants IA sur mesure pour dirigeants, automatisation de blogs, gestion de calendriers, CRM intelligents, SaaS agentiques.
+- **North star:** Devenir le leader du conseil en workflows agentiques dans la région MENA.
 
 ## What I sound like
 
-- **Three of my own reels or captions that sound most like me:** (paste them)
-- **On camera I am:** (fast and loud / dry / calm / funny / deadpan)
-- **Words I actually use:**
-- **Words I would never say out loud:**
-- **Do I swear:** (yes / mild / no)
-- **Emoji in captions:** (never / one, rarely / freely)
-- **Face on camera:** (always / sometimes / faceless)
-- **Voiceover or to-camera:**
-- **Pace:** (words per minute, if you have timed yourself reading a script.
-  `beats.py --wpm` uses this. Most people are between 150 and 200.)
+- **Language:** Français, avec des touches de darija. Le darija sert à la proximité (expressions, transitions, chute), pas au contenu technique.
+- **Three of my own reels or captions that sound most like me:** {{à coller}}
+- **Tone:** Calme et posé. Expert qui explique, pas vendeur qui crie.
+- **Words I actually use:** {{à compléter}}
+- **Words I would never say out loud:** jargon technique gratuit, "révolutionnaire", "game changer", formules de remplissage ("il est important de noter que...").
+- **Do I swear:** non
+- **Emoji in captions:** jamais
+- **Face on camera:** sans visage
+- **Voiceover or to-camera:** sans visage, sans voix : texte à l'écran + B-roll / captures d'écran de workflows. Le "script" = les lignes de texte à l'écran.
+- **Pace:** N/A (pas de voix). Pour beats.py, compter le temps de lecture du texte à l'écran.
+- **Format rules (house style):** paragraphes courts, une idée par ligne, direct, si ça tient en 3 phrases, 3 phrases suffisent.
 
 ## My positions
 
-Three to five things I believe that some of my audience does not. These are
-where the good reels come from.
-
-1.
-2.
-3.
+1. {{ex. "La plupart des PME n'ont pas besoin d'un chatbot, elles ont besoin d'un workflow."}}
+2. {{...}}
+3. {{...}}
 
 ## Off limits
 
-- **Topics I do not post about:**
-- **Clients, numbers or names I cannot say publicly:**
-- **Claims I am not allowed to make:** (regulated industry, employer policy, NDA)
+- **Topics I do not post about:** {{à compléter}}
+- **Clients, numbers or names I cannot say publicly:** Aucun nom client sans accord écrit (ex. riyadh-finpath). {{à compléter}}
+- **Claims I am not allowed to make:** Pas de promesse de ROI chiffrée non mesurée.
 
 ## Proof I can use
 
-Real numbers, outcomes and stories I am happy to put my name on. The skills will
-never invent one, so if this section is empty, every draft comes back with
-`{{your number}}` in it.
-
--
--
--
+- {{chiffre ou résultat réel}}
+- {{...}}
 
 ## The ask
 
-- **My keyword CTA, if I use one:** (one word, sayable, no spaces)
-- **What the keyword sends them:**
-- **Where my link goes:**
+- **My keyword CTA, if I use one:** {{un mot, ex. WORKFLOW}}
+- **What the keyword sends them:** {{ex. audit gratuit / checklist}}
+- **Where my link goes:** {{lien bio}}
