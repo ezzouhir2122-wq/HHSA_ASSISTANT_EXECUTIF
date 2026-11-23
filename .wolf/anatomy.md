@@ -661,6 +661,10 @@
 
 - `index.html` — HHSA Agency — Workflows Agentiques pour PME | Audit Gratuit (~7704 tok)
 
+## live/videos/
+
+- `maitriser-claude-script.md` — Script voix off vidéo « Maîtriser Claude pas à pas » (10.8 min), projet OpenMontage dans /home/user/OpenMontage/projects/maitriser-claude (~3000 tok)
+
 ## live/leads/
 
 - `.gitkeep` (~0 tok)

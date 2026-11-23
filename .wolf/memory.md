@@ -64,3 +64,4 @@
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
+| 20:38 | OpenMontage: recherche + proposition + script vidéo 'Maîtriser Claude' (10.8 min, Remotion, voix Azure à configurer) | live/videos/maitriser-claude-script.md | script en attente validation | ~40k |
